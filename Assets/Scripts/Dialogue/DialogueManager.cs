@@ -16,9 +16,6 @@ public class DialogueManager : MonoBehaviour
     public static DialogueManager Instance { get; private set; }
     public GameObject DialogueParent; // Main container for dialogue UI
     public TextMeshProUGUI DialogTitleText, DialogBodyText; // Text components for title and body
-    public GameObject responseButtonPrefab; // Prefab for generating response buttons
-    public GameObject responseButtonContainer; // Container to hold response buttons
-    private string specialNode = ""; // Checker for unlocking information
     public ChangeSpriteUI image1; // image on the left
     public ChangeSpriteUI image2; // image on the right
     public ChangeSprite background;
@@ -73,23 +70,11 @@ public class DialogueManager : MonoBehaviour
         responseCounter = node.responses.Count;
         Dialoguetest(0);
         dialogueCounter++;
-        foreach (Transform child in responseButtonContainer.GetComponent<Transform>())
-        {
-            Destroy(child.gameObject);
-        }
-        //Debug.Log("title: " + GetName(dialoguee[dialoguee.Count - 1]));
-        //Debug.Log("dialogue: " + GetDialogue(dialoguee[dialoguee.Count - 1]));
     
         foreach (DialogueResponse response in node.responses)
         {
-                GameObject buttonObj = Instantiate(responseButtonPrefab, responseButtonContainer.GetComponent<Transform>());
-                buttonObj.GetComponentInChildren<TextMeshProUGUI>().text = response.responseText;
-
-                // Setup button to trigger SelectResponse when clicked
-                //buttonObj.GetComponent<Button>().onClick.AddListener(() => SelectResponse(response, title));
-                buttonObj.GetComponent<Button>().onClick.AddListener(() => DialogueManager.Instance.StartDialogue(response.Dialogue.RootNode));
+                DialogueManager.Instance.StartDialogue(response.Dialogue.RootNode);
         }
-        responseButtonContainer.SetActive(false);
         
     }
     public void Dialoguetest(int index)
@@ -148,10 +133,6 @@ public class DialogueManager : MonoBehaviour
         return dialogueDone;
     }
 
-    //Checks the value of specialNode (a string)
-    public string GetSpecialNode() {
-        return specialNode;
-    }
     //shows dialogue letter-by-letter
     public async void PrintWord(string dialogue) {
         responseDone = false;
@@ -162,9 +143,6 @@ public class DialogueManager : MonoBehaviour
             await Task.Delay(50);
         }
         DialogBodyText.text = dialogue;
-        if (dialogueCounter == dialoguee.Count) {
-            responseButtonContainer.SetActive(true);
-        }
         responseDone = true;
     }
 
