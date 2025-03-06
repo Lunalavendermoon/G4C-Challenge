@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "G4C Challenge.sln"
+    "dotnet.defaultSolution": "G4C-Challenge.sln"
 }
