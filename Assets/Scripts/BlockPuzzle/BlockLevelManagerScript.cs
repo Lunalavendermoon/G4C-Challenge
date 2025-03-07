@@ -23,12 +23,14 @@ public class BlockLevelManagerScript : MonoBehaviour
     }
 
     void initManager(int levelSize, int[] levelGroupCounts) {
+        // this will be called from the central static class
         // TODO spawn blocks in here
+        // also init other stuff
     }
     
     void spawnBlock(int id, BlockType type) {
         GameObject block = Instantiate(blockPrefab, new Vector3(id, 0, 0), Quaternion.identity);
-        block.GetComponent<BlockScript>().initBlock(type);
+        block.GetComponent<BlockScript>().initBlock(type, this);
         blocks.Add(id, block);
     }
 
@@ -70,8 +72,8 @@ public class BlockLevelManagerScript : MonoBehaviour
         }
     }
 
-    public void blockSelection(int id, bool isSelect) {
-        selectedBlock = isSelect ? id : -1;
+    public void selectBlock(int id) {
+        selectedBlock = id;
     }
 
     public void flipBlock(bool isHorizontal) {

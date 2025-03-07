@@ -10,47 +10,32 @@ public class BlockType {
 
     public bool[][] shape;
 
-    public BlockType(string _name, string _foodGroup, int _size) {
+    public BlockType(string _name, string _foodGroup, int _size, bool[][] _shape) {
         name = _name;
         foodGroup = _foodGroup;
         size = _size;
-        if (name.Equals("apple")) {
-            shape = new bool[][] {
-                new bool[] {true, true},
-                new bool[] {true, true}
-            };
-        } else if (name.Equals("rice")) {
-            shape = new bool[][] {
-                new bool[] {true, false, true},
-                new bool[] {true, true, true}
-            };
-        } else if (name.Equals("chicken")) {
-            shape = new bool[][] {
-                new bool[] {true, false},
-                new bool[] {true, true}
-            };
-        }
-        else {
-            shape = new bool[1][];
-        }
 
-        // shape = new bool[_shape.GetLength(0)][];
-        // for (int i = 0; i < _shape.GetLength(0); ++i) {
-        //     for (int j = 0; j < _shape[i].GetLength(0); ++j) {
-        //         shape[i][j] = (_shape[i][j] == 1) ? true : false;
-        //     }
-        // }
+        shape = _shape;
     }
 
     public static BlockType apple() {
-        return new BlockType("apple", "veg", 1);
+        return new BlockType("apple", "veg", 1, new bool[][] {
+            new bool[] {true, true},
+            new bool[] {true, true}
+        });
     }
 
     public static BlockType rice() {
-        return new BlockType("rice", "carb", 2);
+        return new BlockType("rice", "carb", 2, new bool[][] {
+            new bool[] {true, false, true},
+            new bool[] {true, true, true}
+        });
     }
 
     public static BlockType chicken() {
-        return new BlockType("chicken", "protein", 1);
+        return new BlockType("chicken", "protein", 1, new bool[][] {
+            new bool[] {true, false},
+            new bool[] {true, true}
+        });
     }
 }
