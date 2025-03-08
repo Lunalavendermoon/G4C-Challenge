@@ -6,6 +6,9 @@ public class BlockLevelManagerScript : MonoBehaviour
 {
     public GameObject blockPrefab;
 
+    public GameObject gameGrid;
+    GridScript grid;
+
     Dictionary<int, GameObject> blocks = new Dictionary<int, GameObject>();
 
     int selectedBlock = -1;
@@ -16,13 +19,26 @@ public class BlockLevelManagerScript : MonoBehaviour
 
     void Awake()
     {
+        grid = gameGrid.GetComponent<GridScript>();
+
         // TODO spawn the actually correct amount/type of blocks lmao
+        // BLOCK ID MUST BE 1 OR GREATER
         for (int i = 0; i < 5; ++i) {
-            spawnBlock(i, i % 3 == 0 ? BlockType.apple() : BlockType.rice());
+            spawnBlock(i + 1, i % 3 == 0 ? BlockType.apple() : BlockType.rice());
         }
+
+        // TODO placeholder grid array - should put this in central static class
+        // 0 = empty space, -1 = out of bounds, -2 = obstacle
+        grid.initGrid(new int[][] {
+            new int[] {-1, -1,  0,  0,  0, -1},
+            new int[] {-1,  0,  0,  0,  0, -1},
+            new int[] {-1,  0,  0,  0, -2, -1},
+            new int[] { 0,  0,  0,  0, -2,  0},
+            new int[] { 0,  0,  0,  0,  0,  0}
+        }, 0, 3);
     }
 
-    void initManager(int levelSize, int[] levelGroupCounts) {
+    void initManager(int levelSize, int[] levelGroupCounts, int[][] gridArray) {
         // this will be called from the central static class
         // TODO spawn blocks in here
         // also init other stuff
@@ -30,7 +46,7 @@ public class BlockLevelManagerScript : MonoBehaviour
     
     void spawnBlock(int id, BlockType type) {
         GameObject block = Instantiate(blockPrefab, new Vector3(id, 0, 0), Quaternion.identity);
-        block.GetComponent<BlockScript>().initBlock(type, this);
+        block.GetComponent<BlockScript>().initBlock(type, this, grid);
         blocks.Add(id, block);
     }
 
