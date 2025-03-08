@@ -98,11 +98,11 @@ public class BlockLevelManagerScript : MonoBehaviour
         getBlockScript(selectedBlock).flip(isHorizontal);
     }
 
-    public void rotateBlock(bool isClockwise) {
+    public void rotateBlock() {
         if (selectedBlock < 0) {
             return;
         }
-        getBlockScript(selectedBlock).rotate(isClockwise);
+        getBlockScript(selectedBlock).rotate();
     }
 
     // Update is called once per frame
@@ -110,12 +110,10 @@ public class BlockLevelManagerScript : MonoBehaviour
     {
         if (selectedBlock != -1) {
             // TODO change these keybinds later
-            // E,R = rotate CCW,CW
+            // R = rotate CW
             // D,F = flip horiz,vert
-            if (Input.GetKeyDown(KeyCode.E)) {
-                getBlockScript(selectedBlock).rotate(false);
-            } else if (Input.GetKeyDown(KeyCode.R)) {
-                getBlockScript(selectedBlock).rotate(true);
+            if (Input.GetKeyDown(KeyCode.R)) {
+                getBlockScript(selectedBlock).rotate();
             } else if (Input.GetKeyDown(KeyCode.D)) {
                 getBlockScript(selectedBlock).flip(true);
             } else if (Input.GetKeyDown(KeyCode.F)) {
