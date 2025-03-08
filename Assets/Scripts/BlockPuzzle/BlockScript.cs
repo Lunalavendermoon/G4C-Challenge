@@ -21,7 +21,8 @@ public class BlockScript : MonoBehaviour
         renderer = GetComponent<SpriteRenderer>();
     }
 
-    public void initBlock(BlockType type, BlockLevelManagerScript levelManager, GridScript grid) {
+    public void initBlock(int id, BlockType type, BlockLevelManagerScript levelManager, GridScript grid) {
+        this.id = id;
         isOnGrid = false;
         blockType = type;
         this.levelManager = levelManager;
@@ -52,6 +53,7 @@ public class BlockScript : MonoBehaviour
             } else {
                 isOnGrid = true;
                 grid.addBlock(id, getSpriteTopLeft(), blockType);
+                levelManager.playerAddBlock(id);
             }
         } else {
             if (status == -1 || (!isOnGrid && status == -2)) {
@@ -59,6 +61,7 @@ public class BlockScript : MonoBehaviour
                 if (isOnGrid) {
                     isOnGrid = false;
                     grid.removeBlock(id);
+                    levelManager.playerRemoveBlock(id);
                 }
             } else if (isOnGrid && status == -2) {
                 transform.position = prevPosition;

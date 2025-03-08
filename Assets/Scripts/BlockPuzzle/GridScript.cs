@@ -23,63 +23,69 @@ public class GridScript : MonoBehaviour
         cols = gridArray[0].Length;
         this.xoffset = xoffset;
         this.yoffset = yoffset;
+        redrawTileMap();
     }
 
     void redrawTileMap() {
-        // for (int i = 0; i < gridArray.Length; ++i) {
-        //     for (int j = 0; j < gridArray[i].Length; ++j) {
-        //         Vector3Int cell = new Vector3Int(i + xoffset, j + yoffset, 0);
-        //         switch (gridArray[i][j]) {
-        //             case -1:
-        //                 tilemap.SetTile(cell, null);
-        //                 break;
-        //             case -2:
-        //                 tilemap.SetTile(cell, obstacle);
-        //                 break;
-        //             default:
-        //                 tilemap.SetTile(cell, blank);
-        //                 break;
-        //         }
-        //     }
-        // }
+        // TODO need to rotate clockwise by 90 degrees when converting from array to grid & account for offset
+        for (int i = 0; i < gridArray.Length; ++i) {
+            for (int j = 0; j < gridArray[i].Length; ++j) {
+                Vector3Int cell = arrayToCell(new Vector3Int(i, j, 0));
+                switch (gridArray[i][j]) {
+                    case -1:
+                        tilemap.SetTile(cell, null);
+                        break;
+                    case -2:
+                        tilemap.SetTile(cell, obstacle);
+                        break;
+                    default:
+                        tilemap.SetTile(cell, blank);
+                        break;
+                }
+            }
+        }
     }
 
-    Vector3Int getGridPos(Vector3 world) {
-        return tilemap.WorldToCell(world);
+    Vector3Int worldToArray(Vector3 world) {
+        Vector3Int conv = tilemap.WorldToCell(world);
+        return new Vector3Int(yoffset - conv.y, conv.x - xoffset);
     }
 
-    Vector2Int getOffset(Vector3Int pos) {
-        return new Vector2Int(pos.x - xoffset, yoffset - pos.y);
+    Vector3Int arrayToCell(Vector3Int grid) {
+        return new Vector3Int(xoffset + grid.y - 1, yoffset - grid.x + 1);
     }
 
     public int checkBlockPosition(int id, Vector3 position, BlockType blockType) {
-        Vector3Int pos = getGridPos(position);
-        Vector2Int off = getOffset(pos);
+        Vector3Int off = worldToArray(position);
         bool[][] shape = blockType.shape;
-        // Debug.Log(pos + " " + off.x + " " + off.y);
+        bool doLogs = false;
+        if (doLogs)
+            Debug.Log(tilemap.WorldToCell(position) + " " + off);
         for (int i = 0; i < shape.Length; ++i) {
             for (int j = 0; j < shape[i].Length; ++j) {
                 if (!shape[i][j]) {
                     continue;
                 }
                 if (off.x + i >= rows || off.y + j >= cols || off.x + i < 0 || off.y + j < 0) {
-                    // Debug.Log(pos + " " + off.x + " " + off.y + " false " + blockType.name + " out of bounds " + i + " " + j);
+                    if (doLogs)
+                        Debug.Log(tilemap.WorldToCell(position) + " " + off + " false " + blockType.name + " out of bounds");
                     return -1;
                 }
                 int g = gridArray[off.x + i][off.y + j];
                 if (g == -2 || g == -1 || (g > 0 && g != id)) {
-                    // Debug.Log(pos + " " + off.x + " " + off.y + " false " + blockType.name + " filled " + i + " " + j);
+                    if (doLogs)
+                        Debug.Log(tilemap.WorldToCell(position) + " " + off + " false " + blockType.name + " filled " + g);
                     return -2;
                 }
             }
         }
-        // Debug.Log(pos + " " + off.x + " " + off.y + " true " + blockType.name);
+        if (doLogs)
+            Debug.Log(tilemap.WorldToCell(position) + " " + off + " true " + blockType.name);
         return 0;
     }
 
     public void addBlock(int id, Vector3 position, BlockType blockType) {
-        Vector3Int pos = getGridPos(position);
-        Vector2Int off = getOffset(pos);
+        Vector3Int off = worldToArray(position);
         bool[][] shape = blockType.shape;
         for (int i = 0; i < shape.Length; ++i) {
             for (int j = 0; j < shape[i].Length; ++j) {
