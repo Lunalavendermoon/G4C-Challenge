@@ -211,6 +211,7 @@ MonoBehaviour:
   tilemap: {fileID: 1474497911}
   blank: {fileID: 11400000, guid: 28891f8d220fe4c1ba225c003f378b23, type: 2}
   obstacle: {fileID: 11400000, guid: ae7f94712cd5c420b8a45a8c2d419899, type: 2}
+  dropshadow: {fileID: 11400000, guid: 26501bb4faa784cb1aa4dd2c1bb85550, type: 2}
 --- !u!1 &1100223417
 GameObject:
   m_ObjectHideFlags: 0

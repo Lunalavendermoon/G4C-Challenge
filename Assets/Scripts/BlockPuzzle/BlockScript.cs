@@ -54,6 +54,7 @@ public class BlockScript : MonoBehaviour
 
     private void OnMouseDrag() {
         transform.position = (Vector2) Camera.main.ScreenToWorldPoint(Input.mousePosition) - difference;
+        grid.drawDropShadow(getSpriteTopLeft(), blockType);
     }
 
     Vector3 getSpriteTopLeft() {

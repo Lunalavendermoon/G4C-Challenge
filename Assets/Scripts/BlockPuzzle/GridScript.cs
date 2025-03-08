@@ -12,6 +12,7 @@ public class GridScript : MonoBehaviour
 
     public Tile blank;
     public Tile obstacle;
+    public Tile dropshadow;
 
     int[][] gridArray;
 
@@ -25,10 +26,10 @@ public class GridScript : MonoBehaviour
         cols = gridArray[0].Length;
         this.xoffset = xoffset;
         this.yoffset = yoffset;
-        redrawTileMap();
+        clearTileMap();
     }
 
-    void redrawTileMap() {
+    void clearTileMap() {
         // TODO need to rotate clockwise by 90 degrees when converting from array to grid & account for offset
         for (int i = 0; i < gridArray.Length; ++i) {
             for (int j = 0; j < gridArray[i].Length; ++j) {
@@ -64,10 +65,32 @@ public class GridScript : MonoBehaviour
         return new Vector3Int(xoffset + grid.y, yoffset - grid.x);
     }
 
-    public int checkBlockPosition(int id, UnityEngine.Vector3 position, BlockType blockType) {
+    public void drawDropShadow(UnityEngine.Vector3 position, BlockType blockType) {
+        clearTileMap();
         Vector3Int off = worldToArray(position);
         bool[][] shape = blockType.shape;
-        bool doLogs = true;
+        for (int i = 0; i < shape.Length; ++i) {
+            for (int j = 0; j < shape[i].Length; ++j) {
+                if (!shape[i][j]) {
+                    continue;
+                }
+                if (off.x + i >= rows || off.y + j >= cols || off.x + i < 0 || off.y + j < 0) {
+                    continue;
+                }
+                int g = gridArray[off.x + i][off.y + j];
+                if (g >= 0) {
+                    Vector3Int cell = arrayToCell(new Vector3Int(off.x + i, off.y + j, 0));
+                    tilemap.SetTile(cell, dropshadow);
+                }
+            }
+        }
+    }
+
+    public int checkBlockPosition(int id, UnityEngine.Vector3 position, BlockType blockType) {
+        clearTileMap();
+        Vector3Int off = worldToArray(position);
+        bool[][] shape = blockType.shape;
+        bool doLogs = false;
         if (doLogs)
             Debug.Log(tilemap.WorldToCell(position) + " " + off);
         for (int i = 0; i < shape.Length; ++i) {
