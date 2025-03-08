@@ -108,6 +108,19 @@ public class BlockLevelManagerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (selectedBlock != -1) {
+            // TODO change these keybinds later
+            // E,R = rotate CCW,CW
+            // D,F = flip horiz,vert
+            if (Input.GetKeyDown(KeyCode.E)) {
+                getBlockScript(selectedBlock).rotate(false);
+            } else if (Input.GetKeyDown(KeyCode.R)) {
+                getBlockScript(selectedBlock).rotate(true);
+            } else if (Input.GetKeyDown(KeyCode.D)) {
+                getBlockScript(selectedBlock).flip(true);
+            } else if (Input.GetKeyDown(KeyCode.F)) {
+                getBlockScript(selectedBlock).flip(false);
+            }
+        }
     }
 }

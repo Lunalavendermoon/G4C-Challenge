@@ -25,7 +25,6 @@ public class GridScript : MonoBehaviour
     }
 
     void clearTileMap() {
-        // TODO need to rotate clockwise by 90 degrees when converting from array to grid & account for offset
         for (int i = 0; i < gridArray.Length; ++i) {
             for (int j = 0; j < gridArray[i].Length; ++j) {
                 Vector3Int cell = arrayToCell(new Vector3Int(i, j, 0));
@@ -44,23 +43,20 @@ public class GridScript : MonoBehaviour
         }
     }
 
-    public UnityEngine.Vector3 snapToGrid(UnityEngine.Vector3 world) {
-        // TODO test this
-        // UnityEngine.Vector3 conv = arrayToCell(worldToArray(world));
-        // return new UnityEngine.Vector3(conv.x, conv.y);
+    public Vector3 snapToGrid(Vector3 world) {
         return tilemap.WorldToCell(world);
     }
 
-    Vector3Int worldToArray(UnityEngine.Vector3 world) {
+    public Vector3Int worldToArray(Vector3 world) {
         Vector3Int conv = tilemap.WorldToCell(world);
         return new Vector3Int(yoffset - conv.y, conv.x - xoffset);
     }
 
-    Vector3Int arrayToCell(Vector3Int grid) {
+    public Vector3Int arrayToCell(Vector3Int grid) {
         return new Vector3Int(xoffset + grid.y, yoffset - grid.x);
     }
 
-    public void drawDropShadow(UnityEngine.Vector3 position, BlockType blockType) {
+    public void drawDropShadow(Vector3 position, BlockType blockType) {
         clearTileMap();
         Vector3Int off = worldToArray(position);
         bool[][] shape = blockType.shape;
@@ -81,37 +77,28 @@ public class GridScript : MonoBehaviour
         }
     }
 
-    public int checkBlockPosition(int id, UnityEngine.Vector3 position, BlockType blockType) {
+    public int checkBlockPosition(int id, Vector3 position, BlockType blockType) {
         clearTileMap();
         Vector3Int off = worldToArray(position);
         bool[][] shape = blockType.shape;
-        bool doLogs = false;
-        if (doLogs)
-            Debug.Log(tilemap.WorldToCell(position) + " " + off);
         for (int i = 0; i < shape.Length; ++i) {
             for (int j = 0; j < shape[i].Length; ++j) {
                 if (!shape[i][j]) {
                     continue;
                 }
                 if (off.x + i >= rows || off.y + j >= cols || off.x + i < 0 || off.y + j < 0) {
-                    if (doLogs)
-                        Debug.Log(tilemap.WorldToCell(position) + " " + off + " false " + blockType.name + " out of bounds");
                     return -1;
                 }
                 int g = gridArray[off.x + i][off.y + j];
                 if (g == -2 || g == -1 || (g > 0 && g != id)) {
-                    if (doLogs)
-                        Debug.Log(tilemap.WorldToCell(position) + " " + off + " false " + blockType.name + " filled " + g);
                     return -2;
                 }
             }
         }
-        if (doLogs)
-            Debug.Log(tilemap.WorldToCell(position) + " " + off + " true " + blockType.name);
         return 0;
     }
 
-    public void addBlock(int id, UnityEngine.Vector3 position, BlockType blockType) {
+    public void addBlock(int id, Vector3 position, BlockType blockType) {
         Vector3Int off = worldToArray(position);
         bool[][] shape = blockType.shape;
         for (int i = 0; i < shape.Length; ++i) {

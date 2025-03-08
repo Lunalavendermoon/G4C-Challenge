@@ -16,6 +16,12 @@ public class BlockScript : MonoBehaviour
     Vector3 prevPosition, resetPosition;
     Vector2 difference = Vector2.zero;
 
+    // weird floating point error when flipping sprites causing getTopLeft to return wrong coordinates(?)
+    // store last dragged position (guaranteed to be in the correct grid i think...)
+    Vector3 refPos;
+
+    bool ogOrientation = true;
+
     public Sprite appleSprite;
     public Sprite riceSprite;
     public Sprite chickenSprite;
@@ -37,7 +43,7 @@ public class BlockScript : MonoBehaviour
             case "rice":
                 renderer.sprite = riceSprite;
                 break;
-            case "chicken":
+            case "chicken leg":
                 renderer.sprite = chickenSprite;
                 break;
             default:
@@ -47,6 +53,8 @@ public class BlockScript : MonoBehaviour
 
         Vector2 S = renderer.sprite.bounds.size;
         gameObject.GetComponent<BoxCollider2D>().size = S;
+
+        refPos = getSpriteTopLeft();
     }
 
     private void OnMouseDown() {
@@ -58,6 +66,7 @@ public class BlockScript : MonoBehaviour
     private void OnMouseDrag() {
         transform.position = (Vector2) Camera.main.ScreenToWorldPoint(Input.mousePosition) - difference;
         grid.drawDropShadow(getSpriteTopLeft(), blockType);
+        refPos = getSpriteTopLeft();
     }
 
     Vector3 getSpriteTopLeft() {
@@ -74,8 +83,7 @@ public class BlockScript : MonoBehaviour
                 grid.addBlock(id, getSpriteTopLeft(), blockType);
                 levelManager.playerAddBlock(id);
             }
-            // TODO snap to grid
-            Debug.Log(blockType.shape[0].Length);
+            // snap to grid
             transform.position = grid.snapToGrid(getSpriteTopLeft()) + new Vector3(blockType.shape[0].Length / 2.0f, 0);
         } else {
             if (status == -1 || (!isOnGrid && status == -2)) {
@@ -96,34 +104,35 @@ public class BlockScript : MonoBehaviour
 
         bool[][] shape = new bool[oldShape.Length][];
         for (int i = 0; i < oldShape.Length; ++i) {
-            shape[i] = (bool[]) oldShape[i].Clone();
+            shape[i] = new bool[oldShape[0].Length];
         }
 
         if (isHorizontal) {
-            int len = oldShape[0].Length;
-            for (int i = 0; i < oldShape.Length; ++i) {
-                for (int j = 0; j <= len / 2; ++j) {
-                    bool temp = oldShape[i][len - j - 1];
-                    oldShape[i][len - j - 1] = oldShape[i][j];
-                    oldShape[i][j] = temp;
+            for (int i = 0; i < shape.Length; ++i) {
+                for (int j = 0; j < shape[0].Length; ++j) {
+                    shape[i][shape[0].Length - j - 1] = oldShape[i][j];
                 }
             }
         } else {
-            int len = oldShape.Length;
-            for (int i = 0; i <= oldShape.Length / 2; ++i) {
-                for (int j = 0; j <= oldShape[i].Length; ++j) {
-                    bool temp = oldShape[len - i - 1][j];
-                    oldShape[len - i - 1][j] = oldShape[i][j];
-                    oldShape[i][j] = temp;
+            for (int i = 0; i < shape.Length; ++i) {
+                for (int j = 0; j < shape[0].Length; ++j) {
+                    shape[shape.Length - i - 1][j] = oldShape[i][j];
                 }
             }
         }
 
-        // TODO validate and update blockType.shape accordingly
-        if (grid.checkBlockPosition(id, getSpriteTopLeft(), blockType) == 0) {
-            blockType.shape = shape;
-            grid.updateBlock(id, getSpriteTopLeft(), blockType);
+        blockType.shape = shape;
+        if (!isOnGrid || grid.checkBlockPosition(id, refPos, blockType) == 0) {
+            if (isHorizontal) {
+                renderer.flipX = !renderer.flipX;
+            } else {
+                renderer.flipY = !renderer.flipY;
+            }
+            if (isOnGrid) {
+                grid.updateBlock(id, refPos, blockType);
+            }
         } else {
+            blockType.shape = oldShape;
             // TODO send error
         }
     }
@@ -150,6 +159,38 @@ public class BlockScript : MonoBehaviour
             }
         }
 
-        // TODO validate and update blockType.shape accordingly
+        blockType.shape = shape;
+        if (!isOnGrid || grid.checkBlockPosition(id, refPos, blockType) == 0) {
+            Vector3 tl = getSpriteTopLeft();
+            // TODO FIGURE OUT HOW TO ROTATE THE SPRITE WTF
+            // best case scenario is to keep it anchored at top left position so the getTopLeft calcs still work
+            if (isClockwise) {
+                // transform.Rotate(Vector3.forward * -90);
+            } else {
+                // transform.Rotate(Vector3.forward * 90);
+            }
+            // if (ogOrientation) {
+            //     transform.position = tl + new Vector3(blockType.shape.Length / 2.0f, blockType.shape[0].Length / 2.0f);
+            // } else {
+            //     transform.position = tl + new Vector3(blockType.shape[0].Length / 2.0f, blockType.shape.Length / 2.0f);
+            // }
+
+            // Vector2 S = renderer.sprite.bounds.size;
+            // gameObject.GetComponent<BoxCollider2D>().size = ogOrientation ? S : new Vector2(S.y, S.x);
+
+            transform.position = grid.snapToGrid(getSpriteTopLeft()) + new Vector3(
+                (ogOrientation ? blockType.shape[0].Length : blockType.shape.Length) / 2.0f,
+                0
+            );
+
+            ogOrientation = !ogOrientation;
+
+            if (isOnGrid) {
+                grid.updateBlock(id, refPos, blockType);
+            }
+        } else {
+            blockType.shape = oldShape;
+            // TODO send error
+        }
     }
 }
