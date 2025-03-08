@@ -24,7 +24,7 @@ public class BlockLevelManagerScript : MonoBehaviour
         // TODO spawn the actually correct amount/type of blocks lmao
         // BLOCK ID MUST BE 1 OR GREATER
         for (int i = 0; i < 5; ++i) {
-            spawnBlock(i + 1, i % 2 == 0 ? BlockType.apple() : BlockType.rice());
+            spawnBlock(i + 1, i % 3 == 0 ? BlockType.apple() : i % 3 == 1 ? BlockType.rice() : BlockType.chickenLeg());
         }
 
         // TODO placeholder grid array - should put this in central static class

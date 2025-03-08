@@ -44,6 +44,9 @@ public class BlockScript : MonoBehaviour
                 renderer.sprite = appleSprite;
                 break;
         }
+
+        Vector2 S = renderer.sprite.bounds.size;
+        gameObject.GetComponent<BoxCollider2D>().size = S;
     }
 
     private void OnMouseDown() {
