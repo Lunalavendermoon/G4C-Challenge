@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Numerics;
 using UnityEditor.Rendering;
+using UnityEditor.Tilemaps;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -46,19 +48,26 @@ public class GridScript : MonoBehaviour
         }
     }
 
-    Vector3Int worldToArray(Vector3 world) {
+    public UnityEngine.Vector3 snapToGrid(UnityEngine.Vector3 world) {
+        // TODO test this
+        // UnityEngine.Vector3 conv = arrayToCell(worldToArray(world));
+        // return new UnityEngine.Vector3(conv.x, conv.y);
+        return tilemap.WorldToCell(world);
+    }
+
+    Vector3Int worldToArray(UnityEngine.Vector3 world) {
         Vector3Int conv = tilemap.WorldToCell(world);
         return new Vector3Int(yoffset - conv.y, conv.x - xoffset);
     }
 
     Vector3Int arrayToCell(Vector3Int grid) {
-        return new Vector3Int(xoffset + grid.y - 1, yoffset - grid.x + 1);
+        return new Vector3Int(xoffset + grid.y, yoffset - grid.x);
     }
 
-    public int checkBlockPosition(int id, Vector3 position, BlockType blockType) {
+    public int checkBlockPosition(int id, UnityEngine.Vector3 position, BlockType blockType) {
         Vector3Int off = worldToArray(position);
         bool[][] shape = blockType.shape;
-        bool doLogs = false;
+        bool doLogs = true;
         if (doLogs)
             Debug.Log(tilemap.WorldToCell(position) + " " + off);
         for (int i = 0; i < shape.Length; ++i) {
@@ -84,7 +93,7 @@ public class GridScript : MonoBehaviour
         return 0;
     }
 
-    public void addBlock(int id, Vector3 position, BlockType blockType) {
+    public void addBlock(int id, UnityEngine.Vector3 position, BlockType blockType) {
         Vector3Int off = worldToArray(position);
         bool[][] shape = blockType.shape;
         for (int i = 0; i < shape.Length; ++i) {
@@ -106,7 +115,7 @@ public class GridScript : MonoBehaviour
         }
     }
 
-    public void updateBlock(int id, Vector3 position, BlockType blockType) {
+    public void updateBlock(int id, UnityEngine.Vector3 position, BlockType blockType) {
         removeBlock(id);
         addBlock(id, position, blockType);
     }

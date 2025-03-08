@@ -16,10 +16,9 @@ public class BlockScript : MonoBehaviour
     Vector3 prevPosition, resetPosition;
     Vector2 difference = Vector2.zero;
 
-    public void Start()
-    {
-        renderer = GetComponent<SpriteRenderer>();
-    }
+    public Sprite appleSprite;
+    public Sprite riceSprite;
+    public Sprite chickenSprite;
 
     public void initBlock(int id, BlockType type, BlockLevelManagerScript levelManager, GridScript grid) {
         this.id = id;
@@ -29,6 +28,22 @@ public class BlockScript : MonoBehaviour
         this.grid = grid;
         resetPosition = transform.position;
         prevPosition = transform.position;
+
+        renderer = GetComponent<SpriteRenderer>();
+        switch (type.name) {
+            case "apple":
+                renderer.sprite = appleSprite;
+                break;
+            case "rice":
+                renderer.sprite = riceSprite;
+                break;
+            case "chicken":
+                renderer.sprite = chickenSprite;
+                break;
+            default:
+                renderer.sprite = appleSprite;
+                break;
+        }
     }
 
     private void OnMouseDown() {
@@ -42,7 +57,7 @@ public class BlockScript : MonoBehaviour
     }
 
     Vector3 getSpriteTopLeft() {
-        return GetComponent<Renderer>().transform.TransformPoint(new Vector3(renderer.sprite.bounds.max.x, renderer.sprite.bounds.min.y, 0));
+        return GetComponent<Renderer>().transform.TransformPoint(new Vector3(renderer.sprite.bounds.min.x, renderer.sprite.bounds.max.y, 0));
     }
 
     private void OnMouseUp() {
@@ -55,6 +70,9 @@ public class BlockScript : MonoBehaviour
                 grid.addBlock(id, getSpriteTopLeft(), blockType);
                 levelManager.playerAddBlock(id);
             }
+            // TODO snap to grid
+            Debug.Log(blockType.shape[0].Length);
+            transform.position = grid.snapToGrid(getSpriteTopLeft()) + new Vector3(blockType.shape[0].Length / 2.0f, 0);
         } else {
             if (status == -1 || (!isOnGrid && status == -2)) {
                 transform.position = resetPosition;
