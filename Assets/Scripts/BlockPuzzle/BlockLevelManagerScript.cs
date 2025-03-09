@@ -24,8 +24,8 @@ public class BlockLevelManagerScript : MonoBehaviour
 
         // TODO spawn the actually correct amount/type of blocks lmao
         // BLOCK ID MUST BE 1 OR GREATER
-        for (int i = 0; i < 5; ++i) {
-            spawnBlock(i + 1, i % 3 == 0 ? BlockType.apple() : i % 3 == 1 ? BlockType.rice() : BlockType.chickenLeg());
+        for (int i = 0; i < 6; ++i) {
+            spawnBlock(i + 1, i % 3 == 0 ? BlockType.apple() : i % 3 == 1 ? BlockType.rice() : BlockType.chickenLeg(), new Vector3(-3, 5 - (1.5f*(i+1)), 0));
         }
 
         // TODO placeholder grid array - should put this in central static class
@@ -36,7 +36,7 @@ public class BlockLevelManagerScript : MonoBehaviour
             new int[] {-1,  0,  0,  0, -2, -1},
             new int[] { 0,  0,  0,  0, -2,  0},
             new int[] { 0,  0,  0,  0,  0,  0}
-        }, 2, 0);
+        }, 2, 3);
     }
 
     void initManager(int levelSize, int[] levelGroupCounts, int[][] gridArray) {
@@ -45,8 +45,8 @@ public class BlockLevelManagerScript : MonoBehaviour
         // also init other stuff
     }
     
-    void spawnBlock(int id, BlockType type) {
-        GameObject block = Instantiate(blockPrefab, new Vector3(-3, 5 - (1.5f*id), 0), Quaternion.identity);
+    void spawnBlock(int id, BlockType type, Vector3 position) {
+        GameObject block = Instantiate(blockPrefab, position, Quaternion.identity);
         block.GetComponent<BlockScript>().initBlock(id, type, this, grid);
         blocks.Add(id, block);
     }
