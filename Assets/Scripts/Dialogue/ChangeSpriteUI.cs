@@ -1,63 +1,43 @@
 using UnityEngine;
+using System.Collections.Generic;
 using UnityEngine.UI;
+
 public class ChangeSpriteUI : MonoBehaviour
 {
-   //Attach this script to an Image GameObject and set its Source Image to the Sprite you would like.
+    public Image image;
 
-    Image image;
-    //Set this in the Inspector
-    public Sprite a;
-    public Sprite b;
-    public Sprite c;
+    public List<Sprite> UISprites;
 
-    // void Start()
-    // {
-    //     //Fetch the Image from the GameObject
-    //     image = GetComponent<Image>();
-        
-    //     if (image == null)
-    //         Debug.LogError($"No Image component found on {gameObject.name}.");
-    //     else
-    //         Debug.Log($"Image component found on {gameObject.name}.");
-
-
-    // }
-
-    void Awake() {
-      image = GetComponent<Image>();
+    void Start() {
+        if (image == null) {
+            Debug.LogError("Image component is not assigned in the Inspector on " + gameObject.name);
+        }
     }
-    public void Change(char spriteName) {
-        if (image == null)
-        {
-            Debug.LogError("Image component is not assigned.");
+
+    public void ChangeTo(int num) {
+        if (image == null) {
             return;
         }
-        switch(spriteName) 
-        {
-          case 'a':
-            if (a == null)
-                Debug.LogError("Sprite 'a' is not assigned.");
-            else
-                image.sprite = a;
-            break;
-          case 'b':
-            image.sprite = b;
-            break;
-          default:
-            image.sprite = c;
-            break;
+
+        if (num < 0 || num >= UISprites.Count) {
+            return;
+        }
+
+        image.sprite = UISprites[num];
+        ResetColor(); // Reset color whenever the sprite changes
+    }
+
+    // Changes the image color to grey
+    public void GreyOut() {
+        if (image != null) {
+            image.color = Color.gray; // Sets the image to grey
         }
     }
 
-    public void ChangeAuto() {
-      if (image.sprite == a) {
-        image.sprite = b;
-      }
-      else if (image.sprite == b) {
-        image.sprite = c;
-      }
-      else if (image.sprite == c) {
-        image.sprite = a;
-      }
+    // Resets the image color to white (default)
+    public void ResetColor() {
+        if (image != null) {
+            image.color = Color.white;
+        }
     }
 }

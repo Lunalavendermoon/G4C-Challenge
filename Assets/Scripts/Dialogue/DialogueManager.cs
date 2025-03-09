@@ -1,35 +1,32 @@
-using System.Threading;
+using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
-using System.IO;
-using UnityEditor.Experimental.GraphView;
-using System.Collections.Generic;
-using Mono.Cecil.Cil;
-using Unity.VisualScripting;
-using System.Collections;
-using System.Net.NetworkInformation;
+using DG.Tweening; // Import DOTween
 
 public class DialogueManager : MonoBehaviour
 {
     public static DialogueManager Instance { get; private set; }
-    public GameObject DialogueParent; // Main container for dialogue UI
-    public TextMeshProUGUI DialogTitleText, DialogBodyText; // Text components for title and body
-    public ChangeSpriteUI image1; // image on the left
-    public ChangeSpriteUI image2; // image on the right
+
+    [Header("UI Elements")]
+    public GameObject DialogueParent;
+    public TextMeshProUGUI DialogTitleText, DialogBodyText;
+    public ChangeSpriteUI image1, image2;
     public ChangeSprite background;
     public List<GameObject> disabledUI;
-    private int currentItemNum = -1;
-    private bool dialogueDone = true;
+
+    [Header("Dialogue Data")]
+    public Dialogue dialogue;
+    private DialogueNode dialogueNode;
+    private List<string> dialogues;
+
     private int dialogueCounter = 0;
-    private int responseCounter = 0;
     private bool responseDone = false;
-    private List<string> dialoguee;
+    private int finishDialogue = 0; // 0 = not finished, 1 = finish immediately, -1 = finished, awaiting new dialogue
 
     private void Awake()
     {
-        // Singleton pattern to ensure only one instance of DialogueManager
         if (Instance == null)
         {
             Instance = this;
@@ -39,151 +36,170 @@ public class DialogueManager : MonoBehaviour
             Debug.LogError("Multiple DialogueManager instances found!");
             Destroy(gameObject);
         }
- 
-        // Initially hide the dialogue UI
-        HideDialogue();
+        StartDialogue(dialogue.RootNode);
     }
 
-    public void Update() {
-
-        if(!ItemDropLocation.mouseOverItemDropLocation && Input.GetMouseButtonDown(0) && responseDone == true)
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(0) && !ItemDropLocation.mouseOverItemDropLocation)
         {
-            if (dialogueCounter < dialoguee.Count){
-                Dialoguetest(dialogueCounter);
-                dialogueCounter++;
+            if (!responseDone && finishDialogue == 0)
+            {
+                finishDialogue = 1; // Skip to end of dialogue
             }
-            else if (dialogueCounter == dialoguee.Count && responseCounter == 0) {
-                if (currentItemNum > -1){}
-                HideDialogue();
+            else if (responseDone)
+            {
+                if (dialogueCounter < dialogues.Count)
+                {
+                    DialogueAssemble(dialogueCounter++);
+                }
+                else if (dialogueNode.IsLastNode())
+                {
+                    HideDialogue();
+                }
+                else
+                {
+                    StartDialogue(dialogueNode.nextDialogue.RootNode);
+                }
             }
         }
     }
- 
-    // Starts the dialogue with given title and dialogue node
+
     public void StartDialogue(DialogueNode node)
     {
-        // Display the dialogue UI
         ShowDialogue();
+        dialogueNode = node;
         dialogueCounter = 0;
- 
-        dialoguee = new List<string>(node.dialogues);
-        responseCounter = node.responses.Count;
-        Dialoguetest(0);
-        dialogueCounter++;
-    
-        foreach (DialogueResponse response in node.responses)
-        {
-                DialogueManager.Instance.StartDialogue(response.Dialogue.RootNode);
-        }
-        
-    }
-    public void Dialoguetest(int index)
-    {
-        if (GetDialogue(dialoguee[index]) != DialogTitleText.text || index + 1 != dialoguee.Count) 
-        {
-            string title = GetName(dialoguee[index]);
-            switch(title) 
-            {
-            case "m":
-                title = "mom";
-                break;
-            case "d":
-                title = "dad";
-                break;
-            default:
-                break;
-            }
-            
-            DialogTitleText.text = title;
-            PrintWord(GetDialogue(dialoguee[index]));
-            image1.Change(GetImage1(dialoguee[index]));
-            image2.Change(GetImage2(dialoguee[index]));        
-        }
+        dialogues = new List<string>(node.dialogues);
 
+        FadeTransition(() => DialogueAssemble(dialogueCounter++), node.bgNum);
     }
- 
-    // Hide the dialogue UI
+
+    private void DialogueAssemble(int index)
+    {
+        string fullText = dialogues[index];
+        string title = GetName(fullText);
+        string dialogue = GetDialogue(fullText);
+
+        DialogTitleText.text = title;
+        PrintWord(dialogue);
+        image1.ChangeTo(GetImage1(fullText));
+        image2.ChangeTo(GetImage2(fullText));
+
+        // Apply GreyOut condition based on the last character
+        GreyOutCharacter(fullText);
+    }
+
     public void HideDialogue()
     {
-        background.UnBlur();
-        foreach(GameObject ui in disabledUI) {
-            ui.SetActive(true);
-        }
+        foreach (GameObject ui in disabledUI) ui.SetActive(true);
         DialogueParent.SetActive(false);
     }
- 
-    // Show the dialogue UI
+
     private void ShowDialogue()
     {
-        background.ChangeToBlur();
-        foreach(GameObject ui in disabledUI) {
-            ui.SetActive(false);
-        }
+        foreach (GameObject ui in disabledUI) ui.SetActive(false);
         DialogueParent.SetActive(true);
     }
- 
-    // Check if dialogue is currently active
+
     public bool IsDialogueActive()
     {
         return DialogueParent.activeSelf;
     }
-    
-    //Checks the dialogue done boolean to see if the dialogue chain is completed.
-    public bool GetDialogueDone() {
-        return dialogueDone;
-    }
 
-    //shows dialogue letter-by-letter
-    public async void PrintWord(string dialogue) {
+    public async void PrintWord(string dialogue)
+    {
         responseDone = false;
+        finishDialogue = 0;
         DialogBodyText.text = "";
-        foreach(char letter in dialogue)
+
+        for (int i = 0; i < dialogue.Length; i++)
         {
-            DialogBodyText.text += letter;
-            await Task.Delay(50);
+            if (finishDialogue == 1)
+            {
+                DialogBodyText.text = dialogue;
+                finishDialogue = -1;
+                responseDone = true;
+                return;
+            }
+
+            DialogBodyText.text += dialogue[i];
+            await Task.Delay(20);
         }
+
         DialogBodyText.text = dialogue;
         responseDone = true;
     }
 
-    private string GetName(string text) {
-        string name = "";
-        int i = 0;
-        if (text.IndexOf(':') == -1) {
-            return "";
-        }
-        while(text[i] != ':' && i < text.Length - 2) {
-            name = name + text[i];
-            i++;
-        }
-        return name;
+    private string GetName(string text)
+    {
+        int colonIndex = text.IndexOf(':');
+        if (colonIndex == -1) return "";
+
+        string name = text.Substring(0, colonIndex);
+        return name switch
+        {
+            "y" => "You",
+            "c" => "Clare",
+            "p" => "Politician",
+            "w" => "Worker",
+            _ => name
+        };
     }
 
-    private string GetDialogue(string text) {
-        string dialogue = "";
-        if (GetName(text) == "") {
-            for (int j = 0; j < text.Length - 2; j++) {
-                dialogue = dialogue + text[j];
-            }
-        }
-        else {
-            int i = 0;
-            while(text[i] != ':' && i < text.Length - 1) {
-                i++;
-            }
-            for (int j = i + 1; j < text.Length - 2; j++) {
-                dialogue = dialogue + text[j];
-            }
-        }
-        return dialogue;
+    private string GetDialogue(string text)
+    {
+        int colonIndex = text.IndexOf(':');
+        if (colonIndex == -1) return text.Substring(0, text.Length - 5).Trim();
+        return text.Substring(colonIndex + 1, text.Length - colonIndex - 6).Trim();
     }
 
-    private char GetImage1(string text) {
-        return text[text.Length - 2];
+    private int GetImage1(string text) => ParseImageIndex(text, text.Length - 5);
+    private int GetImage2(string text) => ParseImageIndex(text, text.Length - 3);
+
+    private int ParseImageIndex(string text, int startIndex)
+    {
+        return int.Parse(text.Substring(startIndex, 2));
     }
 
-    private char GetImage2(string text) {
-        return text[text.Length - 1];
+    private void GreyOutCharacter(string fullText)
+    {
+        if (fullText.Length == 0) return;
+
+        char lastChar = fullText[fullText.Length - 1];
+
+        if (lastChar == 'l')
+        {
+            image2.GreyOut();
+        }
+        else if (lastChar == 'r')
+        {
+            image1.GreyOut();
+        }
     }
+
+    private void FadeTransition(Action onFadeComplete, int newBackgroundIndex)
+    {
+        float fadeDuration = 0.5f;
+
+        // Get the SpriteRenderer for the background
+        SpriteRenderer bgRenderer = background.GetComponent<SpriteRenderer>();
+
+        // Fade out to black (Background uses SpriteRenderer, others use Image)
+        bgRenderer.DOFade(0f, fadeDuration);
+        image1.image.DOFade(0f, fadeDuration);
+        image2.image.DOFade(0f, fadeDuration)
+            .OnComplete(() =>
+            {
+                // Change Background and Sprites after fade out
+                background.ChangeTo(newBackgroundIndex);
+                onFadeComplete?.Invoke();
+
+                // Fade back in
+                bgRenderer.DOFade(1f, fadeDuration);
+                image1.image.DOFade(1f, fadeDuration);
+                image2.image.DOFade(1f, fadeDuration);
+            });
+    }
+
 }
-    

@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1996a6502e32979468f8865814e50378, type: 3}
+  m_Name: 1-3
+  m_EditorClassIdentifier: 
+  RootNode:
+    dialogues:
+    - The scenery is completely different from the city earlier. This part of the
+      city looks torn down and completely desolate.0000l
+    - "y:I didn\u2019t realize there was a place like this here\u2026!0400l"
+    - You accidentally bump into a man. His hollow face and thin frame haunts you.0400r
+    - He stares blankly at you for a second before suddenly lunging at you.0300r
+    - y:Ah!0400l
+    - "You barely dodge his outstretched hands, and he grunts as he stumbles past.
+      The man\u2019s hollow eyes are devoid of any warmth.0400r"
+    - "y:P-please calm down! I\u2019ll-0400l"
+    - "You hear shuffling from all directions, and suddenly, you\u2019re surrounded
+      by gaunt faces, all staring at you as if you\u2019re a source of food.0400l"
+    - You feel a shiver down your spine.04001
+    - "c:S-orry\u20260306r"
+    - Her eyes plead for you to leave. You realize that there isn't much you can
+      do in this situation, so you have no choice but to walk away hurriedly.0406r
+    - "You are horrified by this experience. Just what is going on in this city?
+      Those people were definitely either starving or heavily malnourished, but the
+      food bank reports didn\u2019t indicate any mass starvation of that kind. Perhaps
+      it is time for you to do some investigation\u20260400l"
+    nextDialogue: {fileID: 0}
+    bgNum: 1

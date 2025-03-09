@@ -9,21 +9,6 @@ public class ChangeSprite : MonoBehaviour
     //Set this in the Inspector
     public List<Sprite> Sprites;
 
-    private string alphabet ="abcdefghijklmnopqrstuvwxyz";
-
-    // void Start()
-    // {
-    //     //Fetch the Image from the GameObject
-    //     image = GetComponent<Image>();
-        
-    //     if (image == null)
-    //         Debug.LogError($"No Image component found on {gameObject.name}.");
-    //     else
-    //         Debug.Log($"Image component found on {gameObject.name}.");
-
-
-    // }
-
     void Awake() {
       image = GetComponent<SpriteRenderer>();
     }
@@ -38,39 +23,28 @@ public class ChangeSprite : MonoBehaviour
         }
         return -1;
     }
-    public void ChangeToBlur() {
-      if (GetCurrentSprite() % 2 != 1) {
-        image.sprite = Sprites[GetCurrentSprite() + 1];
-      }
-    }
 
-    public void UnBlur() {
-      if (GetCurrentSprite() % 2 != 0) {
-        image.sprite = Sprites[GetCurrentSprite() - 1];
-      }
-    }
+    // public void ChangeAutoRight() {
+    //   if (image.sprite == Sprites[Sprites.Count - 1]) {
+    //     image.sprite = Sprites[1];
+    //   }
+    //   else if (image.sprite == Sprites[Sprites.Count - 2]) {
+    //     image.sprite = Sprites[0];
+    //   }
+    //   else {
+    //     image.sprite = Sprites[GetCurrentSprite() + 2];
+    //   }
+    // }
 
-    public void ChangeAutoRight() {
-      if (image.sprite == Sprites[Sprites.Count - 1]) {
-        image.sprite = Sprites[1];
-      }
-      else if (image.sprite == Sprites[Sprites.Count - 2]) {
-        image.sprite = Sprites[0];
-      }
-      else {
-        image.sprite = Sprites[GetCurrentSprite() + 2];
-      }
-    }
-
-    public void ChangeAutoLeft() {
-      if (image.sprite == Sprites[1]) {
-        image.sprite = Sprites[Sprites.Count - 1];
-      }
-      else if (image.sprite == Sprites[0]) {
-        image.sprite = Sprites[Sprites.Count - 2];
-      }
-      else {
-        image.sprite = Sprites[GetCurrentSprite() - 2];
-      }
-    }
+    // public void ChangeAutoLeft() {
+    //   if (image.sprite == Sprites[1]) {
+    //     image.sprite = Sprites[Sprites.Count - 1];
+    //   }
+    //   else if (image.sprite == Sprites[0]) {
+    //     image.sprite = Sprites[Sprites.Count - 2];
+    //   }
+    //   else {
+    //     image.sprite = Sprites[GetCurrentSprite() - 2];
+    //   }
+    // }
 }
