@@ -24,7 +24,7 @@ public class GridScript : MonoBehaviour
         clearTileMap();
     }
 
-    void clearTileMap() {
+    public void clearTileMap() {
         for (int i = 0; i < gridArray.Length; ++i) {
             for (int j = 0; j < gridArray[i].Length; ++j) {
                 Vector3Int cell = arrayToCell(new Vector3Int(i, j, 0));
@@ -78,7 +78,6 @@ public class GridScript : MonoBehaviour
     }
 
     public int checkBlockPosition(int id, Vector3 position, BlockType blockType) {
-        clearTileMap();
         Vector3Int off = worldToArray(position);
         bool[][] shape = blockType.shape;
         for (int i = 0; i < shape.Length; ++i) {

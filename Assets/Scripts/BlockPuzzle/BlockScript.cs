@@ -13,9 +13,8 @@ public class BlockScript : MonoBehaviour
     public BlockType blockType {get; set;}
 
     public bool isOnGrid {get; set;}
-
-    bool isDragged = false;
-    Vector3 prevPosition, resetPosition;
+    
+    Vector3 resetPosition;
     Vector2 difference = Vector2.zero;
 
     // weird floating point error when flipping sprites causing getTopLeft to return wrong coordinates(?)
@@ -35,7 +34,6 @@ public class BlockScript : MonoBehaviour
         this.levelManager = levelManager;
         this.grid = grid;
         resetPosition = transform.position;
-        prevPosition = transform.position;
 
         renderer = GetComponent<SpriteRenderer>();
         switch (type.name) {
@@ -60,16 +58,10 @@ public class BlockScript : MonoBehaviour
     }
 
     private void OnMouseDown() {
-        isDragged = true;
+        makeTransparent();
+        grid.clearTileMap();
         difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         levelManager.selectBlock(id);
-        prevPosition = transform.position;
-    }
-
-    private void OnMouseDrag() {
-        transform.position = (Vector2) Camera.main.ScreenToWorldPoint(Input.mousePosition) - difference;
-        grid.drawDropShadow(getSpriteTopLeft(), blockType);
-        refPos = getSpriteTopLeft();
     }
 
     Vector3 getSpriteTopLeft() {
@@ -87,10 +79,48 @@ public class BlockScript : MonoBehaviour
         };
     }
 
+    private void OnMouseDrag() {
+        transform.position = (Vector2) Camera.main.ScreenToWorldPoint(Input.mousePosition) - difference;
+        grid.drawDropShadow(getSpriteTopLeft(), blockType);
+        refPos = getSpriteTopLeft();
+    }
+
+    void removeFromGrid() {
+        isOnGrid = false;
+        grid.removeBlock(id);
+        levelManager.playerRemoveBlock(id);
+        grid.drawDropShadow(getSpriteTopLeft(), blockType);
+    }
+
+    void makeTransparent() {
+        Color col = renderer.color;
+        col.a = 0.8f;
+        renderer.color = col;
+    }
+
+    void makeOpaque() {
+        Color col = renderer.color;
+        col.a = 1;
+        renderer.color = col;
+    }
+
     private void OnMouseUp() {
-        isDragged = false;
+        if (isOnGrid) {
+            removeFromGrid();
+        }
+        int status = grid.checkBlockPosition(id, getSpriteTopLeft(), blockType);
+        if (status == -1) {
+            transform.position = resetPosition;
+        } else {
+            makeTransparent();
+        }
+    }
+
+    public void placeBlock() {
         int status = grid.checkBlockPosition(id, getSpriteTopLeft(), blockType);
         if (status == 0) {
+            makeOpaque();
+
             if (isOnGrid) {
                 grid.updateBlock(id, getSpriteTopLeft(), blockType);
             } else {
@@ -104,16 +134,7 @@ public class BlockScript : MonoBehaviour
                 orientation % 2 == 0 ? 0 : -Math.Abs(blockType.shape.Length - blockType.shape[0].Length) / 2.0f
             );
         } else {
-            if (status == -1 || (!isOnGrid && status == -2)) {
-                transform.position = resetPosition;
-                if (isOnGrid) {
-                    isOnGrid = false;
-                    grid.removeBlock(id);
-                    levelManager.playerRemoveBlock(id);
-                }
-            } else if (isOnGrid && status == -2) {
-                transform.position = prevPosition;
-            }
+            // TODO send error message
         }
     }
 
@@ -139,20 +160,31 @@ public class BlockScript : MonoBehaviour
             }
         }
 
-        blockType.shape = shape;
-        if (isDragged || !isOnGrid || grid.checkBlockPosition(id, refPos, blockType) == 0) {
-            if (isHorizontal) {
-                renderer.flipX = !renderer.flipX;
-            } else {
-                renderer.flipY = !renderer.flipY;
-            }
-            if (isOnGrid && !isDragged) {
-                grid.updateBlock(id, refPos, blockType);
-            }
-        } else {
-            blockType.shape = oldShape;
-            // TODO send error
+        if (orientation % 2 == 1) {
+            isHorizontal = !isHorizontal;
         }
+
+        blockType.shape = shape;
+        if (isHorizontal) {
+            renderer.flipX = !renderer.flipX;
+        } else {
+            renderer.flipY = !renderer.flipY;
+        }
+        removeFromGrid();
+        makeTransparent();
+        // if (isDragged || !isOnGrid || grid.checkBlockPosition(id, refPos, blockType) == 0) {
+        //     if (isHorizontal) {
+        //         renderer.flipX = !renderer.flipX;
+        //     } else {
+        //         renderer.flipY = !renderer.flipY;
+        //     }
+        //     if (isOnGrid && !isDragged) {
+        //         grid.updateBlock(id, refPos, blockType);
+        //     }
+        // } else {
+        //     blockType.shape = oldShape;
+        //     // TODO send error
+        // }
     }
 
     public void rotate() {
@@ -167,19 +199,22 @@ public class BlockScript : MonoBehaviour
                 shape[i][j] = oldShape[rows - j - 1][i];
             }
         }
-        
 
         blockType.shape = shape;
-        if (isDragged || !isOnGrid || grid.checkBlockPosition(id, refPos, blockType) == 0) {
-            orientation = (orientation + 1) % 4;
-            transform.Rotate(0, 0, -90f);
+        orientation = (orientation + 1) % 4;
+        transform.Rotate(0, 0, -90f);
+        removeFromGrid();
+        makeTransparent();
+        // if (isDragged || !isOnGrid || grid.checkBlockPosition(id, refPos, blockType) == 0) {
+        //     orientation = (orientation + 1) % 4;
+        //     transform.Rotate(0, 0, -90f);
 
-            if (isOnGrid && !isDragged) {
-                grid.updateBlock(id, refPos, blockType);
-            }
-        } else {
-            blockType.shape = oldShape;
-            // TODO send error
-        }
+        //     if (isOnGrid && !isDragged) {
+        //         grid.updateBlock(id, refPos, blockType);
+        //     }
+        // } else {
+        //     blockType.shape = oldShape;
+        //     // TODO send error
+        // }
     }
 }

@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System.Threading;
+using UnityEditor.Experimental.GraphView;
 
 public class BlockLevelManagerScript : MonoBehaviour
 {
@@ -109,10 +110,12 @@ public class BlockLevelManagerScript : MonoBehaviour
     void Update()
     {
         if (selectedBlock != -1) {
-            // TODO change these keybinds later
+            // space = confirm placement
             // R = rotate CW
             // D,F = flip horiz,vert
-            if (Input.GetKeyDown(KeyCode.R)) {
+            if (Input.GetKeyDown(KeyCode.Space)) {
+                getBlockScript(selectedBlock).placeBlock();
+            } else if (Input.GetKeyDown(KeyCode.R)) {
                 getBlockScript(selectedBlock).rotate();
             } else if (Input.GetKeyDown(KeyCode.D)) {
                 getBlockScript(selectedBlock).flip(true);
