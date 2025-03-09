@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class BlockScript : MonoBehaviour
@@ -13,6 +14,7 @@ public class BlockScript : MonoBehaviour
 
     public bool isOnGrid {get; set;}
 
+    bool isDragged = false;
     Vector3 prevPosition, resetPosition;
     Vector2 difference = Vector2.zero;
 
@@ -20,7 +22,7 @@ public class BlockScript : MonoBehaviour
     // store last dragged position (guaranteed to be in the correct grid i think...)
     Vector3 refPos;
 
-    bool ogOrientation = true;
+    int orientation = 0;
 
     public Sprite appleSprite;
     public Sprite riceSprite;
@@ -58,6 +60,7 @@ public class BlockScript : MonoBehaviour
     }
 
     private void OnMouseDown() {
+        isDragged = true;
         difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         levelManager.selectBlock(id);
         prevPosition = transform.position;
@@ -70,10 +73,22 @@ public class BlockScript : MonoBehaviour
     }
 
     Vector3 getSpriteTopLeft() {
-        return GetComponent<Renderer>().transform.TransformPoint(new Vector3(renderer.sprite.bounds.min.x, renderer.sprite.bounds.max.y, 0));
+        switch (orientation) {
+            case 0:
+                return GetComponent<Renderer>().transform.TransformPoint(new Vector3(renderer.sprite.bounds.min.x, renderer.sprite.bounds.max.y, 0));
+            case 1:
+                return GetComponent<Renderer>().transform.TransformPoint(new Vector3(renderer.sprite.bounds.min.x, renderer.sprite.bounds.min.y, 0));
+            case 2:
+                return GetComponent<Renderer>().transform.TransformPoint(new Vector3(renderer.sprite.bounds.max.x, renderer.sprite.bounds.min.y, 0));
+            case 3:
+                return GetComponent<Renderer>().transform.TransformPoint(new Vector3(renderer.sprite.bounds.max.x, renderer.sprite.bounds.max.y, 0));
+            default:
+                return GetComponent<Renderer>().transform.TransformPoint(new Vector3(renderer.sprite.bounds.min.x, renderer.sprite.bounds.max.y, 0));
+        };
     }
 
     private void OnMouseUp() {
+        isDragged = false;
         int status = grid.checkBlockPosition(id, getSpriteTopLeft(), blockType);
         if (status == 0) {
             if (isOnGrid) {
@@ -84,7 +99,10 @@ public class BlockScript : MonoBehaviour
                 levelManager.playerAddBlock(id);
             }
             // snap to grid
-            transform.position = grid.snapToGrid(getSpriteTopLeft()) + new Vector3(blockType.shape[0].Length / 2.0f, 0);
+            transform.position = grid.snapToGrid(getSpriteTopLeft()) + new Vector3(
+                blockType.shape[0].Length / 2.0f,
+                orientation % 2 == 0 ? 0 : -Math.Abs(blockType.shape.Length - blockType.shape[0].Length) / 2.0f
+            );
         } else {
             if (status == -1 || (!isOnGrid && status == -2)) {
                 transform.position = resetPosition;
@@ -122,13 +140,13 @@ public class BlockScript : MonoBehaviour
         }
 
         blockType.shape = shape;
-        if (!isOnGrid || grid.checkBlockPosition(id, refPos, blockType) == 0) {
+        if (isDragged || !isOnGrid || grid.checkBlockPosition(id, refPos, blockType) == 0) {
             if (isHorizontal) {
                 renderer.flipX = !renderer.flipX;
             } else {
                 renderer.flipY = !renderer.flipY;
             }
-            if (isOnGrid) {
+            if (isOnGrid && !isDragged) {
                 grid.updateBlock(id, refPos, blockType);
             }
         } else {
@@ -152,33 +170,11 @@ public class BlockScript : MonoBehaviour
         
 
         blockType.shape = shape;
-        if (!isOnGrid || grid.checkBlockPosition(id, refPos, blockType) == 0) {
-            // Vector3 tl = getSpriteTopLeft();
-            // // TODO FIGURE OUT HOW TO ROTATE THE SPRITE WTF
-            // // best case scenario is to keep it anchored at top left position so the getTopLeft calcs still work
-            // if (isClockwise) {
-            //     // transform.Rotate(Vector3.forward * -90);
-            // } else {
-            //     // transform.Rotate(Vector3.forward * 90);
-            // }
-            // // if (ogOrientation) {
-            // //     transform.position = tl + new Vector3(blockType.shape.Length / 2.0f, blockType.shape[0].Length / 2.0f);
-            // // } else {
-            // //     transform.position = tl + new Vector3(blockType.shape[0].Length / 2.0f, blockType.shape.Length / 2.0f);
-            // // }
-
-            // // Vector2 S = renderer.sprite.bounds.size;
-            // // gameObject.GetComponent<BoxCollider2D>().size = ogOrientation ? S : new Vector2(S.y, S.x);
-
-            // transform.position = grid.snapToGrid(getSpriteTopLeft()) + new Vector3(
-            //     (ogOrientation ? blockType.shape[0].Length : blockType.shape.Length) / 2.0f,
-            //     0
-            // );
-
-            // ogOrientation = !ogOrientation;
+        if (isDragged || !isOnGrid || grid.checkBlockPosition(id, refPos, blockType) == 0) {
+            orientation = (orientation + 1) % 4;
             transform.Rotate(0, 0, -90f);
 
-            if (isOnGrid) {
+            if (isOnGrid && !isDragged) {
                 grid.updateBlock(id, refPos, blockType);
             }
         } else {
