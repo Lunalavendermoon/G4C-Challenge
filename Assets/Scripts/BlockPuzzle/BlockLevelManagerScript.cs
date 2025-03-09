@@ -1,13 +1,17 @@
 using UnityEngine;
 using System.Collections.Generic;
-using System.Threading;
-using UnityEditor.Experimental.GraphView;
+using TMPro;
 
 public class BlockLevelManagerScript : MonoBehaviour
 {
     public GameObject blockPrefab;
 
     public GameObject gameGrid;
+
+    public TMP_Text sizeText;
+
+    public TMP_Text nutritionText;
+
     GridScript grid;
 
     Dictionary<int, GameObject> blocks = new Dictionary<int, GameObject>();
@@ -37,9 +41,11 @@ public class BlockLevelManagerScript : MonoBehaviour
             new int[] { 0,  0,  0,  0, -2,  0},
             new int[] { 0,  0,  0,  0,  0,  0}
         }, 2, 3);
+
+        updateUI();
     }
 
-    void initManager(int levelSize, int[] levelGroupCounts, int[][] gridArray) {
+    void initManager(int maxSize, int[] maxGroupCounts, int[][] gridArray, BlockType[] blocksToSpawn) {
         // this will be called from the central static class
         // TODO spawn blocks in here
         // also init other stuff
@@ -61,15 +67,16 @@ public class BlockLevelManagerScript : MonoBehaviour
         size += block.blockType.size;
         switch (block.blockType.foodGroup) {
             case "veg":
-                ++groupCounts[0];
+                groupCounts[0] += block.blockType.size;
                 break;
             case "carb":
-                ++groupCounts[1];
+                groupCounts[1] += block.blockType.size;
                 break;
-            default:
-                ++groupCounts[2];
+            case "protein":
+                groupCounts[2] += block.blockType.size;
                 break;
         }
+        updateUI();
     }
 
     public void playerRemoveBlock(int id) {
@@ -77,15 +84,21 @@ public class BlockLevelManagerScript : MonoBehaviour
         size -= block.blockType.size;
         switch (block.blockType.foodGroup) {
             case "veg":
-                --groupCounts[0];
+                groupCounts[0] -= block.blockType.size;
                 break;
             case "carb":
-                --groupCounts[1];
+                groupCounts[1] -= block.blockType.size;
                 break;
-            default:
-                --groupCounts[2];
+            case "protein":
+                groupCounts[2] -= block.blockType.size;
                 break;
         }
+        updateUI();
+    }
+
+    void updateUI() {
+        sizeText.SetText("Size: " + size);
+        nutritionText.SetText("veg " + groupCounts[0] + "\ncarb " + groupCounts[1] + "\nprotein " + groupCounts[2]);
     }
 
     public void selectBlock(int id) {

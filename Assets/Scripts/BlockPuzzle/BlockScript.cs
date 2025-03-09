@@ -17,10 +17,6 @@ public class BlockScript : MonoBehaviour
     Vector3 resetPosition;
     Vector2 difference = Vector2.zero;
 
-    // weird floating point error when flipping sprites causing getTopLeft to return wrong coordinates(?)
-    // store last dragged position (guaranteed to be in the correct grid i think...)
-    Vector3 refPos;
-
     int orientation = 0;
 
     public Sprite appleSprite;
@@ -53,8 +49,6 @@ public class BlockScript : MonoBehaviour
 
         Vector2 S = renderer.sprite.bounds.size;
         gameObject.GetComponent<BoxCollider2D>().size = S;
-
-        refPos = getSpriteTopLeft();
     }
 
     private void OnMouseDown() {
@@ -82,7 +76,6 @@ public class BlockScript : MonoBehaviour
     private void OnMouseDrag() {
         transform.position = (Vector2) Camera.main.ScreenToWorldPoint(Input.mousePosition) - difference;
         grid.drawDropShadow(getSpriteTopLeft(), blockType);
-        refPos = getSpriteTopLeft();
     }
 
     void removeFromGrid() {
@@ -111,6 +104,7 @@ public class BlockScript : MonoBehaviour
         int status = grid.checkBlockPosition(id, getSpriteTopLeft(), blockType);
         if (status == -1) {
             transform.position = resetPosition;
+            makeOpaque();
         } else {
             makeTransparent();
         }
@@ -170,21 +164,10 @@ public class BlockScript : MonoBehaviour
         } else {
             renderer.flipY = !renderer.flipY;
         }
-        removeFromGrid();
-        makeTransparent();
-        // if (isDragged || !isOnGrid || grid.checkBlockPosition(id, refPos, blockType) == 0) {
-        //     if (isHorizontal) {
-        //         renderer.flipX = !renderer.flipX;
-        //     } else {
-        //         renderer.flipY = !renderer.flipY;
-        //     }
-        //     if (isOnGrid && !isDragged) {
-        //         grid.updateBlock(id, refPos, blockType);
-        //     }
-        // } else {
-        //     blockType.shape = oldShape;
-        //     // TODO send error
-        // }
+        if (isOnGrid) {
+            removeFromGrid();
+            makeTransparent();
+        }
     }
 
     public void rotate() {
@@ -203,18 +186,9 @@ public class BlockScript : MonoBehaviour
         blockType.shape = shape;
         orientation = (orientation + 1) % 4;
         transform.Rotate(0, 0, -90f);
-        removeFromGrid();
-        makeTransparent();
-        // if (isDragged || !isOnGrid || grid.checkBlockPosition(id, refPos, blockType) == 0) {
-        //     orientation = (orientation + 1) % 4;
-        //     transform.Rotate(0, 0, -90f);
-
-        //     if (isOnGrid && !isDragged) {
-        //         grid.updateBlock(id, refPos, blockType);
-        //     }
-        // } else {
-        //     blockType.shape = oldShape;
-        //     // TODO send error
-        // }
+        if (isOnGrid) {
+            removeFromGrid();
+            makeTransparent();
+        }
     }
 }
