@@ -24,31 +24,33 @@ public class BlockLevelManagerScript : MonoBehaviour
 
     void Awake()
     {
-        grid = gameGrid.GetComponent<GridScript>();
-
-        // TODO spawn the actually correct amount/type of blocks lmao
-        // BLOCK ID MUST BE 1 OR GREATER
-        for (int i = 0; i < 6; ++i) {
-            spawnBlock(i + 1, i % 3 == 0 ? BlockType.apple() : i % 3 == 1 ? BlockType.rice() : BlockType.chickenLeg(), new Vector3(-3, 5 - (1.5f*(i+1)), 0));
-        }
-
-        // TODO placeholder grid array - should put this in central static class
-        // 0 = empty space, -1 = out of bounds, -2 = obstacle
-        grid.initGrid(new int[][] {
+        // TODO call initManager from static class
+        initManager(20, new int[] {10,5,5}, new int[][] {
             new int[] {-1, -1,  0,  0,  0, -1},
             new int[] {-1,  0,  0,  0,  0, -1},
             new int[] {-1,  0,  0,  0, -2, -1},
             new int[] { 0,  0,  0,  0, -2,  0},
             new int[] { 0,  0,  0,  0,  0,  0}
-        }, 2, 3);
-
-        updateUI();
+        }, 2, 3,
+        new BlockType[] {
+            BlockType.apple(), BlockType.rice(), BlockType.chickenLeg(),
+            BlockType.apple(), BlockType.rice(), BlockType.chickenLeg()
+        });
     }
 
-    void initManager(int maxSize, int[] maxGroupCounts, int[][] gridArray, BlockType[] blocksToSpawn) {
-        // this will be called from the central static class
-        // TODO spawn blocks in here
-        // also init other stuff
+    void initManager(int maxSize, int[] maxGroupCounts, int[][] gridArray, int xoffset, int yoffset, BlockType[] blocksToSpawn) {
+        grid = gameGrid.GetComponent<GridScript>();
+        
+        // BLOCK ID MUST BE 1 OR GREATER
+        for (int i = 0; i < blocksToSpawn.Length; ++i) {
+            spawnBlock(i + 1, blocksToSpawn[i], new Vector3(-3, 5 - (1.5f*(i+1)), 0));
+        }
+
+        // TODO placeholder grid array - should put this in central static class
+        // 0 = empty space, -1 = out of bounds, -2 = obstacle
+        grid.initGrid(gridArray, xoffset, yoffset);
+
+        updateUI();
     }
     
     void spawnBlock(int id, BlockType type, Vector3 position) {
