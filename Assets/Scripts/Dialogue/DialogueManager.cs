@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
-using DG.Tweening; // Import DOTween
+using DG.Tweening;
+using System.Threading; // Import DOTween
 
 public class DialogueManager : MonoBehaviour
 {
@@ -25,6 +26,8 @@ public class DialogueManager : MonoBehaviour
     private bool responseDone = false;
     private int finishDialogue = 0; // 0 = not finished, 1 = finish immediately, -1 = finished, awaiting new dialogue
 
+    private static Mutex mut = new Mutex();
+
     private void Awake()
     {
         if (Instance == null)
@@ -43,12 +46,16 @@ public class DialogueManager : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && !ItemDropLocation.mouseOverItemDropLocation)
         {
+            mut.WaitOne();
             if (!responseDone && finishDialogue == 0)
             {
                 finishDialogue = 1; // Skip to end of dialogue
+                mut.ReleaseMutex();
             }
             else if (responseDone)
             {
+                responseDone = false;
+                mut.ReleaseMutex();
                 if (dialogueCounter < dialogues.Count)
                 {
                     DialogueAssemble(dialogueCounter++);
@@ -111,17 +118,21 @@ public class DialogueManager : MonoBehaviour
 
     public async void PrintWord(string dialogue)
     {
+        mut.WaitOne();
         responseDone = false;
         finishDialogue = 0;
         DialogBodyText.text = "";
+        mut.ReleaseMutex();
 
         for (int i = 0; i < dialogue.Length; i++)
         {
             if (finishDialogue == 1)
             {
+                mut.WaitOne();
                 DialogBodyText.text = dialogue;
                 finishDialogue = -1;
                 responseDone = true;
+                mut.ReleaseMutex();
                 return;
             }
 
