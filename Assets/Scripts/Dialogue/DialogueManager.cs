@@ -9,9 +9,6 @@ public class DialogueManager : MonoBehaviour
 {
     public static DialogueManager Instance { get; private set; }
 
-    [Header("Metadata")]
-    public int day;
-
     [Header("UI Elements")]
     public GameObject DialogueParent;
     public TextMeshProUGUI DialogTitleText, DialogBodyText;
@@ -98,7 +95,7 @@ public class DialogueManager : MonoBehaviour
         foreach (GameObject ui in disabledUI) ui.SetActive(true);
         DialogueParent.SetActive(false);
 
-        FadeTransition(() => GameManager.LoadBlockScene(day), 0);
+        FadeTransition(() => GameManager.LoadBlockScene(), 0);
     }
 
     private void ShowDialogue()

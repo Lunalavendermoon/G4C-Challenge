@@ -1,8 +1,13 @@
+using Unity.VisualScripting;
+using Unity.XR.GoogleVr;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public static class GameManager
 {
+    public static int currentDay;
+
+
     public static int blockMaxSize, blockXOffset, blockYOffset;
 
     public static int[] blockMaxGroupSize;
@@ -13,16 +18,21 @@ public static class GameManager
     
     [RuntimeInitializeOnLoadMethod]
     static void LoadFirstScene() {
+        currentDay = 0;
         // TODO replace this w/ main menu in the final version
         LoadDialogueScene();
     }
 
     public static void LoadDialogueScene() {
-        SceneManager.LoadScene("Main", LoadSceneMode.Single);
+        // currentDay increases every time we show the day cutscene
+        ++currentDay;
+        if (currentDay == 1) {
+            SceneManager.LoadScene("Main", LoadSceneMode.Single);
+        }
     }
 
-    public static void LoadBlockScene(int day) {
-        if (day == 1) {
+    public static void LoadBlockScene() {
+        if (currentDay == 1) {
             blockMaxSize = 20;
             blockMaxGroupSize = new int[] {10,5,5};
             blockGridArray = new int[][] {
@@ -40,5 +50,11 @@ public static class GameManager
             };
         }
         SceneManager.LoadScene("Grid", LoadSceneMode.Single);
+    }
+
+    public static void LoadMapScene(int playerSize, int[] playerNutrition) {
+        if (currentDay == 1) {
+            // TODO set variables
+        }
     }
 }
