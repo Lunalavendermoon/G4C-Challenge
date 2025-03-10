@@ -21,13 +21,13 @@ public class BlockLevelManagerScript : MonoBehaviour
     int size = 0;
     int maxSize;
 
-    int[] groupCounts = {0,0,0};
-    int[] maxGroupCounts;
+    int[] nutrition = {0,0,0};
+    int[] maxNutrition;
 
     void Start()
     {
         maxSize = GameManager.blockMaxSize;
-        maxGroupCounts = GameManager.blockMaxGroupSize;
+        maxNutrition = GameManager.blockMaxGroupSize;
 
         grid = gameGrid.GetComponent<GridScript>();
 
@@ -61,13 +61,13 @@ public class BlockLevelManagerScript : MonoBehaviour
         size += block.blockType.size;
         switch (block.blockType.foodGroup) {
             case "veg":
-                groupCounts[0] += block.blockType.size;
+                nutrition[0] += block.blockType.size;
                 break;
             case "carb":
-                groupCounts[1] += block.blockType.size;
+                nutrition[1] += block.blockType.size;
                 break;
             case "protein":
-                groupCounts[2] += block.blockType.size;
+                nutrition[2] += block.blockType.size;
                 break;
         }
         updateUI();
@@ -78,13 +78,13 @@ public class BlockLevelManagerScript : MonoBehaviour
         size -= block.blockType.size;
         switch (block.blockType.foodGroup) {
             case "veg":
-                groupCounts[0] -= block.blockType.size;
+                nutrition[0] -= block.blockType.size;
                 break;
             case "carb":
-                groupCounts[1] -= block.blockType.size;
+                nutrition[1] -= block.blockType.size;
                 break;
             case "protein":
-                groupCounts[2] -= block.blockType.size;
+                nutrition[2] -= block.blockType.size;
                 break;
         }
         updateUI();
@@ -92,7 +92,7 @@ public class BlockLevelManagerScript : MonoBehaviour
 
     void updateUI() {
         sizeText.SetText("Size: " + size);
-        nutritionText.SetText("veg " + groupCounts[0] + "\ncarb " + groupCounts[1] + "\nprotein " + groupCounts[2]);
+        nutritionText.SetText("veg " + nutrition[0] + "\ncarb " + nutrition[1] + "\nprotein " + nutrition[2]);
     }
 
     public void selectBlock(int id) {
@@ -129,6 +129,10 @@ public class BlockLevelManagerScript : MonoBehaviour
             } else if (Input.GetKeyDown(KeyCode.F)) {
                 getBlockScript(selectedBlock).flip(false);
             }
+        }
+        // M = finish gameplay and go to Map scene
+        if (Input.GetKeyDown(KeyCode.M)) {
+            GameManager.LoadMapScene(size, nutrition);
         }
     }
 }

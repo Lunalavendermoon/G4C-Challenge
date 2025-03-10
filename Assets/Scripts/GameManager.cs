@@ -18,9 +18,15 @@ public static class GameManager
     
     [RuntimeInitializeOnLoadMethod]
     static void LoadFirstScene() {
+        // TODO load w/ main menu in the final version
         currentDay = 0;
-        // TODO replace this w/ main menu in the final version
+
+        // To start from day 1 dialogue:
         LoadDialogueScene();
+
+        // To start from day 1 block puzzle:
+        // currentDay = 1;
+        // LoadBlockScene();
     }
 
     public static void LoadDialogueScene() {
@@ -56,5 +62,7 @@ public static class GameManager
         if (currentDay == 1) {
             // TODO set variables
         }
+        Debug.Log("Player size: " + playerSize + ", Nutrition amounts: " + playerNutrition[0] + " " + playerNutrition[1] + " " + playerNutrition[2]);
+        SceneManager.LoadScene("Map", LoadSceneMode.Single);
     }
 }

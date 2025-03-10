@@ -119,17 +119,16 @@ public class DialogueManager : MonoBehaviour
     public async void PrintWord(string dialogue)
     {
         mut.WaitOne();
-        responseDone = false;
         finishDialogue = 0;
-        DialogBodyText.text = "";
         mut.ReleaseMutex();
+        DialogBodyText.text = "";
 
         for (int i = 0; i < dialogue.Length; i++)
         {
             if (finishDialogue == 1)
             {
-                mut.WaitOne();
                 DialogBodyText.text = dialogue;
+                mut.WaitOne();
                 finishDialogue = -1;
                 responseDone = true;
                 mut.ReleaseMutex();
