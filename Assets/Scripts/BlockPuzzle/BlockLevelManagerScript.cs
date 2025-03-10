@@ -19,27 +19,19 @@ public class BlockLevelManagerScript : MonoBehaviour
     int selectedBlock = -1;
 
     int size = 0;
+    int maxSize;
 
     int[] groupCounts = {0,0,0};
+    int[] maxGroupCounts;
 
-    void Awake()
+    void Start()
     {
-        // TODO call initManager from static class
-        initManager(20, new int[] {10,5,5}, new int[][] {
-            new int[] {-1, -1,  0,  0,  0, -1},
-            new int[] {-1,  0,  0,  0,  0, -1},
-            new int[] {-1,  0,  0,  0, -2, -1},
-            new int[] { 0,  0,  0,  0, -2,  0},
-            new int[] { 0,  0,  0,  0,  0,  0}
-        }, 2, 3,
-        new BlockType[] {
-            BlockType.apple(), BlockType.rice(), BlockType.chickenLeg(),
-            BlockType.apple(), BlockType.rice(), BlockType.chickenLeg()
-        });
-    }
+        maxSize = GameManager.blockMaxSize;
+        maxGroupCounts = GameManager.blockMaxGroupSize;
 
-    void initManager(int maxSize, int[] maxGroupCounts, int[][] gridArray, int xoffset, int yoffset, BlockType[] blocksToSpawn) {
         grid = gameGrid.GetComponent<GridScript>();
+
+        BlockType[] blocksToSpawn = GameManager.blockSpawnList;
         
         // BLOCK ID MUST BE 1 OR GREATER
         for (int i = 0; i < blocksToSpawn.Length; ++i) {
@@ -48,7 +40,7 @@ public class BlockLevelManagerScript : MonoBehaviour
 
         // TODO placeholder grid array - should put this in central static class
         // 0 = empty space, -1 = out of bounds, -2 = obstacle
-        grid.initGrid(gridArray, xoffset, yoffset);
+        grid.initGrid(GameManager.blockGridArray, GameManager.blockXOffset, GameManager.blockYOffset);
 
         updateUI();
     }

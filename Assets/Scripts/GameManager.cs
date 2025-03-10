@@ -1,30 +1,44 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class GameManager : MonoBehaviour
+public static class GameManager
 {
-    public static GameManager Instance { get; private set; }
-    private void Awake()
-    {
-        // Singleton pattern to ensure only one instance of DialogueManager
-        if (Instance == null)
-        {
-            Instance = this;
-        }
-        else
-        {
-            Debug.LogError("Multiple GameManager instances found!");
-            Destroy(gameObject);
-        }
-    }
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
+    public static int blockMaxSize, blockXOffset, blockYOffset;
+
+    public static int[] blockMaxGroupSize;
+
+    public static int[][] blockGridArray;
+
+    public static BlockType[] blockSpawnList;
+    
+    [RuntimeInitializeOnLoadMethod]
+    static void LoadFirstScene() {
+        // TODO replace this w/ main menu in the final version
+        LoadDialogueScene();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public static void LoadDialogueScene() {
+        SceneManager.LoadScene("Main", LoadSceneMode.Single);
+    }
+
+    public static void LoadBlockScene(int day) {
+        if (day == 1) {
+            blockMaxSize = 20;
+            blockMaxGroupSize = new int[] {10,5,5};
+            blockGridArray = new int[][] {
+                new int[] {-1, -1,  0,  0,  0, -1},
+                new int[] {-1,  0,  0,  0,  0, -1},
+                new int[] {-1,  0,  0,  0, -2, -1},
+                new int[] { 0,  0,  0,  0, -2,  0},
+                new int[] { 0,  0,  0,  0,  0,  0}
+            };
+            blockXOffset = 2;
+            blockYOffset = 3;
+            blockSpawnList = new BlockType[] {
+                BlockType.apple(), BlockType.rice(), BlockType.chickenLeg(),
+                BlockType.apple(), BlockType.rice(), BlockType.chickenLeg()
+            };
+        }
+        SceneManager.LoadScene("Grid", LoadSceneMode.Single);
     }
 }
