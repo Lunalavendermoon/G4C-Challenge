@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
 using DG.Tweening;
-using System.Threading; // Import DOTween
+using System.Threading;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -25,8 +25,8 @@ public class DialogueManager : MonoBehaviour
     private int dialogueCounter = 0;
     private bool responseDone = false;
     private int finishDialogue = 0; // 0 = not finished, 1 = finish immediately, -1 = finished, awaiting new dialogue
-
-    private static Mutex mut = new Mutex();
+    private static bool isProcessing = false;
+    private Tween typingTween; // Store active typing tween
 
     private void Awake()
     {
@@ -39,6 +39,7 @@ public class DialogueManager : MonoBehaviour
             Debug.LogError("Multiple DialogueManager instances found!");
             Destroy(gameObject);
         }
+        DOTween.Init();
         StartDialogue(dialogue.RootNode);
     }
 
@@ -46,16 +47,25 @@ public class DialogueManager : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0) && !ItemDropLocation.mouseOverItemDropLocation)
         {
-            mut.WaitOne();
-            if (!responseDone && finishDialogue == 0)
+            if (isProcessing) return;
+            isProcessing = true;
+
+            // If text is still printing, stop it and show full text
+            if (typingTween != null && typingTween.IsActive())
+            {
+                typingTween.Kill();
+                DialogBodyText.text = GetDialogue(dialogues[dialogueCounter - 1]); // Show full dialogue
+                finishDialogue = -1;
+                responseDone = true;
+            }
+            else if (!responseDone && finishDialogue == 0)
             {
                 finishDialogue = 1; // Skip to end of dialogue
-                mut.ReleaseMutex();
             }
             else if (responseDone)
             {
                 responseDone = false;
-                mut.ReleaseMutex();
+
                 if (dialogueCounter < dialogues.Count)
                 {
                     DialogueAssemble(dialogueCounter++);
@@ -69,6 +79,8 @@ public class DialogueManager : MonoBehaviour
                     StartDialogue(dialogueNode.nextDialogue.RootNode);
                 }
             }
+
+            isProcessing = false;
         }
     }
 
@@ -115,32 +127,26 @@ public class DialogueManager : MonoBehaviour
     {
         return DialogueParent.activeSelf;
     }
-
-    public async void PrintWord(string dialogue)
+    
+    public void PrintWord(string dialogue)
     {
-        mut.WaitOne();
         finishDialogue = 0;
-        mut.ReleaseMutex();
+        responseDone = false;
         DialogBodyText.text = "";
 
-        for (int i = 0; i < dialogue.Length; i++)
+        // Kill previous tween if it's still running
+        if (typingTween != null && typingTween.IsActive())
         {
-            if (finishDialogue == 1)
-            {
-                DialogBodyText.text = dialogue;
-                mut.WaitOne();
-                finishDialogue = -1;
-                responseDone = true;
-                mut.ReleaseMutex();
-                return;
-            }
-
-            DialogBodyText.text += dialogue[i];
-            await Task.Delay(20);
+            typingTween.Kill();
         }
 
-        DialogBodyText.text = dialogue;
-        responseDone = true;
+        typingTween = DOTween.To(() => "", x => DialogBodyText.text = x, dialogue, dialogue.Length * 0.02f)
+            .SetEase(Ease.Linear)
+            .OnComplete(() =>
+            {
+                finishDialogue = -1;
+                responseDone = true;
+            });
     }
 
     private string GetName(string text)
