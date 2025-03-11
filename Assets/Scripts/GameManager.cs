@@ -21,12 +21,8 @@ public static class GameManager
         // TODO load w/ main menu in the final version
         currentDay = 0;
 
-        // To start from day 1 dialogue:
-        LoadDialogueScene();
-
-        // To start from day 1 block puzzle:
-        // currentDay = 1;
-        // LoadBlockScene();
+        // Uncomment this to start from the very beginning scene
+        // LoadDialogueScene();
     }
 
     public static void LoadDialogueScene() {
