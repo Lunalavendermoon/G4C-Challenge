@@ -102,7 +102,7 @@ public class DialogueManager : MonoBehaviour
         foreach (GameObject ui in disabledUI) ui.SetActive(true);
         DialogueParent.SetActive(false);
 
-        FadeTransition(() => GameManager.LoadBlockScene(), 0);
+        GameManager.LoadBlockScene();
     }
 
     private void ShowDialogue()
