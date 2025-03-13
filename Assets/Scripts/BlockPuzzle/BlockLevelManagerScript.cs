@@ -9,8 +9,6 @@ public class BlockLevelManagerScript : MonoBehaviour
 
     public GameObject gameGrid;
 
-    public TMP_Text sizeText;
-
     public TMP_Text vegText;
     public TMP_Text proteinText;
     public TMP_Text carbText;
@@ -146,9 +144,9 @@ public class BlockLevelManagerScript : MonoBehaviour
                 getBlockScript(selectedBlock).placeBlock();
             } else if (Input.GetKeyDown(KeyCode.R)) {
                 getBlockScript(selectedBlock).rotate();
-            } else if (Input.GetKeyDown(KeyCode.D)) {
+            } else if (Input.GetKeyDown(KeyCode.H)) {
                 getBlockScript(selectedBlock).flip(true);
-            } else if (Input.GetKeyDown(KeyCode.F)) {
+            } else if (Input.GetKeyDown(KeyCode.V)) {
                 getBlockScript(selectedBlock).flip(false);
             }
         }
