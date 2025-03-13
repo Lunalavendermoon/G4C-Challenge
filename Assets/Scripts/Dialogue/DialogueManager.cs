@@ -96,6 +96,7 @@ public class DialogueManager : MonoBehaviour
 
     private void DialogueAssemble(int index)
     {
+        // string fullText = dialogues[index].Trim();
         string fullText = dialogues[index];
         string title = GetName(fullText);
         string dialogue = GetDialogue(fullText);
