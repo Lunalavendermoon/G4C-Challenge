@@ -362,6 +362,7 @@ MonoBehaviour:
   Sprites:
   - {fileID: 8783284292685355987, guid: 13ee3fccd8fbbb248ad35de2dae9e1ea, type: 3}
   - {fileID: -7392171645639815560, guid: dd734fd75dc990d40b1e8519dcb172ff, type: 3}
+  - {fileID: -7392171645639815560, guid: dd734fd75dc990d40b1e8519dcb172ff, type: 3}
 --- !u!212 &441137508
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -825,7 +826,7 @@ MonoBehaviour:
   image2: {fileID: 267206210}
   background: {fileID: 441137507}
   disabledUI: []
-  dialogue: {fileID: 11400000, guid: 2f37e89c67be323449f14b01300d682c, type: 2}
+  dialogue: {fileID: 11400000, guid: bbec661eb0a3e1545a58772387508e9d, type: 2}
 --- !u!4 &1386758527
 Transform:
   m_ObjectHideFlags: 0
@@ -1360,7 +1361,7 @@ PrefabInstance:
     - target: {fileID: 2490452443067939021, guid: 129012cec89a2a145aaf643bb471bb65, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 8995154407686431259, guid: 40aacfae70e47b64c9b4bbcfcdddf4ce, type: 3}
+      objectReference: {fileID: 21300000, guid: 4653b6d7789bab24f9f8afc3f723016e, type: 3}
     - target: {fileID: 2490452443067939021, guid: 129012cec89a2a145aaf643bb471bb65, type: 3}
       propertyPath: m_Color.b
       value: 0.5283019

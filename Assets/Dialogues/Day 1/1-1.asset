@@ -15,18 +15,18 @@ MonoBehaviour:
   RootNode:
     dialogues:
     - "Food Bank Headquarters \u2013 Morning0000l"
-    - "p:So you\u2019re the new food bank president, huh? Congratulations!0100r"
-    - "p:By the way, it seems that you don\u2019t seem to be from here.0100r"
-    - "y:That\u2019s correct.0100l"
-    - "p:In that case, welcome! We\u2019re thrilled to have you.0100r"
+    - "p:So you\u2019re the new food bank president, huh? Congratulations!0111r"
+    - "p:By the way, it seems that you don\u2019t seem to be from here.0110r"
+    - "y:That\u2019s correct.0110l"
+    - "p:In that case, welcome! We\u2019re thrilled to have you.0111r"
     - "p:This food bank is crucial to our city\u2019s welfare. We just need to ensure
       proper allocation of resources. Of course, the larger pantries and soup kitchens
-      should take priority.0100r"
+      should take priority.0110r"
     - "p:Our properties house many people in need. If you could\u2026 direct some
-      extra supplies our way, we\u2019d be grateful.0100r"
-    - He slides an envelope across the desk.0100r
-    - p:A small token of appreciation.0100r
+      extra supplies our way, we\u2019d be grateful.0110r"
+    - He slides an envelope across the desk.0110r
+    - p:A small token of appreciation.0111r
     - "y:Let\u2019s not get too hasty. It\u2019s just my first day here, after all.
-      Actually, I haven\u2019t even seen my office yet\u20260100l"
+      Actually, I haven\u2019t even seen my office yet\u20260110l"
     nextDialogue: {fileID: 11400000, guid: cc1dff6a9a9938e479393dcb528cd1e1, type: 2}
     bgNum: 0
