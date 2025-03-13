@@ -449,7 +449,7 @@ MonoBehaviour:
   m_text: 7/7
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8e5e9c70067fcfb40b4f51c8ebf363cf, type: 2}
-  m_sharedMaterial: {fileID: -8643376934069939877, guid: 8e5e9c70067fcfb40b4f51c8ebf363cf, type: 2}
+  m_sharedMaterial: {fileID: -6363418637353929178, guid: 8e5e9c70067fcfb40b4f51c8ebf363cf, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -584,8 +584,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tilemap: {fileID: 1474497911}
-  blank: {fileID: 11400000, guid: 28891f8d220fe4c1ba225c003f378b23, type: 2}
-  obstacle: {fileID: 11400000, guid: ae7f94712cd5c420b8a45a8c2d419899, type: 2}
+  blank: {fileID: 11400000, guid: 1d4ebed8b91cc478aad27d772b17ea85, type: 2}
   dropshadow: {fileID: 11400000, guid: 26501bb4faa784cb1aa4dd2c1bb85550, type: 2}
 --- !u!1 &488025720
 GameObject:
@@ -1212,7 +1211,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1083454697
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1329,7 +1328,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blockPrefab: {fileID: 7019135002737759780, guid: 91a181e5a030648028f2cfa791517447, type: 3}
   gameGrid: {fileID: 473607612}
-  sizeText: {fileID: 0}
   vegText: {fileID: 1422367193}
   proteinText: {fileID: 450094060}
   carbText: {fileID: 1118501949}
@@ -1394,7 +1392,7 @@ MonoBehaviour:
   m_text: 7/7
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8e5e9c70067fcfb40b4f51c8ebf363cf, type: 2}
-  m_sharedMaterial: {fileID: -8643376934069939877, guid: 8e5e9c70067fcfb40b4f51c8ebf363cf, type: 2}
+  m_sharedMaterial: {fileID: -6363418637353929178, guid: 8e5e9c70067fcfb40b4f51c8ebf363cf, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2015,7 +2013,7 @@ MonoBehaviour:
   m_text: 7/7
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8e5e9c70067fcfb40b4f51c8ebf363cf, type: 2}
-  m_sharedMaterial: {fileID: -8643376934069939877, guid: 8e5e9c70067fcfb40b4f51c8ebf363cf, type: 2}
+  m_sharedMaterial: {fileID: -6363418637353929178, guid: 8e5e9c70067fcfb40b4f51c8ebf363cf, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

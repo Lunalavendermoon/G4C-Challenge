@@ -6,7 +6,6 @@ public class GridScript : MonoBehaviour
     public Tilemap tilemap;
 
     public Tile blank;
-    public Tile obstacle;
     public Tile dropshadow;
 
     int[][] gridArray;
@@ -33,7 +32,7 @@ public class GridScript : MonoBehaviour
                         tilemap.SetTile(cell, null);
                         break;
                     case -2:
-                        tilemap.SetTile(cell, obstacle);
+                        tilemap.SetTile(cell, null);
                         break;
                     default:
                         tilemap.SetTile(cell, blank);

@@ -20,6 +20,7 @@ public class BlockLevelManagerScript : MonoBehaviour
     Dictionary<int, GameObject> blocks = new Dictionary<int, GameObject>();
 
     int selectedBlock = -1;
+    int orderCount = 1;
 
     int size = 0;
     int maxSize;
@@ -75,6 +76,7 @@ public class BlockLevelManagerScript : MonoBehaviour
     }
 
     public void playerAddBlock(int id) {
+        blocks[id].GetComponent<Renderer>().sortingOrder = 0;
         BlockScript block = getBlockScript(id);
         size += block.blockType.size;
         switch (block.blockType.foodGroup) {
@@ -116,7 +118,11 @@ public class BlockLevelManagerScript : MonoBehaviour
     }
 
     public void selectBlock(int id) {
+        if (selectedBlock != -1) {
+            // TODO deselect previous
+        }
         selectedBlock = id;
+        blocks[id].GetComponent<Renderer>().sortingOrder = orderCount++;
     }
 
     public void flipBlock(bool isHorizontal) {
