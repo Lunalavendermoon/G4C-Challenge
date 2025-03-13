@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor.ShaderGraph.Internal;
 
 public class BlockLevelManagerScript : MonoBehaviour
 {
@@ -10,7 +11,11 @@ public class BlockLevelManagerScript : MonoBehaviour
 
     public TMP_Text sizeText;
 
-    public TMP_Text nutritionText;
+    public TMP_Text vegText;
+    public TMP_Text proteinText;
+    public TMP_Text carbText;
+
+    public GameObject sizeBar;
 
     GridScript grid;
 
@@ -26,16 +31,35 @@ public class BlockLevelManagerScript : MonoBehaviour
 
     void Start()
     {
+        GameManager.LoadDay1BlockData();
+
         maxSize = GameManager.blockMaxSize;
         maxNutrition = GameManager.blockMaxGroupSize;
 
         grid = gameGrid.GetComponent<GridScript>();
 
         BlockType[] blocksToSpawn = GameManager.blockSpawnList;
+
+        float yveg = 1.0f, yprot = -1.5f, ycarb = 2.5f;
         
         // BLOCK ID MUST BE 1 OR GREATER
-        for (int i = 0; i < blocksToSpawn.Length; ++i) {
-            spawnBlock(i + 1, blocksToSpawn[i], new Vector3(-3, 5 - (1.5f*(i+1)), 0));
+        int vegCount = 0, carbCount = 0, protCount = 0, id = 1;
+        foreach (BlockType b in blocksToSpawn) {
+            // spawnBlock(i + 1, blocksToSpawn[i], new Vector3(-3, 5 - (1.5f*(i+1)), 0));
+            switch (b.foodGroup) {
+                case "veg":
+                    spawnBlock(id++, b, vegCount++, yveg, 5);
+                    break;
+                case "protein":
+                    spawnBlock(id++, b, protCount++, yprot, 4);
+                    break;
+                case "carb":
+                    spawnBlock(id++, b, carbCount++, ycarb, 5);
+                    break;
+                default:
+                    Debug.Log("Invalid food group " + b.foodGroup);
+                    break;
+            }
         }
 
         // TODO placeholder grid array - should put this in central static class
@@ -45,7 +69,8 @@ public class BlockLevelManagerScript : MonoBehaviour
         updateUI();
     }
     
-    void spawnBlock(int id, BlockType type, Vector3 position) {
+    void spawnBlock(int id, BlockType type, int count, float yoffset, int rowmax) {
+        Vector3 position = new Vector3(-7.0f + 1.2f * (count % rowmax), yoffset + 1.5f * (count / rowmax));
         GameObject block = Instantiate(blockPrefab, position, Quaternion.identity);
         block.GetComponent<BlockScript>().initBlock(id, type, this, grid);
         blocks.Add(id, block);
@@ -91,8 +116,10 @@ public class BlockLevelManagerScript : MonoBehaviour
     }
 
     void updateUI() {
-        sizeText.SetText("Size: " + size);
-        nutritionText.SetText("veg " + nutrition[0] + "\ncarb " + nutrition[1] + "\nprotein " + nutrition[2]);
+        sizeBar.transform.localScale = new Vector3(((float)size) / maxSize, 1, 1);
+        vegText.SetText(nutrition[0] + "/" + maxNutrition[0]);
+        carbText.SetText(nutrition[1] + "/" + maxNutrition[1]);
+        proteinText.SetText(nutrition[2] + "/" + maxNutrition[2]);
     }
 
     public void selectBlock(int id) {

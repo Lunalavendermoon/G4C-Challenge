@@ -1,0 +1,676 @@
+fileFormatVersion: 2
+guid: 637288bc8a4d04d51bff840c199c850f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6991873624079926201
+    second: UI_Backpack-11_0
+  - first:
+      213: -1793340364209094345
+    second: UI_Backpack-11_1
+  - first:
+      213: 169394879675252941
+    second: UI_Backpack-11_2
+  - first:
+      213: -4805587502642435962
+    second: UI_Backpack-11_3
+  - first:
+      213: 3518556163580830645
+    second: UI_Backpack-11_4
+  - first:
+      213: 7919860259697960502
+    second: UI_Backpack-11_5
+  - first:
+      213: 5767925985340196682
+    second: UI_Backpack-11_6
+  - first:
+      213: -5327588880436620193
+    second: UI_Backpack-11_7
+  - first:
+      213: -2211334351224778670
+    second: UI_Backpack-11_8
+  - first:
+      213: 1901775535861633807
+    second: UI_Backpack-11_9
+  - first:
+      213: 5721035836028495624
+    second: UI_Backpack-11_10
+  - first:
+      213: -6158358395339717135
+    second: UI_Backpack-11_11
+  - first:
+      213: 2846612299041074291
+    second: UI_Backpack-11_12
+  - first:
+      213: 4367753606534956164
+    second: UI_Backpack-11_13
+  - first:
+      213: -7112641160207236124
+    second: UI_Backpack-11_14
+  - first:
+      213: -218196806391998241
+    second: UI_Backpack-11_15
+  - first:
+      213: -265256340482829876
+    second: UI_Backpack-11_16
+  - first:
+      213: 8092570198472342735
+    second: UI_Backpack-11_17
+  - first:
+      213: 558087182177218481
+    second: UI_Backpack-11_18
+  - first:
+      213: -648147754438906720
+    second: UI_Backpack-11_19
+  - first:
+      213: 3193264812118906998
+    second: UI_Backpack-11_20
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: UI_Backpack-11_0
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 749
+        width: 103
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b305bd3400280160800000000000000
+      internalID: 6991873624079926201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Backpack-11_1
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 749
+        width: 103
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73182f5b076cc17e0800000000000000
+      internalID: -1793340364209094345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Backpack-11_2
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 749
+        width: 102
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc040dddebfc95200800000000000000
+      internalID: 169394879675252941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Backpack-11_3
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 749
+        width: 102
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 688e0ff90af1f4db0800000000000000
+      internalID: -4805587502642435962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Backpack-11_4
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 749
+        width: 103
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b32f7c403c64d030800000000000000
+      internalID: 3518556163580830645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Backpack-11_5
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 600
+        width: 103
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 636a70ae1fef8ed60800000000000000
+      internalID: 7919860259697960502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Backpack-11_6
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 600
+        width: 103
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4782f6bf1acb0050800000000000000
+      internalID: 5767925985340196682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Backpack-11_7
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 600
+        width: 102
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f541148d32a9016b0800000000000000
+      internalID: -5327588880436620193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Backpack-11_8
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 600
+        width: 102
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 250d0abaf13cf41e0800000000000000
+      internalID: -2211334351224778670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Backpack-11_9
+      rect:
+        serializedVersion: 2
+        x: 677
+        y: 600
+        width: 103
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f039f8916c6746a10800000000000000
+      internalID: 1901775535861633807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Backpack-11_10
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 461
+        width: 103
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80722c118c3356f40800000000000000
+      internalID: 5721035836028495624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Backpack-11_11
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 461
+        width: 103
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f54b36faad198aa0800000000000000
+      internalID: -6158358395339717135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Backpack-11_12
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 461
+        width: 102
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37ce991ddc2318720800000000000000
+      internalID: 2846612299041074291
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Backpack-11_13
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 461
+        width: 102
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48482f783c06d9c30800000000000000
+      internalID: 4367753606534956164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Backpack-11_14
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 321
+        width: 103
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e386079c82da4d90800000000000000
+      internalID: -7112641160207236124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Backpack-11_15
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 321
+        width: 103
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd851ef192fc8fcf0800000000000000
+      internalID: -218196806391998241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Backpack-11_16
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 321
+        width: 102
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc1d91383ce915cf0800000000000000
+      internalID: -265256340482829876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Backpack-11_17
+      rect:
+        serializedVersion: 2
+        x: 550
+        y: 321
+        width: 102
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fcc3bdf18b59e4070800000000000000
+      internalID: 8092570198472342735
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Backpack-11_18
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 182
+        width: 103
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1bf2f57d559beb700800000000000000
+      internalID: 558087182177218481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Backpack-11_19
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 182
+        width: 103
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0aca3b62d015107f0800000000000000
+      internalID: -648147754438906720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Backpack-11_20
+      rect:
+        serializedVersion: 2
+        x: 421
+        y: 182
+        width: 102
+        height: 119
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6781a109d61c05c20800000000000000
+      internalID: 3193264812118906998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      UI_Backpack-11_0: 6991873624079926201
+      UI_Backpack-11_1: -1793340364209094345
+      UI_Backpack-11_10: 5721035836028495624
+      UI_Backpack-11_11: -6158358395339717135
+      UI_Backpack-11_12: 2846612299041074291
+      UI_Backpack-11_13: 4367753606534956164
+      UI_Backpack-11_14: -7112641160207236124
+      UI_Backpack-11_15: -218196806391998241
+      UI_Backpack-11_16: -265256340482829876
+      UI_Backpack-11_17: 8092570198472342735
+      UI_Backpack-11_18: 558087182177218481
+      UI_Backpack-11_19: -648147754438906720
+      UI_Backpack-11_2: 169394879675252941
+      UI_Backpack-11_20: 3193264812118906998
+      UI_Backpack-11_3: -4805587502642435962
+      UI_Backpack-11_4: 3518556163580830645
+      UI_Backpack-11_5: 7919860259697960502
+      UI_Backpack-11_6: 5767925985340196682
+      UI_Backpack-11_7: -5327588880436620193
+      UI_Backpack-11_8: -2211334351224778670
+      UI_Backpack-11_9: 1901775535861633807
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

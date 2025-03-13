@@ -33,6 +33,25 @@ public static class GameManager
         }
     }
 
+    // FOR TESTING ONLY
+    public static void LoadDay1BlockData() {
+        blockMaxSize = 20;
+        blockMaxGroupSize = new int[] {10,5,5};
+        blockGridArray = new int[][] {
+            new int[] {-1, -1,  0,  0,  0, -1},
+            new int[] {-1,  0,  0,  0,  0, -1},
+            new int[] {-1,  0,  0,  0, -2, -1},
+            new int[] { 0,  0,  0,  0, -2,  0},
+            new int[] { 0,  0,  0,  0,  0,  0}
+        };
+        blockXOffset = 4;
+        blockYOffset = 3;
+        blockSpawnList = new BlockType[] {
+            BlockType.apple(), BlockType.noodle(), BlockType.apple(),
+            BlockType.chickenLeg(), BlockType.rice(), BlockType.noodle()
+        };
+    }
+
     public static void LoadBlockScene() {
         if (currentDay == 1) {
             blockMaxSize = 20;

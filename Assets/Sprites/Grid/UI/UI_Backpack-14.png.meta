@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 1b369bec42b4547e7b79ea4585c4adee
+guid: 8b84cde68e1574ff888cd11762e054b1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 9135130128162984572
-    second: rice_0
+      213: -6241568148953508049
+    second: UI_Backpack-14_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -51,7 +51,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -113,23 +113,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: rice_0
+      name: UI_Backpack-14_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 24
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 1203
+        y: 833
+        width: 500
+        height: 26
+      alignment: 4
+      pivot: {x: 0, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c729f1a937086ce70800000000000000
-      internalID: 9135130128162984572
+      spriteID: f27db3876de7169a0800000000000000
+      internalID: -6241568148953508049
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 133342da109fa4eca857ffad11fa2a21
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      rice_0: 9135130128162984572
+      UI_Backpack-14_0: -6241568148953508049
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

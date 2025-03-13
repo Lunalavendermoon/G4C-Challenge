@@ -21,7 +21,8 @@ public class BlockScript : MonoBehaviour
 
     public Sprite appleSprite;
     public Sprite riceSprite;
-    public Sprite chickenSprite;
+    public Sprite noodleSprite;
+    public Sprite chickenLegSprite;
 
     public void initBlock(int id, BlockType type, BlockLevelManagerScript levelManager, GridScript grid) {
         this.id = id;
@@ -39,8 +40,11 @@ public class BlockScript : MonoBehaviour
             case "rice":
                 renderer.sprite = riceSprite;
                 break;
+            case "noodle":
+                renderer.sprite = noodleSprite;
+                break;
             case "chicken leg":
-                renderer.sprite = chickenSprite;
+                renderer.sprite = chickenLegSprite;
                 break;
             default:
                 renderer.sprite = appleSprite;
@@ -123,9 +127,10 @@ public class BlockScript : MonoBehaviour
                 levelManager.playerAddBlock(id);
             }
             // snap to grid
-            transform.position = grid.snapToGrid(getSpriteTopLeft()) + new Vector3(
-                blockType.shape[0].Length / 2.0f,
-                orientation % 2 == 0 ? 0 : -Math.Abs(blockType.shape.Length - blockType.shape[0].Length) / 2.0f
+            transform.position = grid.snapToGrid(getSpriteTopLeft())
+            + new Vector3(
+                blockType.shape[0].Length / 4.0f,
+                orientation % 2 == 0 ? 0 : -Math.Abs(blockType.shape.Length - blockType.shape[0].Length) / 4.0f
             );
         } else {
             // TODO send error message
