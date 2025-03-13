@@ -40,26 +40,13 @@ public class BlockLevelManagerScript : MonoBehaviour
 
         BlockType[] blocksToSpawn = GameManager.blockSpawnList;
 
-        float yveg = 1.0f, yprot = -1.5f, ycarb = 2.5f;
+        float ycarb = 2.5f;
         
         // BLOCK ID MUST BE 1 OR GREATER
-        int vegCount = 0, carbCount = 0, protCount = 0, id = 1;
+        int id = 1;
         foreach (BlockType b in blocksToSpawn) {
-            // spawnBlock(i + 1, blocksToSpawn[i], new Vector3(-3, 5 - (1.5f*(i+1)), 0));
-            switch (b.foodGroup) {
-                case "veg":
-                    spawnBlock(id++, b, vegCount++, yveg, 5);
-                    break;
-                case "protein":
-                    spawnBlock(id++, b, protCount++, yprot, 4);
-                    break;
-                case "carb":
-                    spawnBlock(id++, b, carbCount++, ycarb, 5);
-                    break;
-                default:
-                    Debug.Log("Invalid food group " + b.foodGroup);
-                    break;
-            }
+            spawnBlock(id, b, id - 1, ycarb);
+            id++;
         }
 
         // TODO placeholder grid array - should put this in central static class
@@ -69,9 +56,17 @@ public class BlockLevelManagerScript : MonoBehaviour
         updateUI();
     }
     
-    void spawnBlock(int id, BlockType type, int count, float yoffset, int rowmax) {
-        Vector3 position = new Vector3(-7.0f + 1.2f * (count % rowmax), yoffset + 1.5f * (count / rowmax));
-        GameObject block = Instantiate(blockPrefab, position, Quaternion.identity);
+    void spawnBlock(int id, BlockType type, int count, float yoffset) {
+        int x = count < 15 ? count % 5 : (count - 15) % 4;
+        int y = count < 15 ? count / 5 : 3 + (count - 15) / 4;
+        Vector3 position = new Vector3(-7.0f + 1.3f * x, yoffset - 1.4f * y);
+        Vector3 jitter;
+        if (count == 4) {
+            jitter = Vector3.zero;
+        } else {
+            jitter = new Vector3(Random.Range(-0.1f, 0.1f), Random.Range(-0.1f, 0.1f));
+        }
+        GameObject block = Instantiate(blockPrefab, position + jitter, Quaternion.identity);
         block.GetComponent<BlockScript>().initBlock(id, type, this, grid);
         blocks.Add(id, block);
     }

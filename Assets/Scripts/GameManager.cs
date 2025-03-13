@@ -48,7 +48,13 @@ public static class GameManager
         blockYOffset = 3;
         blockSpawnList = new BlockType[] {
             BlockType.apple(), BlockType.noodle(), BlockType.apple(),
-            BlockType.chickenLeg(), BlockType.rice(), BlockType.noodle()
+            BlockType.noodle(), BlockType.apple(), BlockType.noodle(),
+            BlockType.noodle(), BlockType.apple(), BlockType.noodle(),
+            BlockType.noodle(), BlockType.apple(), BlockType.noodle(),
+            BlockType.noodle(), BlockType.apple(), BlockType.noodle(),
+            BlockType.noodle(), BlockType.apple(), BlockType.noodle(),
+            BlockType.noodle(), BlockType.apple(), BlockType.noodle(),
+            BlockType.noodle(), BlockType.apple()
         };
     }
 
