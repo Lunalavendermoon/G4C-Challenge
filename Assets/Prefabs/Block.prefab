@@ -86,7 +86,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!61 &2333462002780812954
@@ -148,6 +148,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   appleSprite: {fileID: 7293598183456022363, guid: 6932cccfd1bca4931b8b2e58b1fff6cf, type: 3}
-  riceSprite: {fileID: 9135130128162984572, guid: 1b369bec42b4547e7b79ea4585c4adee, type: 3}
+  riceSprite: {fileID: -3491839630117010820, guid: 6337635ac3fdc491c8e4538c345e7713, type: 3}
   noodleSprite: {fileID: 307049234662581677, guid: 0bb2864b7cf5041078e85d8203a95ecd, type: 3}
-  chickenLegSprite: {fileID: 8678448789981272047, guid: afc3cee2748e04e548e59ea6cfb1b7a6, type: 3}
+  chickenLegSprite: {fileID: 5336855417275088078, guid: b932df228e527477593f2e037fc1db88, type: 3}

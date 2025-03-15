@@ -111,7 +111,7 @@ public class BlockLevelManagerScript : MonoBehaviour
     }
 
     void updateUI() {
-        sizeBar.transform.localScale = new Vector3(((float)size) / maxSize, 1, 1);
+        sizeBar.transform.localScale = new Vector3(0.93f * Mathf.Min(((float)size) / maxSize, 1), 0.93f, 1);
         vegText.SetText(nutrition[0] + "/" + maxNutrition[0]);
         carbText.SetText(nutrition[1] + "/" + maxNutrition[1]);
         proteinText.SetText(nutrition[2] + "/" + maxNutrition[2]);
