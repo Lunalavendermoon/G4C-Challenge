@@ -118,25 +118,12 @@ public class BlockLevelManagerScript : MonoBehaviour
     }
 
     public void selectBlock(int id) {
-        if (selectedBlock != -1) {
-            // TODO deselect previous
-        }
         selectedBlock = id;
         blocks[id].GetComponent<Renderer>().sortingOrder = orderCount++;
     }
 
-    public void flipBlock(bool isHorizontal) {
-        if (selectedBlock < 0) {
-            return;
-        }
-        getBlockScript(selectedBlock).flip(isHorizontal);
-    }
-
-    public void rotateBlock() {
-        if (selectedBlock < 0) {
-            return;
-        }
-        getBlockScript(selectedBlock).rotate();
+    public void deselectBlock(int id) {
+        selectedBlock = -1;
     }
 
     // Update is called once per frame

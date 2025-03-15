@@ -125,6 +125,7 @@ public class BlockScript : MonoBehaviour
                 isOnGrid = true;
                 grid.addBlock(id, getSpriteTopLeft(), blockType);
                 levelManager.playerAddBlock(id);
+                levelManager.deselectBlock(id);
             }
             // snap to grid
             transform.position = grid.snapToGrid(getSpriteTopLeft())
@@ -138,6 +139,9 @@ public class BlockScript : MonoBehaviour
     }
 
     public void flip(bool isHorizontal) {
+        if (isOnGrid) {
+            return;
+        }
         bool[][] oldShape = blockType.shape;
 
         bool[][] shape = new bool[oldShape.Length][];
@@ -169,13 +173,14 @@ public class BlockScript : MonoBehaviour
         } else {
             renderer.flipY = !renderer.flipY;
         }
-        if (isOnGrid) {
-            removeFromGrid();
-            makeTransparent();
-        }
+        grid.drawDropShadow(getSpriteTopLeft(), blockType);
     }
 
     public void rotate() {
+        if (isOnGrid) {
+            return;
+        }
+
         bool[][] oldShape = blockType.shape;
 
         int rows = oldShape.Length, cols = oldShape[0].Length;
@@ -191,9 +196,6 @@ public class BlockScript : MonoBehaviour
         blockType.shape = shape;
         orientation = (orientation + 1) % 4;
         transform.Rotate(0, 0, -90f);
-        if (isOnGrid) {
-            removeFromGrid();
-            makeTransparent();
-        }
+        grid.drawDropShadow(getSpriteTopLeft(), blockType);
     }
 }
