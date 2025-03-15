@@ -5,8 +5,7 @@ public class BlockScript : MonoBehaviour
 {
     BlockLevelManagerScript levelManager;
     GridScript grid;
-
-    SpriteRenderer renderer;
+    new SpriteRenderer renderer;
 
     public int id {get; set;}
 
