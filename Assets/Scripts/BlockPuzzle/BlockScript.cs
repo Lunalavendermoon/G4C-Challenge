@@ -18,12 +18,16 @@ public class BlockScript : MonoBehaviour
 
     int orientation = 0;
 
+    float scalefact;
+
+    float xoffset;
+
     public Sprite appleSprite;
     public Sprite riceSprite;
     public Sprite noodleSprite;
     public Sprite chickenLegSprite;
 
-    public void initBlock(int id, BlockType type, BlockLevelManagerScript levelManager, GridScript grid) {
+    public void initBlock(int id, BlockType type, BlockLevelManagerScript levelManager, GridScript grid, int scaling) {
         this.id = id;
         isOnGrid = false;
         blockType = type;
@@ -50,6 +54,16 @@ public class BlockScript : MonoBehaviour
                 break;
         }
 
+
+        if (scaling == 3) {
+            transform.localScale = new Vector3(1.5f,1.5f,1);
+            scalefact = 0.75f;
+            xoffset = 0.5f;
+        } else {
+            scalefact = 0.5f;
+            xoffset = 0;
+        }
+
         Vector2 S = renderer.sprite.bounds.size;
         gameObject.GetComponent<BoxCollider2D>().size = S;
     }
@@ -61,7 +75,7 @@ public class BlockScript : MonoBehaviour
         levelManager.selectBlock(id);
     }
 
-    Vector3 getSpriteTopLeft() {
+    public Vector3 getSpriteTopLeft() {
         switch (orientation) {
             case 0:
                 return GetComponent<Renderer>().transform.TransformPoint(new Vector3(renderer.sprite.bounds.min.x, renderer.sprite.bounds.max.y, 0));
@@ -127,10 +141,10 @@ public class BlockScript : MonoBehaviour
                 levelManager.deselectBlock(id);
             }
             // snap to grid
-            transform.position = grid.snapToGrid(getSpriteTopLeft())
+            transform.position = (grid.snapToGrid(getSpriteTopLeft()) * scalefact)
             + new Vector3(
-                blockType.shape[0].Length / 4.0f,
-                orientation % 2 == 0 ? 0 : -Math.Abs(blockType.shape.Length - blockType.shape[0].Length) / 4.0f
+                blockType.shape[0].Length / (2.0f / scalefact) + xoffset,
+                orientation % 2 == 0 ? 0 : -Math.Abs(blockType.shape.Length - blockType.shape[0].Length) / (2.0f / scalefact)
             );
         } else {
             // TODO send error message

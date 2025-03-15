@@ -44,7 +44,7 @@ public class GridScript : MonoBehaviour
 
     public Vector3 snapToGrid(Vector3 world) {
         Vector3Int og = tilemap.WorldToCell(world);
-        return new Vector3(og.x / 2.0f, og.y / 2.0f);
+        return new Vector3(og.x, og.y);
     }
 
     public Vector3Int worldToArray(Vector3 world) {

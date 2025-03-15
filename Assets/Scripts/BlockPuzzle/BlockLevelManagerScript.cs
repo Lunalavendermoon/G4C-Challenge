@@ -9,9 +9,15 @@ public class BlockLevelManagerScript : MonoBehaviour
 
     public GameObject gameGrid;
 
+    // 2.0f for big cell, 4.0f for small cell
+    public int scalefact;
+
     public TMP_Text vegText;
     public TMP_Text proteinText;
     public TMP_Text carbText;
+
+    public new Camera camera;
+    public TMP_Text blockLabel;
 
     public GameObject sizeBar;
 
@@ -30,6 +36,8 @@ public class BlockLevelManagerScript : MonoBehaviour
 
     void Start()
     {
+        blockLabel.text = "";
+
         GameManager.LoadDay1BlockData();
 
         maxSize = GameManager.blockMaxSize;
@@ -59,14 +67,19 @@ public class BlockLevelManagerScript : MonoBehaviour
         int x = count < 15 ? count % 5 : (count - 15) % 4;
         int y = count < 15 ? count / 5 : 3 + (count - 15) / 4;
         Vector3 position = new Vector3(-7.0f + 1.3f * x, yoffset - 1.4f * y);
+        if (scalefact == 3) {
+            x = count < 12 ? count % 3 : (count - 12) % 2;
+            y = count < 12 ? count / 3 : 4 + (count - 12) / 2;
+            position = new Vector3(-6.0f + 1.7f * x, yoffset - 1.7f * y);
+        }
         Vector3 jitter;
-        if (count == 4) {
+        if (count == 4 && scalefact == 4) {
             jitter = Vector3.zero;
         } else {
             jitter = new Vector3(Random.Range(-0.1f, 0.1f), Random.Range(-0.1f, 0.1f));
         }
         GameObject block = Instantiate(blockPrefab, position + jitter, Quaternion.identity);
-        block.GetComponent<BlockScript>().initBlock(id, type, this, grid);
+        block.GetComponent<BlockScript>().initBlock(id, type, this, grid, scalefact);
         blocks.Add(id, block);
     }
 
@@ -119,10 +132,12 @@ public class BlockLevelManagerScript : MonoBehaviour
 
     public void selectBlock(int id) {
         selectedBlock = id;
+        blockLabel.text = getBlockScript(id).blockType.name;
         blocks[id].GetComponent<Renderer>().sortingOrder = orderCount++;
     }
 
     public void deselectBlock(int id) {
+        blockLabel.text = "";
         selectedBlock = -1;
     }
 
@@ -130,6 +145,9 @@ public class BlockLevelManagerScript : MonoBehaviour
     void Update()
     {
         if (selectedBlock != -1) {
+            Vector3 anchor = getBlockScript(selectedBlock).getSpriteTopLeft();
+            Vector3 center = blocks[selectedBlock].transform.position;
+            blockLabel.transform.position = camera.WorldToScreenPoint(new Vector3(center.x, anchor.y + 0.1f, center.z));
             // space = confirm placement
             // R = rotate CW
             // D,F = flip horiz,vert

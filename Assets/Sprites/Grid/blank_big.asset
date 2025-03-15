@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 13312, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: dropshadow_actual
+  m_Name: blank_big
   m_EditorClassIdentifier: 
-  m_Sprite: {fileID: 3369983816852948552, guid: 46784ed3953b34c269742fca7e1ca499, type: 3}
+  m_Sprite: {fileID: -2720922381176439266, guid: 803829a697c774487a13733e5ba8230e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1

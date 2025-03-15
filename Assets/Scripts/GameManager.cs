@@ -44,17 +44,13 @@ public static class GameManager
             new int[] { 0,  0,  0,  0, -2,  0},
             new int[] { 0,  0,  0,  0,  0,  0}
         };
-        blockXOffset = 6;
+        blockXOffset = 2;
         blockYOffset = 1;
         blockSpawnList = new BlockType[] {
             BlockType.apple(), BlockType.noodle(), BlockType.apple(),
             BlockType.noodle(), BlockType.apple(), BlockType.rice(),
             BlockType.chickenLeg(), BlockType.apple(), BlockType.noodle(),
-            BlockType.noodle(), BlockType.apple(), BlockType.rice(),
-            BlockType.chickenLeg(), BlockType.apple(), BlockType.noodle(),
-            BlockType.noodle(), BlockType.apple(), BlockType.rice(),
-            BlockType.chickenLeg(), BlockType.apple(), BlockType.noodle(),
-            BlockType.noodle(), BlockType.apple()
+            BlockType.noodle(), BlockType.apple(), BlockType.rice()
         };
     }
 
