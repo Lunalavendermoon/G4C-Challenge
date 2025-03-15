@@ -1,16 +1,21 @@
 using System.Collections;
+using Unity.Properties;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 
 public class PlayerMovement : MonoBehaviour
 {
     private SpriteRenderer spriteRenderer;
     [SerializeField] float moveDistance = 0.5f;
-    private float foodGiven = 0;
+    private float foodGiven = 4;
     private int status = 1;
     private bool canMove = true;
     [SerializeField] bool isRiding = false;
     private Vector2 railRoadDirection = Vector2.up;
+    [SerializeField] int step = 29;
+    [SerializeField] int foodOwn = 4;
+
 
     private void Start()
     {
@@ -41,12 +46,6 @@ public class PlayerMovement : MonoBehaviour
             moveeee(new Vector3(moveDistance, 0f, 0f));
         }
 
-
-
-
-
-
-
         if (foodGiven < 2.5)
         {
             status = 1;
@@ -69,18 +68,19 @@ public class PlayerMovement : MonoBehaviour
             canMove = false;
         }
 
-        Debug.Log(railRoadDirection);
-
 
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
             foodGiven += 1;
-            Debug.Log(foodGiven);
         }
         else if (Input.GetKeyDown(KeyCode.DownArrow))
         {
             foodGiven -= 1;
-            Debug.Log(foodGiven);
+        }
+
+        if (step == 0)
+        {
+            canMove = false;
         }
     }
 
@@ -121,6 +121,7 @@ public class PlayerMovement : MonoBehaviour
                 return;
             }
         }
+        step -= 1;
         StartCoroutine(leap(destination));
     }
 
@@ -154,5 +155,15 @@ public class PlayerMovement : MonoBehaviour
             isRiding = false;
             canMove = true;
         }
+    }
+
+    public void giveFood()
+    {
+        foodGiven += 1;
+    }
+
+    public int getFood()
+    {
+        return foodOwn;
     }
 }
