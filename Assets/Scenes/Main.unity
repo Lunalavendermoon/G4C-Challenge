@@ -826,7 +826,7 @@ MonoBehaviour:
   image2: {fileID: 267206210}
   background: {fileID: 441137507}
   disabledUI: []
-  dialogue: {fileID: 11400000, guid: bbec661eb0a3e1545a58772387508e9d, type: 2}
+  dialogue: {fileID: 11400000, guid: 69ac8fc2d17ee4f4f91f4e70805bea87, type: 2}
 --- !u!4 &1386758527
 Transform:
   m_ObjectHideFlags: 0
