@@ -23,9 +23,18 @@ public class BlockScript : MonoBehaviour
     float xoffset;
 
     public Sprite appleSprite;
-    public Sprite riceSprite;
-    public Sprite noodleSprite;
+    public Sprite baconSprite;
+    public Sprite beanSprite;
+    public Sprite cabbageSprite;
+    public Sprite carrotSprite;
     public Sprite chickenLegSprite;
+    public Sprite cornSprite;
+    public Sprite cucumberSprite;
+    public Sprite eggplantSprite;
+    public Sprite hamSprite;
+    public Sprite mushroomSprite;
+    public Sprite noodleSprite;
+    public Sprite riceSprite;
 
     public void initBlock(int id, BlockType type, BlockLevelManagerScript levelManager, GridScript grid, int scaling) {
         this.id = id;
@@ -40,14 +49,41 @@ public class BlockScript : MonoBehaviour
             case "apple":
                 renderer.sprite = appleSprite;
                 break;
-            case "rice":
-                renderer.sprite = riceSprite;
+            case "bacon":
+                renderer.sprite = baconSprite;
+                break;
+            case "bean":
+                renderer.sprite = beanSprite;
+                break;
+            case "cabbage":
+                renderer.sprite = cabbageSprite;
+                break;
+            case "carrot":
+                renderer.sprite = carrotSprite;
+                break;
+            case "chicken leg":
+                renderer.sprite = chickenLegSprite;
+                break;
+            case "corn":
+                renderer.sprite = cornSprite;
+                break;
+            case "cucumber":
+                renderer.sprite = cucumberSprite;
+                break;
+            case "eggplant":
+                renderer.sprite = eggplantSprite;
+                break;
+            case "ham":
+                renderer.sprite = hamSprite;
+                break;
+            case "mushroom":
+                renderer.sprite = mushroomSprite;
                 break;
             case "noodle":
                 renderer.sprite = noodleSprite;
                 break;
-            case "chicken leg":
-                renderer.sprite = chickenLegSprite;
+            case "rice":
+                renderer.sprite = riceSprite;
                 break;
             default:
                 renderer.sprite = appleSprite;

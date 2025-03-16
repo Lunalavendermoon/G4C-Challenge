@@ -47,10 +47,11 @@ public static class GameManager
         blockXOffset = 2;
         blockYOffset = 1;
         blockSpawnList = new BlockType[] {
-            BlockType.apple(), BlockType.noodle(), BlockType.apple(),
-            BlockType.noodle(), BlockType.apple(), BlockType.rice(),
-            BlockType.chickenLeg(), BlockType.apple(), BlockType.noodle(),
-            BlockType.noodle(), BlockType.apple(), BlockType.rice()
+            BlockType.apple(), BlockType.bacon(), BlockType.bean(),
+            BlockType.cabbage(), BlockType.carrot(), BlockType.chickenLeg(),
+            BlockType.corn(), BlockType.cucumber(), BlockType.eggplant(),
+            BlockType.ham(), BlockType.mushroom(), BlockType.noodle(),
+            BlockType.rice()
         };
     }
 

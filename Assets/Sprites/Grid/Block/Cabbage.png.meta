@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: b932df228e527477593f2e037fc1db88
+guid: 96e596172562242aa9ef841d8edd6413
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5336855417275088078
-    second: Chicken_0
+      213: 159068718711766808
+    second: Cabbage_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,12 +113,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Chicken_0
+      name: Cabbage_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 2048
+        width: 3033
         height: 2048
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: eccfc44e9b1501a40800000000000000
-      internalID: 5336855417275088078
+      spriteID: 81ff0b92820253200800000000000000
+      internalID: 159068718711766808
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Chicken_0: 5336855417275088078
+      Cabbage_0: 159068718711766808
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

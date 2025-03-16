@@ -70,7 +70,7 @@ public class BlockLevelManagerScript : MonoBehaviour
         if (scalefact == 3) {
             x = count < 12 ? count % 3 : (count - 12) % 2;
             y = count < 12 ? count / 3 : 4 + (count - 12) / 2;
-            position = new Vector3(-6.0f + 1.7f * x, yoffset - 1.7f * y);
+            position = new Vector3(-6.0f + 1.7f * x, yoffset - 1.3f * y);
         }
         Vector3 jitter;
         if (count == 4 && scalefact == 4) {

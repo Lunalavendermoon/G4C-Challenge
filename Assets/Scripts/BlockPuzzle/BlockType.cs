@@ -68,9 +68,7 @@ public class BlockType {
 
     public static BlockType cucumber() {
         return new BlockType("cucumber", "veg", new bool[][] {
-            new bool[] {true},
-            new bool[] {true},
-            new bool[] {true}
+            new bool[] {true, true, true}
         });
     }
 
@@ -129,9 +127,7 @@ public class BlockType {
 
     public static BlockType corn() {
         return new BlockType("corn", "carb", new bool[][] {
-            new bool[] {true},
-            new bool[] {true},
-            new bool[] {true}
+            new bool[] {true, true, true},
         });
     }
 
