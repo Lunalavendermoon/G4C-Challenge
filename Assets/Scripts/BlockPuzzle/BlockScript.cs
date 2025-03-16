@@ -180,7 +180,7 @@ public class BlockScript : MonoBehaviour
             transform.position = (grid.snapToGrid(getSpriteTopLeft()) * scalefact)
             + new Vector3(
                 blockType.shape[0].Length / (2.0f / scalefact) + xoffset,
-                orientation % 2 == 0 ? 0 : -Math.Abs(blockType.shape.Length - blockType.shape[0].Length) / (2.0f / scalefact)
+                orientation % 2 == 0 ? 0 : -Math.Min(1, Math.Abs(blockType.shape.Length - blockType.shape[0].Length)) / (2.0f / scalefact)
             );
         } else {
             // TODO send error message
