@@ -16,6 +16,7 @@ MonoBehaviour:
     dialogues:
     - y:Sir-
     - Father:Are you here to yell at me about slacking off again!?
+    - "y:Uhhh\u2026sir?"
     - "He doesn\u2019t seem to be very lucid. You smell booze."
     - "Father:I just\u2026Jane won\u2019t be able to go to school anymore\u2026Just
       give me a week"

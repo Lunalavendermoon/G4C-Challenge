@@ -31,6 +31,8 @@ MonoBehaviour:
       but\u2026these\u2026are getting rerouted?0118l"
     - You are about to ask the worker, but you notice their nervous expression.0118r
     - "Well, it\u2019s not fair to pressure the workers, who are probably just doing
-      their job. It\u2019s better to question the source..0118l"
+      their job.0118l"
+    - y:Well, uh, thanks for the help. Let me know if you need help with anything.0118l
+    - "w:\u20260118r"
     nextDialogue: {fileID: 11400000, guid: bbec661eb0a3e1545a58772387508e9d, type: 2}
     bgNum: 2

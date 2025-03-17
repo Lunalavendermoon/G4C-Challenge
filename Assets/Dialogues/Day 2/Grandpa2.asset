@@ -14,20 +14,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RootNode:
     dialogues:
-    - y:Sir.0109l
-    - "Grandpa:There\u2019s no need to be so formal with me, young man.0109r"
+    - y:Sir.
+    - "Grandpa:There\u2019s no need to be so formal with me, young man."
     - "y:I just call everyone the same way. Here\u2019s your food, sir. How was the
-      cold medicine?0109l"
+      cold medicine?"
     - "Grandpa:It was helpful, thank you. But really, there\u2019s no need to waste
-      resources on me. Rather, I see you\u2019ve been hanging around Clare.0109r"
-    - "y:Yes. She\u2019s very sweet. Are you familiar with her?0209l"
+      resources on me. Rather, I see you\u2019ve been hanging around Clare."
+    - "y:Yes. She\u2019s very sweet. Are you familiar with her?"
     - "Grandpa:That girl\u2026it\u2019s truly unfair. She doesn\u2019t deserve to
       suffer so much at such a young age. She doesn\u2019t speak very well; no one
-      was ever willing to help her. I just have one request: Please look after her.0109r"
-    - y:Of course, you can trust me on that.0109l
-    - Grandpa:*cough**cough*0409r
-    - The old man coughs up blood.0409r
-    - y:Sir!0409l
-    - "Grandpa:You should leave. You\u2019re on a timer too, aren\u2019t you?0309r"
+      was ever willing to help her. I just have one request: Please look after her."
+    - y:Of course, you can trust me on that.
+    - Grandpa:*cough**cough*
+    - The old man coughs up blood.
+    - y:Sir!
+    - "Grandpa:You should leave. You\u2019re on a timer too, aren\u2019t you?"
     nextDialogue: {fileID: 0}
     bgNum: 0

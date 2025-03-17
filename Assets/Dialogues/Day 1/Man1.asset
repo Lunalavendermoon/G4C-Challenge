@@ -23,6 +23,8 @@ MonoBehaviour:
       sure to eat. It\u2019s-"
     - "Middle-aged man:I don\u2019t want it. Who knows what kind of hidden agenda
       you have?"
+    - "Middle-aged man:I\u2019m doing my job just fine. Go bother someone else who\u2019s
+      actually slacking off."
     - "The man angrily turns back to work. You can sense that he doesn\u2019t want
       to engage in conversation anymore. You decide to leave the food beside him."
     nextDialogue: {fileID: 0}
