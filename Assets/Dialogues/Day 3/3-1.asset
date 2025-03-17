@@ -18,13 +18,12 @@ MonoBehaviour:
     - "You are invited by local politicians to attend a formal event. Apparently
       it was to celebrate one of the politician\u2019s successful financial investments.0100l"
     - Lavish dishes are served.0100l
-    - Lavish dishes are served.0100l
     - "p:You see? We\u2019re all about generosity. Our city thrives because of good
-      leadership."
-    - "y:This food\u2026 where did it come from?"
-    - p:Imported. Only the best.
+      leadership.0111r"
+    - "y:This food\u2026 where did it come from?0111l"
+    - p:Imported. Only the best.0111r
     - "You eye the foods carefully. Beyond the fancy toppings and condiments, the
-      base materials\u2026"
-    - "There\u2019s no mistake, after all. This is where the missing food went."
+      base materials\u20260111l"
+    - "There\u2019s no mistake, after all. This is where the missing food went.0311l"
     nextDialogue: {fileID: 0}
     bgNum: 0
