@@ -14,30 +14,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RootNode:
     dialogues:
-    - You approach Clare, but she seems rather downtrodden.
-    - y:Are you okay?
-    - c:Grandpa left. With mom now.
+    - You approach Clare, but she seems rather downtrodden.0107r
+    - y:Are you okay?0207l
+    - c:Grandpa left. With mom now.0106r
     - "With her mother? But her mother is\u2026realization suddenly strikes you.
       You can\u2019t help but feel disbelief. That grandpa had been right there,
       speaking with you yesterday. But he\u2019s gone now. And you had promised him
-      to take care of Clare\u2026\r"
-    - c:Grandpa give food. To Clare.
-    - c:Clare give food. To others.
+      to take care of Clare...0406l"
+    - c:Grandpa give food. To Clare.0307r
+    - c:Clare give food. To others.0307r
     - "y:That\u2019s incredibly kind of you, Clare. But make sure you have been eating
-      well too."
-    - c:Farm. More food.
+      well too.0207l"
+    - c:Farm. More food.0205r
     - "y:I agree. If it is possible, I would love to start some sort of farm here
       to help out. But as far as I\u2019ve seen, there isn\u2019t any good place
-      for it."
+      for it.0205l"
     - "Clare gestures for you to follow her. She brings you to what seems to be a
       garbage dump. But as she parts some of the trash aside, you examine the soil
-      underneath and\u2026there is indeed potential."
+      underneath and\u2026there is indeed potential.0105r"
     - y:Wow, I never would have guessed. Thank you, Clare. I think I can definitely
-      do something with this. How did you find this?
-    - c:...Mom. Mom told Clare.
-    - y:...
-    - y:...She must have been a lovely woman.
-    - "c:Clare, I don\u2019t think any of you deserve this. I swear to you, I will
-      try my best to improve the situation here, no matter how long it takes me."
+      do something with this. How did you find this?0405l
+    - c:...Mom. Mom told Clare.0405r
+    - y:...0405l
+    - y:...She must have been a lovely woman.0405l
+    - "y:Clare, I don\u2019t think any of you deserve this. I swear to you, I will
+      try my best to improve the situation here, no matter how long it takes me.0305l"
     nextDialogue: {fileID: 11400000, guid: 42df1b1c6a0cb5e4f96b1b648e1b33b5, type: 2}
     bgNum: 0
