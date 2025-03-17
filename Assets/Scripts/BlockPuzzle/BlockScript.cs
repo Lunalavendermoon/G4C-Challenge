@@ -36,6 +36,8 @@ public class BlockScript : MonoBehaviour
     public Sprite noodleSprite;
     public Sprite riceSprite;
 
+    bool isEnabled = true;
+
     public void initBlock(int id, BlockType type, BlockLevelManagerScript levelManager, GridScript grid, int scaling) {
         this.id = id;
         isOnGrid = false;
@@ -104,11 +106,42 @@ public class BlockScript : MonoBehaviour
         gameObject.GetComponent<BoxCollider2D>().size = S;
     }
 
+    public void setEnabled(bool enabled) {
+        isEnabled = enabled;
+    }
+
     private void OnMouseDown() {
+        if (!isEnabled) {
+            return;
+        }
         makeTransparent();
         grid.clearTileMap();
         difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
         levelManager.selectBlock(id);
+    }
+
+    private void OnMouseDrag() {
+        if (!isEnabled) {
+            return;
+        }
+        transform.position = (Vector2) Camera.main.ScreenToWorldPoint(Input.mousePosition) - difference;
+        grid.drawDropShadow(getSpriteTopLeft(), blockType);
+    }
+
+    private void OnMouseUp() {
+        if (!isEnabled) {
+            return;
+        }
+        if (isOnGrid) {
+            removeFromGrid();
+        }
+        int status = grid.checkBlockPosition(id, getSpriteTopLeft(), blockType);
+        if (status == -1) {
+            transform.position = resetPosition;
+            makeOpaque();
+        } else {
+            makeTransparent();
+        }
     }
 
     public Vector3 getSpriteTopLeft() {
@@ -124,11 +157,6 @@ public class BlockScript : MonoBehaviour
             default:
                 return GetComponent<Renderer>().transform.TransformPoint(new Vector3(renderer.sprite.bounds.min.x, renderer.sprite.bounds.max.y, 0));
         };
-    }
-
-    private void OnMouseDrag() {
-        transform.position = (Vector2) Camera.main.ScreenToWorldPoint(Input.mousePosition) - difference;
-        grid.drawDropShadow(getSpriteTopLeft(), blockType);
     }
 
     void removeFromGrid() {
@@ -150,19 +178,6 @@ public class BlockScript : MonoBehaviour
         renderer.color = col;
     }
 
-    private void OnMouseUp() {
-        if (isOnGrid) {
-            removeFromGrid();
-        }
-        int status = grid.checkBlockPosition(id, getSpriteTopLeft(), blockType);
-        if (status == -1) {
-            transform.position = resetPosition;
-            makeOpaque();
-        } else {
-            makeTransparent();
-        }
-    }
-
     public void placeBlock() {
         int status = grid.checkBlockPosition(id, getSpriteTopLeft(), blockType);
         if (status == 0) {
@@ -174,7 +189,7 @@ public class BlockScript : MonoBehaviour
                 isOnGrid = true;
                 grid.addBlock(id, getSpriteTopLeft(), blockType);
                 levelManager.playerAddBlock(id);
-                levelManager.deselectBlock(id);
+                levelManager.deselectBlock();
             }
             // snap to grid
             transform.position = (grid.snapToGrid(getSpriteTopLeft()) * scalefact)

@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using TMPro;
 using UnityEditor.ShaderGraph.Internal;
+using System;
 
 public class BlockLevelManagerScript : MonoBehaviour
 {
@@ -34,6 +35,8 @@ public class BlockLevelManagerScript : MonoBehaviour
     int[] nutrition = {0,0,0};
     int[] maxNutrition;
 
+    bool popupIsOpen = false;
+
     void Start()
     {
         blockLabel.text = "";
@@ -62,6 +65,22 @@ public class BlockLevelManagerScript : MonoBehaviour
 
         updateUI();
     }
+
+    public void setPopupStatus(bool status) {
+        if (status == popupIsOpen) {
+            return;
+        }
+        popupIsOpen = status;
+        deselectBlock();
+        foreach (var block in blocks.Values) {
+            block.GetComponent<BlockScript>().setEnabled(!status);
+        }
+    }
+
+    public void showHint() {
+        // TODO implement this
+        Debug.Log("show a hint");
+    }
     
     void spawnBlock(int id, BlockType type, int count, float yoffset) {
         int x = count < 15 ? count % 5 : (count - 15) % 4;
@@ -76,7 +95,7 @@ public class BlockLevelManagerScript : MonoBehaviour
         if (count == 4 && scalefact == 4) {
             jitter = Vector3.zero;
         } else {
-            jitter = new Vector3(Random.Range(-0.1f, 0.1f), Random.Range(-0.1f, 0.1f));
+            jitter = new Vector3(UnityEngine.Random.Range(-0.1f, 0.1f), UnityEngine.Random.Range(-0.1f, 0.1f));
         }
         GameObject block = Instantiate(blockPrefab, position + jitter, Quaternion.identity);
         block.GetComponent<BlockScript>().initBlock(id, type, this, grid, scalefact);
@@ -134,9 +153,24 @@ public class BlockLevelManagerScript : MonoBehaviour
         selectedBlock = id;
         blockLabel.text = getBlockScript(id).blockType.name;
         blocks[id].GetComponent<Renderer>().sortingOrder = orderCount++;
+        // this will probably never happen but yknow, just in case lol
+        if (orderCount == 30000) {
+            int minOrder = orderCount+1, maxOrder = 0;
+            foreach (var value in blocks.Values) {
+                if (value.GetComponent<Renderer>().sortingOrder == 0) {
+                    continue;
+                }
+                minOrder = Math.Min(value.GetComponent<Renderer>().sortingOrder, minOrder);
+            }
+            foreach (var value in blocks.Values) {
+                value.GetComponent<Renderer>().sortingOrder = minOrder;
+                maxOrder = Math.Max(value.GetComponent<Renderer>().sortingOrder, maxOrder);
+            }
+            orderCount = maxOrder + 1;
+        }
     }
 
-    public void deselectBlock(int id) {
+    public void deselectBlock() {
         blockLabel.text = "";
         selectedBlock = -1;
     }
