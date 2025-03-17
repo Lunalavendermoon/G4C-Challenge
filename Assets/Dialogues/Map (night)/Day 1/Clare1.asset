@@ -20,5 +20,5 @@ MonoBehaviour:
     - c:Thank you, mister.0108r
     - Your expression softens and you reach down to ruffle her hair.0208l
     - "y:Make sure to eat the food while it\u2019s fresh. I\u2019ll return with more.0208l"
-    nextDialogue: {fileID: 0}
+    nextDialogue: {fileID: 11400000, guid: 4242d91a920106d4ea25450968998d70, type: 2}
     bgNum: 1

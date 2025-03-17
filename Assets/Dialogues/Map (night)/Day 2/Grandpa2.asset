@@ -29,5 +29,5 @@ MonoBehaviour:
     - The old man coughs up blood.0409r
     - y:Sir!0409l
     - "Grandpa:You should leave. You\u2019re on a timer too, aren\u2019t you?0309r"
-    nextDialogue: {fileID: 0}
+    nextDialogue: {fileID: 11400000, guid: e61edc4cfbb876e43a042566e184ecbb, type: 2}
     bgNum: 0

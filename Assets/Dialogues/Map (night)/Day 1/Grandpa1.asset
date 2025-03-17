@@ -21,5 +21,5 @@ MonoBehaviour:
     - "Grandpa:Don\u2019t worry about me. If you truly are giving out food, give
       it to the children first. Old men like me have no future.0109r"
     - "y:Sir, please take it. I\u2019ll be giving out food to everyone.0109l"
-    nextDialogue: {fileID: 0}
+    nextDialogue: {fileID: 11400000, guid: 282a8134dfd3b0f4ca034b8543cb7930, type: 2}
     bgNum: 1
