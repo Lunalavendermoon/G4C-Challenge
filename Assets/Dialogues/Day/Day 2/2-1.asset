@@ -19,18 +19,18 @@ MonoBehaviour:
       What was causing this heavy proportion of malnourishment within the city?0000l
     - When you arrive, you see that the place is well-stocked, but something feels
       off.0100l
-    - "y:Canned goods, instant noodles, mass-produced white bread\u20260118l"
+    - "y:Canned goods, instant noodles, mass-produced white bread\u20260115l"
     - "y:Where\u2019s all the fresh food? There doesn\u2019t seem to be any protein
-      sources either.0118l"
+      sources either.0115l"
     - y:Even if there is enough food, this level of nutrition will still cause long-term
-      health issues.0118l
-    - "w:Look, I just do my job. I sort the food. Don\u2019t ask me.0118r"
+      health issues.0115l
+    - "w:Look, I just do my job. I sort the food. Don\u2019t ask me.0116r"
     - y:Then do you know where the distribution document is?0118l
-    - The food pantry worker reluctantly hands you a sheet of paper.0118r
+    - The food pantry worker reluctantly hands you a sheet of paper.0116r
     - "y:Hmm\u2026these labels suggest that many items are intended for public distribution,
-      but\u2026these\u2026are getting rerouted?0118l"
-    - You are about to ask the worker, but you notice their nervous expression.0118r
+      but\u2026these\u2026are getting rerouted?0115l"
+    - You are about to ask the worker, but you notice their nervous expression.0115r
     - "Well, it\u2019s not fair to pressure the workers, who are probably just doing
-      their job. It\u2019s better to question the source.0118l"
+      their job. It\u2019s better to question the source.0115l"
     nextDialogue: {fileID: 11400000, guid: bbec661eb0a3e1545a58772387508e9d, type: 2}
     bgNum: 2

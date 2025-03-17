@@ -14,17 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RootNode:
     dialogues:
-    - c:Mister!
-    - y:Hey.
-    - c:Here.
-    - She holds out something shiny towards you.
-    - "y:What\u2019s this?"
-    - "You tentatively take the object. It\u2019s a shiny bottle cap."
-    - c:Shiny. Found. Gift.
-    - c:Shiny. Found. Gifty:Is this a gift for me?
-    - The girl nods.
-    - "y:Thank you so much. I really appreciate it. You really didn\u2019t have to,
-      as I\u2019m just giving you guys what you deserved a long time ago."
-    - "y:Here\u2019s today\u2019s food. I\u2019ll be back tomorrow."
+    - c:Mister!0108r
+    - y:Hey.0208l
+    - c:Here.0208r
+    - She holds out something shiny towards you.0208r
+    - "y:What\u2019s this?0108l"
+    - "You tentatively take the object. It\u2019s a shiny bottle cap.0108l"
+    - c:Shiny. Found. Gift.0108r
+    - y:Is this a gift for me?0208l
+    - The girl nods.0208r
+    - y:Thank you so much. I really appreciate it.0208l
+    - "y:Here\u2019s today\u2019s food. I\u2019ll be back tomorrow.0205l"
     nextDialogue: {fileID: 11400000, guid: 70435dfba9978244c861a0a558cb0a28, type: 2}
     bgNum: 1

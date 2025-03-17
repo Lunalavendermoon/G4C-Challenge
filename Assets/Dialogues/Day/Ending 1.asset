@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RootNode:
     dialogues:
-    - "Food Bank Headquarters \u2013 Afternoon"
+    - "Food Bank Headquarters \u2013 Afternoon0000l"
     - "p:Hey, you! What\u2019s been going on? I heard part of the food supply was
-      missing last night."
-    - p:You better not have done anything behind my back.
+      missing last night.0312r"
+    - p:You better not have done anything behind my back.0312r
     - "p:Nevermind. I\u2019ll just go ask the workers. They\u2019ll know what\u2019s
-      up."
+      up.0312r"
     - "w:Sir, we checked the records. It seems there was a processing error. I don\u2019t
       think we can make any accusations based on the information we have right now."
     - p:What?
