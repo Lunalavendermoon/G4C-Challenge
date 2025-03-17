@@ -1,0 +1,49 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1996a6502e32979468f8865814e50378, type: 3}
+  m_Name: 1-2
+  m_EditorClassIdentifier: 
+  RootNode:
+    dialogues:
+    - "Outside the Food Bank \u2013 Afternoon0000l"
+    - "???:\u20260105r"
+    - "You notice a disheveled girl standing on the side of the street. Judging from
+      her condition, she probably hasn\u2019t eaten in days.0405r"
+    - You pull out a piece of bread from your bag and offer it to the girl.0105l
+    - ???:!0106r
+    - "y:It\u2019s okay. I\u2019m just trying to give you some food. Here, just take
+      it.0206l"
+    - The girl is still a little hesitant, but she slowly approaches you and tentatively
+      takes the bread from you.0207r
+    - ???:!!!0208r
+    - "The girl\u2019s face lights up as she happily bites into the bread.0208r"
+    - However, she eats too hurriedly and starts to cough.0406r
+    - "y:Hey, careful. Eating too fast isn\u2019t good. Here\u2019s some water.0206l"
+    - y:Do you have a name?0205l
+    - ???:N-name?0205r
+    - y:What should I call you?0205l
+    - "???:\u20260205r"
+    - y:Hm?0205l
+    - c:Clare.0205r
+    - "y:That\u2019s a beautiful name.0205l"
+    - "You smile gently, but you can see the guardedness in her eyes. It\u2019s as
+      if the kindness feels foreign to her.0205l"
+    - c:G-grandpa. There.0106r
+    - She points into what seems to be a dead end.0106r
+    - c:Follow. Help.0106r
+    - y:You want me to follow you? 0406l
+    - Clare nods.0107l
+    - "y:Okay, let\u2019s go.0105l"
+    - "Clare leads you to a narrow alleyway that you\u2019ve never noticed. After
+      a series of twists and turns, the sight you see shocks you.0405l"
+    nextDialogue: {fileID: 11400000, guid: ab26c3edb8d0a1e4b90ca2961b29f3e0, type: 2}
+    bgNum: 0

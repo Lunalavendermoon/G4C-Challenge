@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1996a6502e32979468f8865814e50378, type: 3}
+  m_Name: Father2
+  m_EditorClassIdentifier: 
+  RootNode:
+    dialogues:
+    - y:Sir-
+    - Father:Are you here to yell at me about slacking off again!?
+    - "He doesn\u2019t seem to be very lucid. You smell booze."
+    - "Father:I just\u2026Jane won\u2019t be able to go to school anymore\u2026Just
+      give me a week"
+    - "Father:I\u2019ll finish the work."
+    - "y:...Here. This is for you. If you don't mind me asking, Jane is\u2026"
+    - "Father:You\u2026You look rather young. Guess you don\u2019t have a family
+      you need to worry about yet, huh?"
+    - The man hastily snatched the food from your hands and began to leave.
+    - y:Wait. Take some extra.
+    nextDialogue: {fileID: 0}
+    bgNum: 0

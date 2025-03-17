@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1996a6502e32979468f8865814e50378, type: 3}
+  m_Name: Woman1
+  m_EditorClassIdentifier: 
+  RootNode:
+    dialogues:
+    - Woman:What do you want?0114r
+    - "y:Miss, here\u2019s some food. Don\u2019t worry, it\u2019s completely free.
+      No strings attached.0114l"
+    - "Woman:Don\u2019t come any closer.0114r"
+    - "The woman\u2019s gaze is cold.0114r"
+    - "y:Of course. I\u2019ll just\u2026leave the food here.0114l"
+    nextDialogue: {fileID: 11400000, guid: e61edc4cfbb876e43a042566e184ecbb, type: 2}
+    bgNum: 1

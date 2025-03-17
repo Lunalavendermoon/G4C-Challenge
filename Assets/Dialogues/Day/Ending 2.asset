@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1996a6502e32979468f8865814e50378, type: 3}
+  m_Name: Ending 2
+  m_EditorClassIdentifier: 
+  RootNode:
+    dialogues:
+    - "Food Bank Headquarters \u2013 Afternoon"
+    - "p:Hey, you! What\u2019s been going on? I heard part of the food supply was
+      missing last night."
+    - p:You better not have done anything behind my back.
+    - "p:Nevermind. I\u2019ll just go ask the workers. They\u2019ll know what\u2019s
+      up."
+    - 'w: Sir, I can testify. Yesterday, the president ordered me to leave and took
+      care of the supplies himself. I can tell you which specific boxes had not been
+      processed at that point.'
+    - "p: Ah\u2026I see."
+    - "p: It\u2019s really not that hard. Following instructions, I mean. But you
+      couldn\u2019t even do such a simple thing."
+    - 'y: So you insist on leaving your people to their doom?'
+    - "p: Well, it\u2019s none of your business anymore. You\u2019re fired."
+    - "y: What? You can\u2019t just-"
+    - "p: Why not? I\u2019m the one in charge here. Goodbye. You should go pack your
+      bags now."
+    nextDialogue: {fileID: 0}
+    bgNum: 0

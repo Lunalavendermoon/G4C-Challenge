@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1996a6502e32979468f8865814e50378, type: 3}
+  m_Name: 3-1
+  m_EditorClassIdentifier: 
+  RootNode:
+    dialogues:
+    - "Politician\u2019s Party \u2013 Evening0000l"
+    - "You are invited by local politicians to attend a formal event. Apparently
+      it was to celebrate one of the politician\u2019s successful financial investments.0100l"
+    - Lavish dishes are served.0100l
+    - "p:You see? We\u2019re all about generosity. Our city thrives because of good
+      leadership.0111r"
+    - "y:This food\u2026 where did it come from?0111l"
+    - p:Imported. Only the best.0111r
+    - "You eye the foods carefully. Beyond the fancy toppings and condiments, the
+      base materials\u20260111l"
+    - "There\u2019s no mistake, after all. This is where the missing food went.0311l"
+    nextDialogue: {fileID: 0}
+    bgNum: 0

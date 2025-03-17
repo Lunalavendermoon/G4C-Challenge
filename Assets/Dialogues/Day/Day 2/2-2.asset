@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1996a6502e32979468f8865814e50378, type: 3}
+  m_Name: 2-2
+  m_EditorClassIdentifier: 
+  RootNode:
+    dialogues:
+    - "Politician\u2019s Office \u2013 Noon0000l"
+    - "y:Today I took a look at the food pantry and discovered that there\u2019s
+      a heavy imbalance of nutrition-0110l"
+    - "p:People don\u2019t care about fancy meals. They need calories to survive,
+      that\u2019s it. We provide what we can.0310r"
+    - y:But malnutrition is making them sicker. They need more than just empty calories.
+      Their children are stunted, people are getting weaker-0310l
+    - "p:Oh, come on. We\u2019re giving them free food. They should be grateful.
+      It\u2019s not a gourmet restaurant.0312r"
+    - "p:Besides, did you not notice their ungrateful behavior? Work productivity
+      in the factories have been seriously declining. It\u2019s a shame, I was earning
+      so much from them.0312r"
+    - "y:The productivity problems are a product of malnourishment. Having food isn\u2019t
+      enough, there needs to be a balance of nutrition. And I\u2019m not talking
+      about luxury here. It\u2019s a basic human need. Processed food is keeping
+      them hungry, making them dependent.0312l"
+    - p:Hah, you should know. Keep them dependent, they stay in line. If they get
+      too strong, they start asking for more.0311r
+    - "y:\u20260311l"
+    - You realize the depth of corruption is way deeper than you initially thought.
+      The system isn't failing by accident. It's designed to keep the poor weak and
+      controlled.0311l
+    nextDialogue: {fileID: 0}
+    bgNum: 0
