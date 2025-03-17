@@ -22,16 +22,24 @@ public class BlockScript : MonoBehaviour
 
     float xoffset;
 
+    // public Sprite Sprite;
     public Sprite appleSprite;
     public Sprite baconSprite;
+    public Sprite bananaSprite;
     public Sprite beanSprite;
+    public Sprite breadSprite;
+    public Sprite broccoliSprite;
     public Sprite cabbageSprite;
     public Sprite carrotSprite;
+    public Sprite cheeseSprite;
     public Sprite chickenLegSprite;
     public Sprite cornSprite;
     public Sprite cucumberSprite;
+    public Sprite eggSprite;
     public Sprite eggplantSprite;
+    public Sprite fishSprite;
     public Sprite hamSprite;
+    public Sprite lettuceSprite;
     public Sprite mushroomSprite;
     public Sprite noodleSprite;
     public Sprite riceSprite;
@@ -54,14 +62,26 @@ public class BlockScript : MonoBehaviour
             case "bacon":
                 renderer.sprite = baconSprite;
                 break;
+            case "banana":
+                renderer.sprite = bananaSprite;
+                break;
             case "bean":
                 renderer.sprite = beanSprite;
+                break;
+            case "bread":
+                renderer.sprite = breadSprite;
+                break;
+            case "broccoli":
+                renderer.sprite = broccoliSprite;
                 break;
             case "cabbage":
                 renderer.sprite = cabbageSprite;
                 break;
             case "carrot":
                 renderer.sprite = carrotSprite;
+                break;
+            case "cheese":
+                renderer.sprite = cheeseSprite;
                 break;
             case "chicken leg":
                 renderer.sprite = chickenLegSprite;
@@ -72,11 +92,20 @@ public class BlockScript : MonoBehaviour
             case "cucumber":
                 renderer.sprite = cucumberSprite;
                 break;
+            case "egg":
+                renderer.sprite = eggSprite;
+                break;
             case "eggplant":
                 renderer.sprite = eggplantSprite;
                 break;
+            case "fish":
+                renderer.sprite = fishSprite;
+                break;
             case "ham":
                 renderer.sprite = hamSprite;
+                break;
+            case "lettuce":
+                renderer.sprite = lettuceSprite;
                 break;
             case "mushroom":
                 renderer.sprite = mushroomSprite;

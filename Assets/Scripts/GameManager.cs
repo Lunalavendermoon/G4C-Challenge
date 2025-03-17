@@ -52,6 +52,9 @@ public static class GameManager
             BlockType.corn(), BlockType.cucumber(), BlockType.eggplant(),
             BlockType.ham(), BlockType.mushroom(), BlockType.noodle(),
             BlockType.rice()
+            // BlockType.banana(), BlockType.bread(), BlockType.broccoli(),
+            // BlockType.cheese(), BlockType.egg(), BlockType.fish(),
+            // BlockType.lettuce()
         };
     }
 

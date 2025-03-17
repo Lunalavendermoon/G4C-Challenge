@@ -149,14 +149,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   appleSprite: {fileID: 7293598183456022363, guid: 6932cccfd1bca4931b8b2e58b1fff6cf, type: 3}
   baconSprite: {fileID: 4638073604318642339, guid: be9ecd451fe644e02bccbc6b75de0b3a, type: 3}
+  bananaSprite: {fileID: 7381965769198725172, guid: e8349899ad11b455c8cf84120109b134, type: 3}
   beanSprite: {fileID: 4495422397181781673, guid: ba102bdde0b694a448ed21c0c984e7b8, type: 3}
+  breadSprite: {fileID: -1660761858345613354, guid: 1114f444c0c864ec39ef6226038d31cd, type: 3}
+  broccoliSprite: {fileID: -918663293682559355, guid: b5993bceb24244745ba85613320ca5bf, type: 3}
   cabbageSprite: {fileID: 159068718711766808, guid: 96e596172562242aa9ef841d8edd6413, type: 3}
   carrotSprite: {fileID: -5859083586626064994, guid: 9c4d317053d5b42c6a45c11bc6af9051, type: 3}
+  cheeseSprite: {fileID: 6582011127417039112, guid: d689caff213564e1bbf18d648f8ef179, type: 3}
   chickenLegSprite: {fileID: -7689685193998265335, guid: d275643f16ee149b8804cd359238803f, type: 3}
   cornSprite: {fileID: -7944502702452990849, guid: 27e011f17e72f40889ea93bf86f762ce, type: 3}
   cucumberSprite: {fileID: -3513379549867885781, guid: 2a4ca69d9e3c54f9f886109ac81f2a71, type: 3}
+  eggSprite: {fileID: 4646649027328027380, guid: 29c909c99c838411db85ca44b6282f17, type: 3}
   eggplantSprite: {fileID: -6905139553319271647, guid: db5e1e0b073ce4c3fb21810eceeacedc, type: 3}
+  fishSprite: {fileID: -1915776564401465818, guid: 42576888210504ccea59c3047ae5e40c, type: 3}
   hamSprite: {fileID: 4456443523020135713, guid: 41d8b5d6be3104c1b9bc35b25593c1da, type: 3}
+  lettuceSprite: {fileID: -7523970955242101793, guid: 0294a3bcb51e34ec5947702e0910a16e, type: 3}
   mushroomSprite: {fileID: 4315506946141470425, guid: 9eab429b9558441e29a2250f30987a2e, type: 3}
   noodleSprite: {fileID: 307049234662581677, guid: 0bb2864b7cf5041078e85d8203a95ecd, type: 3}
   riceSprite: {fileID: -3491839630117010820, guid: 6337635ac3fdc491c8e4538c345e7713, type: 3}

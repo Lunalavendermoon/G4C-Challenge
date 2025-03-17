@@ -133,16 +133,16 @@ public class BlockType {
 
     public static BlockType bread() {
         return new BlockType("bread", "carb", new bool[][] {
-            new bool[] {false, true},
-            new bool[] {false, true},
-            new bool[] {true, true}
+            new bool[] {true, false, true},
+            new bool[] {true, true, true}
         });
     }
 
     public static BlockType bread2() {
         return new BlockType("bread2", "carb", new bool[][] {
-            new bool[] {true, false, true},
-            new bool[] {true, true, true}
+            new bool[] {false, true},
+            new bool[] {false, true},
+            new bool[] {true, true}
         });
     }
 
@@ -196,6 +196,14 @@ public class BlockType {
         });
     }
 
+    public static BlockType egg() {
+        return new BlockType("egg", "protein", new bool[][] {
+            new bool[] {false, false, true},
+            new bool[] {false, false, true},
+            new bool[] {true, true, true}
+        });
+    }
+
     public static BlockType fish() {
         return new BlockType("fish", "protein", new bool[][] {
             new bool[] {true, true, false},
@@ -235,9 +243,8 @@ public class BlockType {
 
     public static BlockType cheese() {
         return new BlockType("cheese", "protein", new bool[][] {
-            new bool[] {true, true},
-            new bool[] {true, true},
-            new bool[] {true, true}
+            new bool[] {true, true, true},
+            new bool[] {true, true, true}
         });
     }
 }
