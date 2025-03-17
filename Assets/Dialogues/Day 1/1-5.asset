@@ -16,15 +16,15 @@ MonoBehaviour:
     dialogues:
     - "It\u2019s time to prepare food for distribution.0000l"
     - Giving people any food is not enough.0000l
-    - 45 million children under 5 suffer from wasting, which is what happens when
+    - '{45 million} children under 5 suffer from wasting, which is what happens when
       people are malnourished for a brief period of time. They are much more likely
       to die than other children and even one occurance can have lifelong effects
-      on health.0000l
-    - "148 million children under 5 suffer from stunting, which is the consequence
+      on health.0000l'
+    - "{148 million} children under 5 suffer from stunting, which is the consequence
       of a long period of malnutrition. Stunting leads to poor cognitive development,
-      impeding an individual\u2019s ability to learn. Stunting cannot be cured, so
-      it must be prevented.0000l"
-    - In order to prevent these consequences, it is important to have proper nutrition.
+      impeding an individual\u2019s ability to learn. {Stunting cannot be cured,
+      so it must be prevented.}0000l"
+    - In order to prevent these consequences, it is important to have {proper nutrition.}
       A balanced diet includes a variety of nutrient-rich foods that provide essential
       macronutrients, such as proteins, vegetables, healthy carbs and fats, and hydration.0000l
     nextDialogue: {fileID: 0}

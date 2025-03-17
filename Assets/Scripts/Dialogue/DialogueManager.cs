@@ -141,13 +141,27 @@ public class DialogueManager : MonoBehaviour
             typingTween.Kill();
         }
 
-        typingTween = DOTween.To(() => "", x => DialogBodyText.text = x, dialogue, dialogue.Length * 0.02f)
+        typingTween = DOTween.To(() => "", x => DialogBodyText.text = AddTags(x), dialogue, dialogue.Length * 0.02f)
             .SetEase(Ease.Linear)
             .OnComplete(() =>
             {
                 finishDialogue = -1;
                 responseDone = true;
             });
+    }
+
+    private string AddTags(string text) {
+        string final = "";
+        for (int i = 0; i < text.Length; ++i) {
+            if (text[i] == '{') {
+                final += "<color=#ffd666>";
+            } else if (text[i] == '}') {
+                final += "</color>";
+            } else {
+                final += text[i];
+            }
+        }
+        return final;
     }
 
     private string GetName(string text)
