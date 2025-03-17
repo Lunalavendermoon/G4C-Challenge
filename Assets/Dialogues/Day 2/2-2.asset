@@ -14,13 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RootNode:
     dialogues:
-    - y:But malnutrition is making them sicker. They need more than just empty calories.
-      Their children are stunted, people are getting weaker-0310l
+    - "Politician\u2019s Office \u2013 Noon0000l"
     - "y:Today I took a look at the food pantry and discovered that there\u2019s
       a heavy imbalance of nutrition-0110l"
     - "p:People don\u2019t care about fancy meals. They need calories to survive,
       that\u2019s it. We provide what we can.0310r"
-    - "Politician\u2019s Office \u2013 Noon0310l"
+    - y:But malnutrition is making them sicker. They need more than just empty calories.
+      Their children are stunted, people are getting weaker-0310l
     - "p:Oh, come on. We\u2019re giving them free food. They should be grateful.
       It\u2019s not a gourmet restaurant.0312r"
     - "p:Besides, did you not notice their ungrateful behavior? Work productivity

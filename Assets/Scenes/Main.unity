@@ -826,7 +826,11 @@ MonoBehaviour:
   image2: {fileID: 267206210}
   background: {fileID: 441137507}
   disabledUI: []
+<<<<<<< Updated upstream
   dialogue: {fileID: 11400000, guid: 69ac8fc2d17ee4f4f91f4e70805bea87, type: 2}
+=======
+  dialogue: {fileID: 11400000, guid: 2f37e89c67be323449f14b01300d682c, type: 2}
+>>>>>>> Stashed changes
 --- !u!4 &1386758527
 Transform:
   m_ObjectHideFlags: 0
@@ -1025,7 +1029,7 @@ MonoBehaviour:
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
-  m_lineSpacing: 10
+  m_lineSpacing: 30
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0

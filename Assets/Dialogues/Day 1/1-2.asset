@@ -24,7 +24,7 @@ MonoBehaviour:
       it.0206l"
     - The girl is still a little hesitant, but she slowly approaches you and tentatively
       takes the bread from you.0207r
-    - ???:!!!0206r
+    - ???:!!!0208r
     - "The girl\u2019s face lights up as she happily bites into the bread.0208r"
     - However, she eats too hurriedly and starts to cough.0406r
     - "y:Hey, careful. Eating too fast isn\u2019t good. Here\u2019s some water.0206l"
@@ -37,11 +37,6 @@ MonoBehaviour:
     - "y:That\u2019s a beautiful name.0205l"
     - "You smile gently, but you can see the guardedness in her eyes. It\u2019s as
       if the kindness feels foreign to her.0205l"
-    - "y:There should be a restaurant nearby. Let\u2019s go there. Bread isn\u2019t
-      enough.0105l"
-    - You gently take Clare's hands and try to lead her away.0105l
-    - However, you can feel her tugging you back.0105l
-    - "y:What\u2019s the matter? Don\u2019t worry, I won\u2019t hurt you.0205l"
     - c:G-grandpa. There.0106r
     - She points into what seems to be a dead end.0106r
     - c:Follow. Help.0106r
