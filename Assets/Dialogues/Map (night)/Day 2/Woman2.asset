@@ -14,17 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RootNode:
     dialogues:
-    - "Woman:It\u2019s you again."
-    - "y:Yes. Here\u2019s more food."
-    - "Woman:Why are you doing this? I don\u2019t see any benefit."
+    - "Woman:It\u2019s you again.0114r"
+    - "y:Yes. Here\u2019s more food.0114l"
+    - "Woman:Why are you doing this? I don\u2019t see any benefit.0113r"
     - "y:I just\u2026I just think it\u2019s unfair. Humans need food to survive.
-      I don\u2019t think it\u2019s right to rob people of their basic needs."
+      I don\u2019t think it\u2019s right to rob people of their basic needs.0313l"
     - "Woman:Hah. Are you truly altruistic? Or are you just naive? What you\u2019re
-      doing won\u2019t solve anything."
+      doing won\u2019t solve anything.0314r"
     - "y:Well, I\u2019d like to think it could potentially save a life. If even you\u2019ve
-      lost hope, you\u2019ll at least want your child to survive, won\u2019t you?"
+      lost hope, you\u2019ll at least want your child to survive, won\u2019t you?0114l"
     - "y:And I understand what I\u2019m doing isn\u2019t sustainable. But the situation
-      is too dire. This is a temporary resort."
-    - Woman:The guy before you spoke of empty promises as well.
-    nextDialogue: {fileID: 0}
+      is too dire. This is a temporary resort.0314l"
+    - Woman:The guy before you spoke of empty promises as well.0314r
+    nextDialogue: {fileID: 11400000, guid: 42df1b1c6a0cb5e4f96b1b648e1b33b5, type: 2}
     bgNum: 1

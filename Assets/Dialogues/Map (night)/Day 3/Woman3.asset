@@ -14,28 +14,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RootNode:
     dialogues:
-    - "Woman:...You\u2019re back."
+    - "Woman:...You\u2019re back.0113r"
     - "y:How do you feel about taking a job to sort some food? It shouldn\u2019t
-      be too taxing on your body. Food, living, and a wage will be included."
-    - "y:And I\u2019ll make sure the child can be properly delivered."
-    - "Woman:What\u2019s this? Another scheme of yours?"
+      be too taxing on your body. Food, living, and a wage will be included.0213l"
+    - "y:And I\u2019ll make sure the child can be properly delivered.0213l"
+    - "Woman:What\u2019s this? Another scheme of yours?0113r"
     - "y:That\u2019s right. You made a good point last time. I need to do more. Unfortunately
-      I can\u2019t just keep giving out food like this. It simply isn\u2019t sustainable."
+      I can\u2019t just keep giving out food like this. It simply isn\u2019t sustainable.0313l"
     - y:But if I create more jobs in the food bank, it will allow you guys to sustain
-      yourselves on your own, and fairly.
+      yourselves on your own, and fairly.0113l
     - "y:Of course, I still have to deal with the political committee. I\u2019ll
       need to put some policies in place to ensure proper distribution of food is
       supervised. Luckily, it seems to me that the regular people here in this town
-      are kind. They are willing to help."
+      are kind. They are willing to help.0113l"
     - "y:So I\u2019d like for you to place your trust in me. I will advocate for
-      a better situation. To reduce food loss and poverty."
+      a better situation. To reduce food loss and poverty.0213l"
     - The pregnant woman is stunned for a few seconds. Then she lets out a light
-      chuckle.
+      chuckle.0213r
     - "Woman:...Haha. I, I don\u2019t know what I was expecting, but definitely not
-      this. But it\u2019s a good surprise."
-    - Woman:It seems I was wrong about you. You truly endeavor to create change.
+      this. But it\u2019s a good surprise.0213r"
+    - Woman:It seems I was wrong about you. You truly endeavor to create change.0213r
     - "Woman:I\u2019m willing to take on this job. I\u2019ve even got a few others
       I can recommend. As long as you don\u2019t stray from your words, I can support
-      you."
+      you.0213r"
     nextDialogue: {fileID: 0}
     bgNum: 0
