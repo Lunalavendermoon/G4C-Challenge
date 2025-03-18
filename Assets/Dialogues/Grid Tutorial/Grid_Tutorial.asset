@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1996a6502e32979468f8865814e50378, type: 3}
+  m_Name: Grid_Tutorial
+  m_EditorClassIdentifier: 
+  RootNode:
+    dialogues:
+    - Here is the amount of space you have to fit the food.
+    - And here are other food options.
+    - 'In order to maintain a nutritional diet, the food is divided into three categories:
+      Fruits and vegetables, grains, and protein.'
+    - Your goal is to fit the food into the space available and meet the following
+      nutritional requirements for each of the 3 categories.
+    - You can do so by dragging food blocks into the space, but you need to have
+      enough gridspace to properly place the food.
+    - You can always flip or rotate to food with the following keybinds to help it
+      better fit into the space.
+    - "{Remember to press SPACE to confirm the food\u2019s location.}"
+    - If you are unsure about what to do, click on the HELP tab for help.
+    nextDialogue: {fileID: 0}
+    bgNum: 0

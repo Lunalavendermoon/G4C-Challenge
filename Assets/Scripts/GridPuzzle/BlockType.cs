@@ -1,6 +1,3 @@
-using System;
-using NUnit.Framework.Constraints;
-
 public class BlockType {
     public string name;
 
