@@ -5,6 +5,7 @@ using System;
 
 public class BlockLevelManagerScript : MonoBehaviour
 {
+    public GameObject helpUiManager;
     public GameObject blockPrefab;
 
     public GameObject gameGrid;
@@ -38,9 +39,9 @@ public class BlockLevelManagerScript : MonoBehaviour
 
     void Start()
     {
-        blockLabel.text = "";
+        GameManager.LoadDay1BlockData(); // TODO delete this later, this is just for testing
 
-        GameManager.LoadDay1BlockData();
+        blockLabel.text = "";
 
         maxSize = GameManager.blockMaxSize;
         maxNutrition = GameManager.blockMaxGroupSize;
@@ -63,6 +64,11 @@ public class BlockLevelManagerScript : MonoBehaviour
         grid.initGrid(GameManager.blockGridArray, GameManager.blockXOffset, GameManager.blockYOffset);
 
         updateUI();
+
+        // TODO uncomment this
+        // if (GameManager.currentDay == 1) {
+        //     helpUiManager.GetComponent<HelpUiManager>().startTutorialDay1();
+        // }
     }
 
     public void setPopupStatus(bool status) {

@@ -35,6 +35,8 @@ public static class GameManager
 
     // FOR TESTING ONLY
     public static void LoadDay1BlockData() {
+        currentDay = 1;
+
         blockMaxSize = 20;
         blockMaxGroupSize = new int[] {10,5,5};
         blockGridArray = new int[][] {

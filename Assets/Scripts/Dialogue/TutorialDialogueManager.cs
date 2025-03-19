@@ -1,16 +1,20 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 using DG.Tweening;
 
 public class TutorialDialogueManager : MonoBehaviour
 {
     public static TutorialDialogueManager Instance { get; private set; }
 
+    public GameObject helpUiManager;
+
     [Header("UI Elements")]
     public TextMeshProUGUI DialogBodyText;
-    public ChangeSprite background; // TODO delete and replace with canvas image
-    public List<GameObject> disabledUI;
+    public RawImage background;
+
+    public List<Texture> tutorialBackgrounds;
 
     [Header("Dialogue Data")]
     public Dialogue dialogue;
@@ -59,6 +63,8 @@ public class TutorialDialogueManager : MonoBehaviour
         dialogueNode = dialogue.RootNode;
         dialogueCounter = 0;
         dialogues = new List<string>(dialogueNode.dialogues);
+        
+        DialogueAssemble(dialogueCounter++);
     }
 
     private void DialogueAssemble(int index)
@@ -66,12 +72,14 @@ public class TutorialDialogueManager : MonoBehaviour
         string fullText = dialogues[index];
 
         DialogBodyText.text = AddTags(fullText);
+
+        background.texture = tutorialBackgrounds[index];
     }
 
     public void HideDialogue()
     {
         dialogueIsActive = false;
-        // TODO hide entire popup window
+        helpUiManager.GetComponent<HelpUiManager>().hideHelpFromTutorial();
     }
 
     private string AddTags(string text) {
@@ -86,36 +94,5 @@ public class TutorialDialogueManager : MonoBehaviour
             }
         }
         return final;
-    }
-
-    private string GetName(string text)
-    {
-        int colonIndex = text.IndexOf(':');
-        if (colonIndex == -1) return "";
-
-        string name = text.Substring(0, colonIndex);
-        return name switch
-        {
-            "y" => "You",
-            "c" => "Clare",
-            "p" => "Politician",
-            "w" => "Worker",
-            _ => name
-        };
-    }
-
-    private string GetDialogue(string text)
-    {
-        int colonIndex = text.IndexOf(':');
-        if (colonIndex == -1) return text.Substring(0, text.Length - 5).Trim();
-        return text.Substring(colonIndex + 1, text.Length - colonIndex - 6).Trim();
-    }
-
-    private int GetImage1(string text) => ParseImageIndex(text, text.Length - 5);
-    private int GetImage2(string text) => ParseImageIndex(text, text.Length - 3);
-
-    private int ParseImageIndex(string text, int startIndex)
-    {
-        return int.Parse(text.Substring(startIndex, 2));
     }
 }

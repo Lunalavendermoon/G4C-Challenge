@@ -7,6 +7,7 @@ public class HelpUiManager : MonoBehaviour
     public GameObject tutorialContent;
     public GameObject helpBg;
     public GameObject helpChoice;
+    public GameObject closeButton;
 
     TutorialDialogueManager dialogueManager;
 
@@ -19,11 +20,21 @@ public class HelpUiManager : MonoBehaviour
     }
 
     public void startTutorialDay1() {
-        // TODO show UI and tutorial, hide UI after
+        setStatus(true);
+        closeButton.SetActive(false);
+        startTutorialFromButton();
     }
 
     public void startTutorialFromButton() {
-        // TODO show tutorial and hide UI after
+        helpChoice.SetActive(false);
+        tutorialContent.SetActive(true);
+
+        dialogueManager.StartDialogue();
+    }
+
+    public void hideHelpFromTutorial() {
+        closeButton.SetActive(true);
+        hideHelp();
     }
 
     public void showHelp() {

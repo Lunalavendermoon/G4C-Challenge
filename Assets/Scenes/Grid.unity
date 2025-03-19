@@ -504,6 +504,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1248284939}
+        m_TargetAssemblyTypeName: HelpUiManager, Assembly-CSharp
+        m_MethodName: startTutorialFromButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &159279261
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -586,9 +598,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ac6e0c1882bd41bc806b1bf02378a8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DialogBodyText: {fileID: 0}
-  background: {fileID: 0}
-  disabledUI: []
+  helpUiManager: {fileID: 1248284937}
+  DialogBodyText: {fileID: 1119172571800986811}
+  background: {fileID: 275426106}
+  tutorialBackgrounds:
+  - {fileID: 2800000, guid: 8b9e0b638ac174e168ea3eb7eebb88b1, type: 3}
+  - {fileID: 2800000, guid: 9117e26667c114dbfbd931711d952cf1, type: 3}
+  - {fileID: 2800000, guid: 57044194b2289423894e3e912cd3df8e, type: 3}
+  - {fileID: 2800000, guid: b14d6845413eb44acadd915534e91837, type: 3}
+  - {fileID: 2800000, guid: ffb644a7c9a2b4ca894da471d0e9ade4, type: 3}
+  - {fileID: 2800000, guid: 38cbe97f4913a494faf7fc75f42283e7, type: 3}
+  - {fileID: 2800000, guid: ff4b67d1b8e3d40e28f31bcc7ca56542, type: 3}
+  - {fileID: 2800000, guid: 2a822cbce1af64eea89c8d32f8c39492, type: 3}
   dialogue: {fileID: 11400000, guid: 11df4404f9d534cfdbaa2ab12698b9b5, type: 2}
 --- !u!1 &275426104
 GameObject:
@@ -1107,6 +1128,7 @@ MonoBehaviour:
   tutorialContent: {fileID: 337890293}
   helpBg: {fileID: 1763846756}
   helpChoice: {fileID: 22415417}
+  closeButton: {fileID: 1698359051}
 --- !u!1 &1306903643
 GameObject:
   m_ObjectHideFlags: 0
@@ -2559,7 +2581,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: rise up into my world
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8e5e9c70067fcfb40b4f51c8ebf363cf, type: 2}
   m_sharedMaterial: {fileID: -6363418637353929178, guid: 8e5e9c70067fcfb40b4f51c8ebf363cf, type: 2}
@@ -3132,6 +3154,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a60edf24a8bbf4be8b061a7490e9111a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  helpUiManager: {fileID: 1248284937}
   blockPrefab: {fileID: 7019135002737759780, guid: 91a181e5a030648028f2cfa791517447, type: 3}
   gameGrid: {fileID: 736460109322595143}
   scalefact: 3
@@ -3284,7 +3307,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3575024602228281564}
   m_Layer: 0
-  m_Name: Background
+  m_Name: BackPack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4060,7 +4083,7 @@ RectTransform:
   m_GameObject: {fileID: 109805529738987708}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 15, y: 4, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4183108486104716126}
