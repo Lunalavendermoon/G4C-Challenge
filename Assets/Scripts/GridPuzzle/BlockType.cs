@@ -1,6 +1,8 @@
 public class BlockType {
     public string name;
 
+    public string displayName;
+
     public string foodGroup;
 
     public int size;
@@ -9,6 +11,25 @@ public class BlockType {
 
     public BlockType(string _name, string _foodGroup, bool[][] _shape) {
         name = _name;
+        displayName = _name;
+        foodGroup = _foodGroup;
+
+        shape = _shape;
+
+        size = 0;
+        
+        for (int i = 0; i < shape.Length; ++i) {
+            for (int j = 0; j < shape[i].Length; ++j) {
+                if (shape[i][j]) {
+                    ++size;
+                }
+            }
+        }
+    }
+
+    public BlockType(string _name, string display, string _foodGroup, bool[][] _shape) {
+        name = _name;
+        displayName = display;
         foodGroup = _foodGroup;
 
         shape = _shape;
@@ -55,8 +76,8 @@ public class BlockType {
         });
     }
 
-    public static BlockType lettuce2() {
-        return new BlockType("lettuce2", "veg", new bool[][] {
+    public static BlockType tomato() {
+        return new BlockType("tomato", "veg", new bool[][] {
             new bool[] {false, true, false},
             new bool[] {true, true, false},
             new bool[] {true, true, true}
@@ -114,14 +135,6 @@ public class BlockType {
         });
     }
 
-    public static BlockType rice2() {
-        return new BlockType("rice2", "carb", new bool[][] {
-            new bool[] {false, true},
-            new bool[] {true, true},
-            new bool[] {true, true}
-        });
-    }
-
     public static BlockType corn() {
         return new BlockType("corn", "carb", new bool[][] {
             new bool[] {true, true, true},
@@ -136,36 +149,30 @@ public class BlockType {
     }
 
     public static BlockType bread2() {
-        return new BlockType("bread2", "carb", new bool[][] {
-            new bool[] {false, true},
-            new bool[] {false, true},
-            new bool[] {true, true}
+        return new BlockType("bread2", "bread", "carb", new bool[][] {
+            new bool[] {true, true, false, false},
+            new bool[] {false, true, true, true}
         });
     }
 
     public static BlockType bread3() {
-        return new BlockType("bread3", "carb", new bool[][] {
-            new bool[] {true},
-            new bool[] {true},
-            new bool[] {true},
-            new bool[] {true}
+        return new BlockType("bread3", "bread", "carb", new bool[][] {
+            new bool[] {true, true, false},
+            new bool[] {true, true, true}
         });
     }
 
     public static BlockType bread4() {
-        return new BlockType("bread4", "carb", new bool[][] {
-            new bool[] {true, false, false},
-            new bool[] {true, true, false},
-            new bool[] {false, true, true}
+        return new BlockType("bread4", "bread", "carb", new bool[][] {
+            new bool[] {true, true, true, true}
         });
     }
 
-    public static BlockType bread5() {
-        return new BlockType("bread5", "carb", new bool[][] {
-            new bool[] {false, true},
-            new bool[] {false, true},
-            new bool[] {true, true},
-            new bool[] {true, false}
+    public static BlockType oats() {
+        return new BlockType("oats", "carb", new bool[][] {
+            new bool[] {true, false, false},
+            new bool[] {true, true, false},
+            new bool[] {false, true, true}
         });
     }
 
@@ -178,8 +185,8 @@ public class BlockType {
         });
     }
 
-    public static BlockType chickenBreast() {
-        return new BlockType("chicken breast", "protein", new bool[][] {
+    public static BlockType tofu() {
+        return new BlockType("tofu", "protein", new bool[][] {
             new bool[] {false, true, false},
             new bool[] {true, true, false},
             new bool[] {true, true, true}
@@ -208,11 +215,11 @@ public class BlockType {
         });
     }
 
-    public static BlockType fish2() {
-        return new BlockType("fish2", "protein", new bool[][] {
-            new bool[] {true, false, false},
+    public static BlockType fishSlice() {
+        return new BlockType("fish slice", "protein", new bool[][] {
+            new bool[] {false, true, true},
             new bool[] {true, true, false},
-            new bool[] {false, true, true}
+            new bool[] {true, false, false}
         });
     }
 
@@ -227,14 +234,6 @@ public class BlockType {
         return new BlockType("bacon", "protein", new bool[][] {
             new bool[] {true},
             new bool[] {true}
-        });
-    }
-
-    public static BlockType lambLeg() {
-        return new BlockType("lamb leg", "protein", new bool[][] {
-            new bool[] {false, false, true},
-            new bool[] {false, false, true},
-            new bool[] {true, true, true}
         });
     }
 

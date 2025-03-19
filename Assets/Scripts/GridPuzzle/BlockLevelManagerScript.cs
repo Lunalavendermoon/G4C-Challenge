@@ -150,7 +150,7 @@ public class BlockLevelManagerScript : MonoBehaviour
 
     public void selectBlock(int id) {
         selectedBlock = id;
-        blockLabel.text = getBlockScript(id).blockType.name;
+        blockLabel.text = getBlockScript(id).blockType.displayName;
         blocks[id].GetComponent<Renderer>().sortingOrder = orderCount++;
         // this will probably never happen but yknow, just in case lol
         if (orderCount == 30000) {

@@ -21,6 +21,7 @@ public class BlockScript : MonoBehaviour
     float scalefact;
 
     float xoffset;
+    float yoffset;
 
     // public Sprite Sprite;
     public Sprite appleSprite;
@@ -28,6 +29,9 @@ public class BlockScript : MonoBehaviour
     public Sprite bananaSprite;
     public Sprite beanSprite;
     public Sprite breadSprite;
+    public Sprite bread2Sprite;
+    public Sprite bread3Sprite;
+    public Sprite bread4Sprite;
     public Sprite broccoliSprite;
     public Sprite cabbageSprite;
     public Sprite carrotSprite;
@@ -38,11 +42,15 @@ public class BlockScript : MonoBehaviour
     public Sprite eggSprite;
     public Sprite eggplantSprite;
     public Sprite fishSprite;
+    public Sprite fishSliceSprite;
     public Sprite hamSprite;
     public Sprite lettuceSprite;
     public Sprite mushroomSprite;
     public Sprite noodleSprite;
+    public Sprite oatsSprite;
     public Sprite riceSprite;
+    public Sprite tofuSprite;
+    public Sprite tomatoSprite;
 
     bool isEnabled = true;
 
@@ -70,6 +78,15 @@ public class BlockScript : MonoBehaviour
                 break;
             case "bread":
                 renderer.sprite = breadSprite;
+                break;
+            case "bread2":
+                renderer.sprite = bread2Sprite;
+                break;
+            case "bread3":
+                renderer.sprite = bread3Sprite;
+                break;
+            case "bread4":
+                renderer.sprite = bread4Sprite;
                 break;
             case "broccoli":
                 renderer.sprite = broccoliSprite;
@@ -101,6 +118,9 @@ public class BlockScript : MonoBehaviour
             case "fish":
                 renderer.sprite = fishSprite;
                 break;
+            case "fish slice":
+                renderer.sprite = fishSliceSprite;
+                break;
             case "ham":
                 renderer.sprite = hamSprite;
                 break;
@@ -113,8 +133,17 @@ public class BlockScript : MonoBehaviour
             case "noodle":
                 renderer.sprite = noodleSprite;
                 break;
+            case "oats":
+                renderer.sprite = oatsSprite;
+                break;
             case "rice":
                 renderer.sprite = riceSprite;
+                break;
+            case "tofu":
+                renderer.sprite = tofuSprite;
+                break;
+            case "tomato":
+                renderer.sprite = tomatoSprite;
                 break;
             default:
                 renderer.sprite = appleSprite;
@@ -126,9 +155,11 @@ public class BlockScript : MonoBehaviour
             transform.localScale = new Vector3(1.5f,1.5f,1);
             scalefact = 0.75f;
             xoffset = 0.5f;
+            yoffset = 0.75f;
         } else {
             scalefact = 0.5f;
             xoffset = 0;
+            yoffset = 0;
         }
 
         Vector2 S = renderer.sprite.bounds.size;
@@ -224,7 +255,7 @@ public class BlockScript : MonoBehaviour
             transform.position = (grid.snapToGrid(getSpriteTopLeft()) * scalefact)
             + new Vector3(
                 blockType.shape[0].Length / (2.0f / scalefact) + xoffset,
-                orientation % 2 == 0 ? 0 : -Math.Min(1, Math.Abs(blockType.shape.Length - blockType.shape[0].Length)) / (2.0f / scalefact)
+                - blockType.shape.Length / (2.0f / scalefact) + yoffset
             );
         } else {
             // TODO send error message
