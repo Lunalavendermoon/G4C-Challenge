@@ -20,6 +20,8 @@ public class GridScript : MonoBehaviour
         cols = gridArray[0].Length;
         this.xoffset = xoffset;
         this.yoffset = yoffset;
+        
+        tilemap.ClearAllTiles();
         clearTileMap();
     }
 

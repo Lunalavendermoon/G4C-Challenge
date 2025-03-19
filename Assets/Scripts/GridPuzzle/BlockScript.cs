@@ -159,7 +159,7 @@ public class BlockScript : MonoBehaviour
         } else {
             scalefact = 0.5f;
             xoffset = 0;
-            yoffset = 0;
+            yoffset = 0.5f;
         }
 
         Vector2 S = renderer.sprite.bounds.size;

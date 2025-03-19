@@ -39,7 +39,7 @@ public class BlockLevelManagerScript : MonoBehaviour
 
     void Start()
     {
-        GameManager.LoadDay1BlockData(); // TODO delete this later, this is just for testing
+        GameManager.LoadTestingBlockData(); // TODO delete this later, this is just for testing
 
         blockLabel.text = "";
 
