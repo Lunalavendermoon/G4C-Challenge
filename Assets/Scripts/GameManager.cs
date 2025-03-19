@@ -125,7 +125,7 @@ public static class GameManager
                 BlockType.apple(), BlockType.rice(), BlockType.chickenLeg()
             };
         }
-        SceneManager.LoadScene("Grid", LoadSceneMode.Single);
+        SceneManager.LoadScene("Grid Day " + currentDay, LoadSceneMode.Single);
     }
 
     public static void LoadMapScene(int playerSize, int[] playerNutrition) {
