@@ -54,7 +54,7 @@ public class DialogueManager : MonoBehaviour
             if (typingTween != null && typingTween.IsActive())
             {
                 typingTween.Kill();
-                DialogBodyText.text = GetDialogue(dialogues[dialogueCounter - 1]); // Show full dialogue
+                DialogBodyText.text = AddTags(GetDialogue(dialogues[dialogueCounter - 1])); // Show full dialogue
                 finishDialogue = -1;
                 responseDone = true;
             }

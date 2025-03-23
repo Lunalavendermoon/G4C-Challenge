@@ -108,6 +108,7 @@ public static class GameManager
     }
 
     public static void LoadBlockScene() {
+        currentDay = 1; //TODO change this
         if (currentDay == 1) {
             blockMaxSize = 20;
             blockMaxGroupSize = new int[] {10,5,5};
