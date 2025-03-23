@@ -53,6 +53,7 @@ public class BlockScript : MonoBehaviour
     public Sprite tomatoSprite;
 
     bool isEnabled = true;
+    bool pauseDragging = false;
 
     public void initBlock(int id, BlockType type, BlockLevelManagerScript levelManager, GridScript grid, int scaling) {
         this.id = id;
@@ -174,6 +175,9 @@ public class BlockScript : MonoBehaviour
         if (!isEnabled) {
             return;
         }
+        if (isOnGrid) {
+            removeFromGrid();
+        }
         makeTransparent();
         grid.clearTileMap();
         difference = Camera.main.ScreenToWorldPoint(Input.mousePosition) - transform.position;
@@ -181,7 +185,7 @@ public class BlockScript : MonoBehaviour
     }
 
     private void OnMouseDrag() {
-        if (!isEnabled) {
+        if (!isEnabled || pauseDragging) {
             return;
         }
         transform.position = (Vector2) Camera.main.ScreenToWorldPoint(Input.mousePosition) - difference;
@@ -189,11 +193,9 @@ public class BlockScript : MonoBehaviour
     }
 
     private void OnMouseUp() {
-        if (!isEnabled) {
+        if (!isEnabled || pauseDragging) {
+            pauseDragging = true;
             return;
-        }
-        if (isOnGrid) {
-            removeFromGrid();
         }
         int status = grid.checkBlockPosition(id, getSpriteTopLeft(), blockType);
         if (status == -1) {
@@ -241,6 +243,7 @@ public class BlockScript : MonoBehaviour
     public void placeBlock() {
         int status = grid.checkBlockPosition(id, getSpriteTopLeft(), blockType);
         if (status == 0) {
+            pauseDragging = true;
             makeOpaque();
 
             if (isOnGrid) {
@@ -257,8 +260,6 @@ public class BlockScript : MonoBehaviour
                 blockType.shape[0].Length / (2.0f / scalefact) + xoffset,
                 - blockType.shape.Length / (2.0f / scalefact) + yoffset
             );
-        } else {
-            // TODO send error message
         }
     }
 
