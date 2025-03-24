@@ -22,8 +22,8 @@ MonoBehaviour:
       nutritional requirements for each of the 3 categories.
     - You can do so by dragging food blocks into the space, but you need to have
       enough gridspace to properly place the food.
-    - You can always flip or rotate to food with the following keybinds to help it
-      better fit into the space.
+    - You can always flip or rotate the food with the following keybinds to help
+      it better fit into the space.
     - "{Remember to press SPACE to confirm the food\u2019s location.}"
     - If you are unsure about what to do, click on the HELP tab for help.
     nextDialogue: {fileID: 0}

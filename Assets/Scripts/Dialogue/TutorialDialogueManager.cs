@@ -3,6 +3,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using System;
 
 public class TutorialDialogueManager : MonoBehaviour
 {
@@ -24,6 +25,8 @@ public class TutorialDialogueManager : MonoBehaviour
     private int dialogueCounter = 0;
 
     private bool dialogueIsActive = false;
+    private float timermax = 0.1f;
+    private float timer = 0.0f;
 
     private void Awake()
     {
@@ -44,8 +47,13 @@ public class TutorialDialogueManager : MonoBehaviour
         if (!dialogueIsActive) {
             return;
         }
+        if (timer > 0.0f) {
+            timer -= Time.deltaTime;
+            return;
+        }
         if (Input.GetMouseButtonDown(0) && !ItemDropLocation.mouseOverItemDropLocation)
         {
+            timer = timermax;
             if (dialogueCounter < dialogues.Count)
             {
                 DialogueAssemble(dialogueCounter++);

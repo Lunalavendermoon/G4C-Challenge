@@ -65,10 +65,9 @@ public class BlockLevelManagerScript : MonoBehaviour
 
         updateUI();
 
-        // TODO uncomment this
-        // if (GameManager.currentDay == 1) {
-        //     helpUiManager.GetComponent<HelpUiManager>().startTutorialDay1();
-        // }
+        if (GameManager.currentDay == 1) {
+            helpUiManager.GetComponent<HelpUiManager>().startTutorialDay1();
+        }
     }
 
     public void setPopupStatus(bool status) {
