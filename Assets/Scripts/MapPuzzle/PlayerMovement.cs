@@ -21,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
 
 
     [SerializeField] Text setpText;
+    [SerializeField] Text noStep;
     [SerializeField] MapLevelManager mapLevelManager;
 
 
@@ -88,11 +89,15 @@ public class PlayerMovement : MonoBehaviour
         if (step == 0)
         {
             canMove = false;
+            noStep.text = "Run out of steps\n'R' to retry";
         }
 
 
 
         setpText.text = step.ToString() + " Step left";
+
+
+        
 
         //if (Input.GetKeyDown(KeyCode.UpArrow))
         //{
