@@ -8,7 +8,7 @@ public class FoodBelt : MonoBehaviour
     [SerializeField] MapLevelManager mapLevelManager;
     private float foodHave;
     private float foodStored = 0;
-    private bool haveStored = false;
+    public bool haveStored = false;
 
     [System.Obsolete]
     private void OnTriggerEnter2D(Collider2D collision)

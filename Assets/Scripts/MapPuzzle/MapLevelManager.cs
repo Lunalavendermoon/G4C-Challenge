@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class MapLevelManager : MonoBehaviour
 {
     public static float foodOwn = 4;
-    [SerializeField] Slider slider;  // ÍÏ×§ Slider ½øÀ´
+    [SerializeField] Slider slider;
     [SerializeField] float fillSpeed = 10f;
 
 
