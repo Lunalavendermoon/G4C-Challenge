@@ -44,16 +44,15 @@ public class TutorialDialogueManager : MonoBehaviour
 
     private void Update()
     {
-        if (!dialogueIsActive) {
-            return;
-        }
         if (timer > 0.0f) {
             timer -= Time.deltaTime;
             return;
         }
+        if (!dialogueIsActive) {
+            return;
+        }
         if (Input.GetMouseButtonDown(0) && !ItemDropLocation.mouseOverItemDropLocation)
         {
-            timer = timermax;
             if (dialogueCounter < dialogues.Count)
             {
                 DialogueAssemble(dialogueCounter++);
@@ -77,6 +76,7 @@ public class TutorialDialogueManager : MonoBehaviour
 
     private void DialogueAssemble(int index)
     {
+        timer = timermax;
         string fullText = dialogues[index];
 
         DialogBodyText.text = AddTags(fullText);
