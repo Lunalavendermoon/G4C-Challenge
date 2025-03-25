@@ -25,5 +25,5 @@ MonoBehaviour:
     - "You eye the foods carefully. Beyond the fancy toppings and condiments, the
       base materials\u20260111l"
     - "There\u2019s no mistake, after all. This is where the missing food went.0311l"
-    nextDialogue: {fileID: 0}
+    nextDialogue: {fileID: 11400000, guid: 852b15f805991e0448b03f30abc12430, type: 2}
     bgNum: 0

@@ -21,22 +21,22 @@ MonoBehaviour:
     - "p:Nevermind. I\u2019ll just go ask the workers. They\u2019ll know what\u2019s
       up.0312r"
     - "w:Sir, we checked the records. It seems there was a processing error. I don\u2019t
-      think we can make any accusations based on the information we have right now."
-    - p:What?
-    - p:So it really was just an error?
+      think we can make any accusations based on the information we have right now.1510l"
+    - p:What?1510r
+    - p:So it really was just an error?1510r
     - "p:Well, I\u2019ll let you off the hook this time. Just remember one thing,
-      do as you\u2019re told and don\u2019t cause any trouble."
-    - The politician leaves haughtily.
-    - "y:\u2026Thanks."
-    - w:I was just telling the truth.
-    - y:Yeah. Still, thank you.
+      do as you\u2019re told and don\u2019t cause any trouble.0112r"
+    - The politician leaves haughtily.0100r
+    - "y:\u2026Thanks.0215l"
+    - w:I was just telling the truth.0215r
+    - y:Yeah. Still, thank you.0215l
     - "You examine the food pantry. The first steps are important, and at least you\u2019ve
       secured your position. As for the next steps, well, secretly handing people
-      food at night simply isn\u2019t sustainable."
+      food at night simply isn\u2019t sustainable.0100l"
     - "You\u2019ll have to find ways to pass laws to reduce the power of corrupt
       figures in the town. There\u2019s still a lot of work that needs to be done
-      if you truly wish to resolve the food crises."
+      if you truly wish to resolve the food crises.0100l"
     - "It\u2019s certain to be a grueling process, but remembering Clare and the
-      smiles of others lightens the burden."
+      smiles of others lightens the burden.0100l"
     nextDialogue: {fileID: 0}
-    bgNum: 0
+    bgNum: 2

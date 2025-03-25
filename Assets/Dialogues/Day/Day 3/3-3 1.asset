@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1996a6502e32979468f8865814e50378, type: 3}
+  m_Name: 3-3 1
+  m_EditorClassIdentifier: 
+  RootNode:
+    dialogues:
+    - You decide to return to the food pantry and find the food distribution list.
+      From there, you track out the foods that will be rerouted, probably for another
+      party, and pack the food into your bag.0100l
+    - y:Huh? You-0415l
+    - "w:If I report you, I\u2019ll get a reward.0416r"
+    - "y:I\u2019m just giving the food to the people it rightfully belongs to.0316l"
+    - "y:As a labor worker you\u2019re probably not very well off. I can\u2019t blame
+      you for wanting that money. But here\u2019s so many people that need help and
+      they aren't getting it. I\u2019m just giving it to them. Can\u2019t you at
+      least give those people a chance?0116l"
+    - ???:Um, mister?0400r
+    - You turn around at the familiar voice.0406l
+    - y:Clare? What are you doing here?0406l
+    - She glances nervously at the food pantry worker.0406r
+    - "w:Clare\u2026that name\u2026no way, are you\u2026?0115r"
+    - y:What? Do you know her?0115l
+    - "w:That must be Sarah\u2019s child\u2026She worked here back then\u2026I knew
+      she had a child, but- We couldn\u2019t afford to take in anyone else anymore.0115r"
+    - Clare does seem to fully understand what the man is saying and walks to hide
+      behind you.0107r
+    - "y:You don\u2019t need to worry, I\u2019ll take care of her.0115l"
+    - The worker glances between you and her, then crouches down to her level.0715r
+    - w:Hey, Clare, these past few days, have, have you been getting food?0715r
+    - Clare quietly nods.0815l
+    - c:Mister. Give food to many. Save many.0815l
+    - c:I like mister.0815l
+    nextDialogue: {fileID: 11400000, guid: 94aacb3caa65d3646bf57b21b40b7769, type: 2}
+    bgNum: 2

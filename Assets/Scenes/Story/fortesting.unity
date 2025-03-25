@@ -555,7 +555,7 @@ PrefabInstance:
     - target: {fileID: 527725046118703949, guid: 5d20da6f144de67429f48d3520038459, type: 3}
       propertyPath: dialogue
       value: 
-      objectReference: {fileID: 11400000, guid: 9765a462642b1c544bbf7c9d3d2bbb39, type: 2}
+      objectReference: {fileID: 11400000, guid: 94aacb3caa65d3646bf57b21b40b7769, type: 2}
     - target: {fileID: 527725046118703949, guid: 5d20da6f144de67429f48d3520038459, type: 3}
       propertyPath: background
       value: 

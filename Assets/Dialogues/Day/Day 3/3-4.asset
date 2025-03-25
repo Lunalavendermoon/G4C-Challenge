@@ -10,39 +10,41 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1996a6502e32979468f8865814e50378, type: 3}
-  m_Name: 3-3
+  m_Name: 3-4
   m_EditorClassIdentifier: 
   RootNode:
     dialogues:
-    - 'Mother:Once upon a time, there was a cute little girl. She had big, bright
-      eyes that sparkled like the stars and a heart even bigger than the sky. '
+    - ...0000l
+    - Mother:Once upon a time, there was a cute little girl. She had big, bright
+      eyes that sparkled like the stars and a heart even bigger than the sky.0000l
     - "Mother:This girl and her mother didn\u2019t have much\u2014just a tiny house
       with a leaky roof and a garden with more weeds than vegetables. But what they
-      lacked in riches, this girl made up for in kindness."
-    - "Mother:Every morning, the girl would help her mother bake warm bread. They
+      lacked in riches, this girl made up for in kindness.0000l"
+    - Mother:Every morning, the girl would help her mother bake warm bread. They
       would share it with their neighbors, such as grandpa, who lived alone and told
-      wonderful stories about the past. \r"
+      wonderful stories about the past.0000l
     - "Mother:One day, the girl noticed something troubling\u2014many children were
       going to bed hungry. Their parents worked hard, but the prices were too high,
       and there was no land to grow food. The girl couldn\u2019t stand to see her
-      friends suffer.\r"
+      friends suffer.0000l"
     - Mother:That night, as she lay in bed, an idea sprouted in her mind like a tiny
-      seed.
+      seed.0000l
     - "Mother:The next morning, she told her friends her plan. \u201CWe can clean
       out the trash dump by the river, and turn it into a garden for everyone! If
-      we plant food, no one will go hungry.\u201D"
+      we plant food, no one will go hungry.\u201D0000l"
     - Mother:So, with borrowed tools and hopeful hearts, they began. They dug the
       dry earth, planted seeds, and carried buckets of water from the river. At first,
-      nothing happened. The sun was harsh, and the soil was stubborn.
-    - "Mother:But she didn\u2019t give up."
+      nothing happened. The sun was harsh, and the soil was stubborn.0000l
+    - "Mother:But she didn\u2019t give up.0000l"
     - "Mother:Slowly, something magical happened\u2014sprouts peeked through the
       soil, then leaves, then stems strong enough to dance in the wind. The townspeople
       began to notice. Inspired by the girl\u2019s dedication, they started helping
-      too."
+      too.0000l"
     - Mother:Months passed, and the garden flourished. And standing in the middle
       of it all, with dirt on her hands and a bright smile on her face, was the girl,
-      who had turned a trash dump into a garden and hunger into hope.
-    - "Mother:And with that, little one, it\u2019s time to dream sweet dreams."
-    - Mother:Good night, Clare.
+      who had turned a trash dump into a garden and hunger into hope.0000l
+    - "Mother:And with that, little one, it\u2019s time to dream sweet dreams.0000l"
+    - Mother:Good night, Clare.0000l
+    - ...0000l
     nextDialogue: {fileID: 0}
-    bgNum: 0
+    bgNum: 1
