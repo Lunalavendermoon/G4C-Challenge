@@ -1,23 +1,40 @@
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEditor.SceneManagement;
 using UnityEngine.SceneManagement;
 
 public class MapLevelManager : MonoBehaviour
 {
-    public static float foodOwn = 4;
-    [SerializeField] Slider slider;
+    public static MapLevelManager Instance { get; private set; }
+
+    public float foodOwn;
+    private float beginFoodOwn;
+    private float originFoodOwn;
+    private Slider slider;
+    private int sceneIndex;
     [SerializeField] float fillSpeed = 10f;
 
+    void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+    }
 
     void Start()
     {
-        if (slider == null)
-        {
-            slider = GetComponent<Slider>();
-        }
-        slider.value = foodOwn;
+        SceneManager.sceneLoaded += OnSceneLoaded;
+        slider = GameObject.Find("Slider").GetComponent<Slider>();
+        sceneIndex = SceneManager.GetActiveScene().buildIndex;
+        originFoodOwn = foodOwn;
+    }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        slider = GameObject.Find("Slider").GetComponent<Slider>();
+        beginFoodOwn = foodOwn;
     }
 
     void Update()
@@ -26,7 +43,14 @@ public class MapLevelManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.R))
         {
+            foodOwn = beginFoodOwn;
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            foodOwn = originFoodOwn;
+            SceneManager.LoadScene(sceneIndex);
         }
 
         if (foodOwn < 1)
@@ -37,13 +61,12 @@ public class MapLevelManager : MonoBehaviour
         {
             slider.handleRect.gameObject.SetActive(true);
         }
-    }
 
-    // 调用这个方法更新进度
-    //public void SetProgress(float progress)
-    //{
-    //    foodOwn = Mathf.Clamp(progress, slider.minValue, slider.maxValue);
-    //}
+        if (slider == null)
+        {
+            Destroy(gameObject);
+        }
+    }
 
     public void setFood(float amount)
     {

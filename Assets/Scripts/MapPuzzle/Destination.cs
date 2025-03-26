@@ -1,6 +1,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Destination : MonoBehaviour
 {
@@ -18,7 +19,7 @@ public class Destination : MonoBehaviour
             }
             else
             {
-                Debug.Log("win!");
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
         }
     }

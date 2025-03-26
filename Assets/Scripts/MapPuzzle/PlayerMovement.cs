@@ -22,13 +22,11 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] Text setpText;
     [SerializeField] Text noStep;
-    [SerializeField] MapLevelManager mapLevelManager;
-
 
 
     private void Start()
     {
-        foodGiven = 5 - mapLevelManager.getFood();
+
     }
 
 
@@ -119,6 +117,13 @@ public class PlayerMovement : MonoBehaviour
         Collider2D middleGround = Physics2D.OverlapBox(destination, Vector2.zero, 0f, LayerMask.GetMask("MiddleGround"));
         Collider2D smallGround = Physics2D.OverlapBox(destination, Vector2.zero, 0f, LayerMask.GetMask("SmallGround"));
         Collider2D railRoad = Physics2D.OverlapBox(destination, Vector2.zero, 0f, LayerMask.GetMask("RailRoad"));
+        Collider2D barrier = Physics2D.OverlapBox(destination, Vector2.zero, 0f, LayerMask.GetMask("Barrier"));
+
+
+        if (barrier != null)
+        {
+            return;
+        }
 
         if (railRoad != null)
         {
@@ -148,6 +153,11 @@ public class PlayerMovement : MonoBehaviour
                 return;
             }
         }
+
+
+
+
+
         step -= 1;
 
         StartCoroutine(leap(destination));
