@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class MapLevelManager : MonoBehaviour
 {
     public static MapLevelManager Instance { get; private set; }
+    public static float foodGiven;
 
     public float foodOwn;
     private float beginFoodOwn;
@@ -66,6 +67,8 @@ public class MapLevelManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        foodGiven = originFoodOwn - foodOwn;
     }
 
     public void setFood(float amount)
