@@ -62,12 +62,13 @@ public class BlockLevelManagerScript : MonoBehaviour
 
         // TODO placeholder grid array - should put this in central static class
         // 0 = empty space, -1 = out of bounds, -2 = obstacle
-        grid.initGrid(GameManager.blockGridArray, GameManager.blockXOffset, GameManager.blockYOffset);
+        grid.initGrid(GameManager.blockGridArray, GameManager.blockXOffset, GameManager.blockYOffset, GameManager.blockSolutionArray);
 
         updateUI();
 
         if (GameManager.currentDay == 1) {
-            helpUiManager.GetComponent<HelpUiManager>().startTutorialDay1();
+            // TODO uncomment this in final
+            // helpUiManager.GetComponent<HelpUiManager>().startTutorialDay1();
         }
     }
 
@@ -86,7 +87,8 @@ public class BlockLevelManagerScript : MonoBehaviour
         // TODO implement this
         // compare solution and current int grid, first difference = block that's in the wrong spot
         // find the block correponding to that id and show it as a hint
-        Debug.Log("show a hint");
+        int id = grid.getFirstMismatch();
+        Debug.Log((id == -1) ? "no mismatches found" : blocks[id].GetComponent<BlockScript>().blockType.displayName);
     }
     
     void spawnBlock(int id, BlockType type, int count, float yoffset) {

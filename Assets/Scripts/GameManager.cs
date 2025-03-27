@@ -15,6 +15,8 @@ public static class GameManager
 
     public static int[][] blockGridArray;
 
+    public static int[][] blockSolutionArray;
+
     public static BlockType[] blockSpawnList;
     
     [RuntimeInitializeOnLoadMethod]
@@ -36,7 +38,7 @@ public static class GameManager
 
     // FOR TESTING ONLY
     public static void LoadTestingBlockData() {
-        currentDay = 2; // change the day to test different setups
+        currentDay = 1; // change the day to test different setups
 
         if (currentDay == 1) {
             blockMaxSize = 20;
@@ -47,6 +49,14 @@ public static class GameManager
                 new int[] {-1,  0,  0,  0, -2, -1},
                 new int[] { 0,  0,  0,  0, -2,  0},
                 new int[] { 0,  0,  0,  0,  0,  0}
+            };
+            // TODO fill this out
+            blockSolutionArray = new int[][] {
+                new int[] {-1, -1,  1,  1,  2, -1},
+                new int[] {-1,  9,  1,  1,  2, -1},
+                new int[] {-1,  9,  9,  8, -2, -1},
+                new int[] {12, 12, 12,  8, -2,  6},
+                new int[] {12, 12, 12,  8,  6,  6}
             };
             blockXOffset = 2;
             blockYOffset = 1;
@@ -63,10 +73,16 @@ public static class GameManager
             blockGridArray = new int[][] {
                 new int[] {-1, -1,  0,  0,  0, -1},
                 new int[] {-1,  0,  0,  0,  0, -1},
+                new int[] {-1,  0,  0,  0, -2, -1},
+                new int[] { 0,  0,  0,  0, -2,  0},
+                new int[] { 0,  0,  0,  0,  0,  0}
+            };
+            // TODO fill this out
+            blockSolutionArray = new int[][] {
+                new int[] {-1, -1,  0,  0,  0, -1},
                 new int[] {-1,  0,  0,  0,  0, -1},
-                new int[] { 0, -2,  0,  0,  0, -2},
-                new int[] { 0,  0,  0,  0,  0,  0},
-                new int[] { 0,  0,  0, -2,  0,  0},
+                new int[] {-1,  0,  0,  0, -2, -1},
+                new int[] { 0,  0,  0,  0, -2,  0},
                 new int[] { 0,  0,  0,  0,  0,  0}
             };
             blockXOffset = 5;
@@ -84,6 +100,18 @@ public static class GameManager
             blockMaxSize = 40;
             blockMaxGroupSize = new int[] {20,10,10};
             blockGridArray = new int[][] {
+                new int[] { 0,  0, -1, -1, -1, -1, -1, -1, -1},
+                new int[] { 0,  0, -2, -1, -1,  0,  0,  0, -1},
+                new int[] { 0,  0,  0, -1,  0,  0,  0,  0, -1},
+                new int[] {-1, -1, -1,  0,  0, -2,  0,  0, -1},
+                new int[] {-1, -1, -1,  0,  0,  0,  0,  0, -2},
+                new int[] {-1, -1, -1,  0,  0,  0,  0,  0,  0},
+                new int[] {-1, -1, -1,  0,  0,  0, -2,  0,  0},
+                new int[] {-1, -1, -1,  0,  0,  0, -2,  0,  0},
+                new int[] {-1, -1, -1, -1,  0,  0,  0,  0,  0}
+            };
+            // TODO fill this out
+            blockSolutionArray = new int[][] {
                 new int[] { 0,  0, -1, -1, -1, -1, -1, -1, -1},
                 new int[] { 0,  0, -2, -1, -1,  0,  0,  0, -1},
                 new int[] { 0,  0,  0, -1,  0,  0,  0,  0, -1},

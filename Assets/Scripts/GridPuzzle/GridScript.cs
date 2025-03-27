@@ -9,13 +9,15 @@ public class GridScript : MonoBehaviour
     public Tile dropshadow;
 
     int[][] gridArray;
+    int[][] solutionArray;
 
     int rows, cols;
 
     int xoffset, yoffset;
 
-    public void initGrid(int[][] gridArray, int xoffset, int yoffset) {
+    public void initGrid(int[][] gridArray, int xoffset, int yoffset, int[][] solutionArray) {
         this.gridArray = gridArray;
+        this.solutionArray = solutionArray;
         rows = gridArray.Length;
         cols = gridArray[0].Length;
         this.xoffset = xoffset;
@@ -124,5 +126,16 @@ public class GridScript : MonoBehaviour
     public void updateBlock(int id, UnityEngine.Vector3 position, BlockType blockType) {
         removeBlock(id);
         addBlock(id, position, blockType);
+    }
+
+    public int getFirstMismatch() {
+        for (int i = 0; i < gridArray.Length; ++i) {
+            for (int j = 0; j < gridArray[i].Length; ++j) {
+                if (gridArray[i][j] != solutionArray[i][j]) {
+                    return gridArray[i][j] == 0 ? solutionArray[i][j] : gridArray[i][j];
+                }
+            }
+        }
+        return -1;
     }
 }
