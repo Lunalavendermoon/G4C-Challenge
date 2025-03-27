@@ -129,7 +129,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 184401490058177730, guid: 4c3569f168785e24b975900f6d4d5b87, type: 3}
       propertyPath: step
-      value: 26
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 184401490058177730, guid: 4c3569f168785e24b975900f6d4d5b87, type: 3}
       propertyPath: noStep
@@ -2747,7 +2747,7 @@ PrefabInstance:
     - target: {fileID: 6606785581116792695, guid: b2aaf747b53050041a346b61807425bf, type: 3}
       propertyPath: warnText
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1174731967}
     - target: {fileID: 8777259684874502967, guid: b2aaf747b53050041a346b61807425bf, type: 3}
       propertyPath: m_Name
       value: Destination

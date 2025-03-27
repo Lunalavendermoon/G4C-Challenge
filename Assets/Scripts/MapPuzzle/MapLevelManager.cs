@@ -9,7 +9,7 @@ public class MapLevelManager : MonoBehaviour
     public static float foodGiven;
 
     public float foodOwn;
-    private float beginFoodOwn;
+    [SerializeField] float beginFoodOwn;
     private float originFoodOwn;
     private Slider slider;
     private int sceneIndex;
@@ -22,13 +22,18 @@ public class MapLevelManager : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(gameObject);
         }
+        else if (Instance != this)
+        {
+            Destroy(gameObject);
+        }
     }
 
     void Start()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
-        slider = GameObject.Find("Slider").GetComponent<Slider>();
+
         sceneIndex = SceneManager.GetActiveScene().buildIndex;
+        slider = GameObject.Find("Slider").GetComponent<Slider>();
         originFoodOwn = foodOwn;
     }
 
@@ -69,6 +74,8 @@ public class MapLevelManager : MonoBehaviour
         }
 
         foodGiven = originFoodOwn - foodOwn;
+
+        Debug.Log(foodOwn);
     }
 
     public void setFood(float amount)
