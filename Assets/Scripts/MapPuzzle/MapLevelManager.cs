@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 public class MapLevelManager : MonoBehaviour
 {
     public static MapLevelManager Instance { get; private set; }
-    public static float foodGiven;
 
     public float foodOwn;
     [SerializeField] float beginFoodOwn;
@@ -59,6 +58,12 @@ public class MapLevelManager : MonoBehaviour
             SceneManager.LoadScene(sceneIndex);
         }
 
+        if (Input.GetKeyDown(KeyCode.RightArrow))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
+        }
+
         if (foodOwn < 1)
         {
             slider.handleRect.gameObject.SetActive(false);
@@ -73,7 +78,7 @@ public class MapLevelManager : MonoBehaviour
             Destroy(gameObject);
         }
 
-        foodGiven = originFoodOwn - foodOwn;
+        GameManager.foodGiven = originFoodOwn - foodOwn;
 
         Debug.Log(foodOwn);
     }

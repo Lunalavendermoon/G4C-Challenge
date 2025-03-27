@@ -7,6 +7,7 @@ public static class GameManager
 {
     public static int currentDay;
 
+    public static float foodGiven;
 
     public static int blockMaxSize, blockXOffset, blockYOffset;
 

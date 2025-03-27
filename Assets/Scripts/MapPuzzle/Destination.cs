@@ -13,6 +13,11 @@ public class Destination : MonoBehaviour
         
         if (collision.CompareTag("Player"))
         {
+            if (belt1 == null &&  belt2 == null)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+
+            }
             if (belt1.GetComponent<SpriteRenderer>().color == Color.red || belt2.GetComponent<SpriteRenderer>().color == Color.red)
             {
                 warnText.text = "No, I can't leave the food in the food belt\nR to retry";
