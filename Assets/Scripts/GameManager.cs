@@ -29,7 +29,7 @@ public static class GameManager
         // currentDay increases every time we show the day cutscene
         ++currentDay;
         if (currentDay == 1) {
-            SceneManager.LoadScene("Main", LoadSceneMode.Single);
+            SceneManager.LoadScene("Day 1", LoadSceneMode.Single);
         }
     }
 
