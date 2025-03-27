@@ -58,11 +58,11 @@ public class MapLevelManager : MonoBehaviour
             SceneManager.LoadScene(sceneIndex);
         }
 
-        if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        //if (Input.GetKeyDown(KeyCode.RightArrow))
+        //{
+        //    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
 
-        }
+        //}
 
         if (foodOwn < 1)
         {

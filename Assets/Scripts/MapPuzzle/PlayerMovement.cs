@@ -87,7 +87,7 @@ public class PlayerMovement : MonoBehaviour
         if (step == 0)
         {
             canMove = false;
-            noStep.text = "Run out of steps\n'R' to retry";
+            noStep.text = "Ran out of steps\n'R' to retry";
         }
 
 
@@ -125,7 +125,7 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
 
-        if (railRoad != null)
+        if (railRoad != null && (Quaternion.Angle(transform.rotation, railRoad.transform.rotation) == 0 || Quaternion.Angle(transform.rotation, railRoad.transform.rotation) == 90))
         {
             isRiding = true;
             step -= 1;

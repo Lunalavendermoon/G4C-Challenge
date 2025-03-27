@@ -20,7 +20,7 @@ public class Destination : MonoBehaviour
             }
             if (belt1.GetComponent<SpriteRenderer>().color == Color.red || belt2.GetComponent<SpriteRenderer>().color == Color.red)
             {
-                warnText.text = "No, I can't leave the food in the food belt\nR to retry";
+                warnText.text = "There's still food left in the transport cart!\nR to retry";
             }
             else
             {
