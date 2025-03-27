@@ -26,5 +26,5 @@ MonoBehaviour:
     - "y:And I understand what I\u2019m doing isn\u2019t sustainable. But the situation
       is too dire. This is a temporary resort.0314l"
     - Woman:The guy before you spoke of empty promises as well.0314r
-    nextDialogue: {fileID: 11400000, guid: 42df1b1c6a0cb5e4f96b1b648e1b33b5, type: 2}
+    nextDialogue: {fileID: 11400000, guid: c58defd2ddfba5041a4377b218eb32f1, type: 2}
     bgNum: 1

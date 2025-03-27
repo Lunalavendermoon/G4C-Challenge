@@ -40,4 +40,4 @@ MonoBehaviour:
     - "y:Clare, I don\u2019t think any of you deserve this. I swear to you, I will
       try my best to improve the situation here, no matter how long it takes me.0305l"
     nextDialogue: {fileID: 11400000, guid: 42df1b1c6a0cb5e4f96b1b648e1b33b5, type: 2}
-    bgNum: 0
+    bgNum: 1

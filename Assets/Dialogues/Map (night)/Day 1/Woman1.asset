@@ -20,5 +20,5 @@ MonoBehaviour:
     - "Woman:Don\u2019t come any closer.0114r"
     - "The woman\u2019s gaze is cold.0114r"
     - "y:Of course. I\u2019ll just\u2026leave the food here.0114l"
-    nextDialogue: {fileID: 11400000, guid: e61edc4cfbb876e43a042566e184ecbb, type: 2}
+    nextDialogue: {fileID: 11400000, guid: 9765a462642b1c544bbf7c9d3d2bbb39, type: 2}
     bgNum: 1
