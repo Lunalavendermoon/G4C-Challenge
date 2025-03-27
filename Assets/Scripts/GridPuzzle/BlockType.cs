@@ -143,7 +143,7 @@ public class BlockType {
 
     public static BlockType bread() {
         return new BlockType("bread", "carb", new bool[][] {
-            new bool[] {true, false, true},
+            new bool[] {true, false, false},
             new bool[] {true, true, true}
         });
     }

@@ -1,4 +1,5 @@
 using System;
+using System.Numerics;
 using UnityEngine;
 
 public class BlockScript : MonoBehaviour
@@ -13,8 +14,8 @@ public class BlockScript : MonoBehaviour
 
     public bool isOnGrid {get; set;}
     
-    Vector3 resetPosition;
-    Vector2 difference = Vector2.zero;
+    UnityEngine.Vector3 resetPosition;
+    UnityEngine.Vector2 difference = UnityEngine.Vector2.zero;
 
     int orientation = 0;
 
@@ -153,7 +154,7 @@ public class BlockScript : MonoBehaviour
 
 
         if (scaling == 3) {
-            transform.localScale = new Vector3(1.5f,1.5f,1);
+            transform.localScale = new UnityEngine.Vector3(1.5f,1.5f,1);
             scalefact = 0.75f;
             xoffset = 0.5f;
             yoffset = 0.75f;
@@ -163,7 +164,7 @@ public class BlockScript : MonoBehaviour
             yoffset = 0.5f;
         }
 
-        Vector2 S = renderer.sprite.bounds.size;
+        UnityEngine.Vector2 S = renderer.sprite.bounds.size;
         gameObject.GetComponent<BoxCollider2D>().size = S;
     }
 
@@ -172,6 +173,7 @@ public class BlockScript : MonoBehaviour
     }
 
     private void OnMouseDown() {
+        pauseDragging = false;
         if (!isEnabled) {
             return;
         }
@@ -188,7 +190,7 @@ public class BlockScript : MonoBehaviour
         if (!isEnabled || pauseDragging) {
             return;
         }
-        transform.position = (Vector2) Camera.main.ScreenToWorldPoint(Input.mousePosition) - difference;
+        transform.position = (UnityEngine.Vector2) Camera.main.ScreenToWorldPoint(Input.mousePosition) - difference;
         grid.drawDropShadow(getSpriteTopLeft(), blockType);
     }
 
@@ -206,18 +208,18 @@ public class BlockScript : MonoBehaviour
         }
     }
 
-    public Vector3 getSpriteTopLeft() {
+    public UnityEngine.Vector3 getSpriteTopLeft() {
         switch (orientation) {
             case 0:
-                return GetComponent<Renderer>().transform.TransformPoint(new Vector3(renderer.sprite.bounds.min.x, renderer.sprite.bounds.max.y, 0));
+                return GetComponent<Renderer>().transform.TransformPoint(new UnityEngine.Vector3(renderer.sprite.bounds.min.x, renderer.sprite.bounds.max.y, 0));
             case 1:
-                return GetComponent<Renderer>().transform.TransformPoint(new Vector3(renderer.sprite.bounds.min.x, renderer.sprite.bounds.min.y, 0));
+                return GetComponent<Renderer>().transform.TransformPoint(new UnityEngine.Vector3(renderer.sprite.bounds.min.x, renderer.sprite.bounds.min.y, 0));
             case 2:
-                return GetComponent<Renderer>().transform.TransformPoint(new Vector3(renderer.sprite.bounds.max.x, renderer.sprite.bounds.min.y, 0));
+                return GetComponent<Renderer>().transform.TransformPoint(new UnityEngine.Vector3(renderer.sprite.bounds.max.x, renderer.sprite.bounds.min.y, 0));
             case 3:
-                return GetComponent<Renderer>().transform.TransformPoint(new Vector3(renderer.sprite.bounds.max.x, renderer.sprite.bounds.max.y, 0));
+                return GetComponent<Renderer>().transform.TransformPoint(new UnityEngine.Vector3(renderer.sprite.bounds.max.x, renderer.sprite.bounds.max.y, 0));
             default:
-                return GetComponent<Renderer>().transform.TransformPoint(new Vector3(renderer.sprite.bounds.min.x, renderer.sprite.bounds.max.y, 0));
+                return GetComponent<Renderer>().transform.TransformPoint(new UnityEngine.Vector3(renderer.sprite.bounds.min.x, renderer.sprite.bounds.max.y, 0));
         };
     }
 
@@ -255,12 +257,16 @@ public class BlockScript : MonoBehaviour
                 levelManager.deselectBlock();
             }
             // snap to grid
-            transform.position = (grid.snapToGrid(getSpriteTopLeft()) * scalefact)
-            + new Vector3(
-                blockType.shape[0].Length / (2.0f / scalefact) + xoffset,
-                - blockType.shape.Length / (2.0f / scalefact) + yoffset
-            );
+            placeBlockAt(grid.snapToGrid(getSpriteTopLeft()) * scalefact);
         }
+    }
+
+    public void placeBlockAt(UnityEngine.Vector3 position) {
+        transform.position = position
+        + new UnityEngine.Vector3(
+            blockType.shape[0].Length / (2.0f / scalefact) + xoffset,
+            - blockType.shape.Length / (2.0f / scalefact) + yoffset
+        );
     }
 
     public void flip(bool isHorizontal) {

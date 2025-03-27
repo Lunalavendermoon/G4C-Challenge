@@ -6,6 +6,7 @@ using System;
 public class BlockLevelManagerScript : MonoBehaviour
 {
     public GameObject helpUiManager;
+    public GameObject hintManager;
     public GameObject blockPrefab;
 
     public GameObject gameGrid;
@@ -106,6 +107,8 @@ public class BlockLevelManagerScript : MonoBehaviour
         GameObject block = Instantiate(blockPrefab, position + jitter, Quaternion.identity);
         block.GetComponent<BlockScript>().initBlock(id, type, this, grid, scalefact);
         blocks.Add(id, block);
+
+        hintManager.GetComponent<BlockHintScript>().initBlock(id, type, position, false, false, 0, this, grid, scalefact);
     }
 
     BlockScript getBlockScript(int id) {
