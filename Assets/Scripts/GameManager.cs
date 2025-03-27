@@ -35,7 +35,7 @@ public static class GameManager
 
     // FOR TESTING ONLY
     public static void LoadTestingBlockData() {
-        currentDay = 1; // change the day to test different setups
+        currentDay = 2; // change the day to test different setups
 
         if (currentDay == 1) {
             blockMaxSize = 20;

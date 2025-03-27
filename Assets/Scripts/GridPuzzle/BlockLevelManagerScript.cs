@@ -83,6 +83,8 @@ public class BlockLevelManagerScript : MonoBehaviour
 
     public void showHint() {
         // TODO implement this
+        // compare solution and current int grid, first difference = block that's in the wrong spot
+        // find the block correponding to that id and show it as a hint
         Debug.Log("show a hint");
     }
     

@@ -194,7 +194,7 @@ public class BlockScript : MonoBehaviour
 
     private void OnMouseUp() {
         if (!isEnabled || pauseDragging) {
-            pauseDragging = true;
+            pauseDragging = false;
             return;
         }
         int status = grid.checkBlockPosition(id, getSpriteTopLeft(), blockType);
