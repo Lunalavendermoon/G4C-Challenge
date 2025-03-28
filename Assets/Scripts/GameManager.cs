@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Unity.VisualScripting;
 using Unity.XR.GoogleVr;
 using UnityEngine;
@@ -16,6 +17,8 @@ public static class GameManager
     public static int[][] blockGridArray;
 
     public static int[][] blockSolutionArray;
+
+    public static Dictionary<int, object[]> blockPositionArray = new Dictionary<int, object[]>();
 
     public static BlockType[] blockSpawnList;
     
@@ -50,7 +53,6 @@ public static class GameManager
                 new int[] { 0,  0,  0,  0, -2,  0},
                 new int[] { 0,  0,  0,  0,  0,  0}
             };
-            // TODO fill this out
             blockSolutionArray = new int[][] {
                 new int[] {-1, -1,  1,  1,  2, -1},
                 new int[] {-1,  9,  1,  1,  2, -1},
@@ -58,6 +60,12 @@ public static class GameManager
                 new int[] {12, 12, 12,  8, -2,  6},
                 new int[] {12, 12, 12,  8,  6,  6}
             };
+            blockPositionArray.Add( 1, new object[] {false, false, 0});
+            blockPositionArray.Add( 2, new object[] {false, false, 0});
+            blockPositionArray.Add( 6, new object[] { true, false, 0});
+            blockPositionArray.Add( 8, new object[] {false, false, 1});
+            blockPositionArray.Add( 9, new object[] {false, false, 0});
+            blockPositionArray.Add(12, new object[] {false, false, 0});
             blockXOffset = 2;
             blockYOffset = 1;
             blockSpawnList = new BlockType[] {
@@ -85,6 +93,8 @@ public static class GameManager
                 new int[] { 0,  0,  0,  0, -2,  0},
                 new int[] { 0,  0,  0,  0,  0,  0}
             };
+            blockPositionArray.Clear();
+            // TODO Add solution to blockPositionArray
             blockXOffset = 5;
             blockYOffset = 2;
             blockSpawnList = new BlockType[] {
@@ -122,6 +132,8 @@ public static class GameManager
                 new int[] {-1, -1, -1,  0,  0,  0, -2,  0,  0},
                 new int[] {-1, -1, -1, -1,  0,  0,  0,  0,  0}
             };
+            blockPositionArray.Clear();
+            // TODO Add solution to blockPositionArray
             blockXOffset = 4;
             blockYOffset = 3;
             blockSpawnList = new BlockType[] {

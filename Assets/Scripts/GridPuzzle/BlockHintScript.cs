@@ -1,9 +1,19 @@
 using System.Collections.Generic;
+using System.Data.Common;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BlockHintScript : MonoBehaviour
 {
+    public float hintTimer;
+
+    public Button hintButton;
+
+    float timer = 0;
+
     public GameObject blockPrefab;
+
+    int curId = -1;
 
     Dictionary<int, GameObject> blocks = new Dictionary<int, GameObject>();
 
@@ -25,6 +35,7 @@ public class BlockHintScript : MonoBehaviour
 
         // make sure block is in correct position after rotating
         block.GetComponent<BlockScript>().placeBlockAt(position);
+        block.GetComponent<Renderer>().sortingOrder = 29999;
 
         // shouldn't be draggable
         block.GetComponent<BlockScript>().setEnabled(false);
@@ -33,5 +44,26 @@ public class BlockHintScript : MonoBehaviour
         block.SetActive(false);
 
         blocks.Add(id, block);
+    }
+
+    void Update()
+    {
+        if (timer > 0.0f) {
+            timer -= Time.deltaTime;
+            return;
+        }
+        if (curId != -1) {
+            blocks[curId].SetActive(false);
+            hintButton.interactable = true;
+            curId = -1;
+        }
+
+    }
+
+    public void showBlock(int id) {
+        timer = hintTimer;
+        hintButton.interactable = false;
+        curId = id;
+        blocks[curId].SetActive(true);
     }
 }

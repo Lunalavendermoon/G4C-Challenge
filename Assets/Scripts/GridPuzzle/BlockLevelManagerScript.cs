@@ -88,6 +88,9 @@ public class BlockLevelManagerScript : MonoBehaviour
         // compare solution and current int grid, first difference = block that's in the wrong spot
         // find the block correponding to that id and show it as a hint
         int id = grid.getFirstMismatch();
+        if (id != -1) {
+            hintManager.GetComponent<BlockHintScript>().showBlock(id);
+        }
         Debug.Log((id == -1) ? "no mismatches found" : blocks[id].GetComponent<BlockScript>().blockType.displayName);
     }
     
@@ -110,7 +113,13 @@ public class BlockLevelManagerScript : MonoBehaviour
         block.GetComponent<BlockScript>().initBlock(id, type, this, grid, scalefact);
         blocks.Add(id, block);
 
-        hintManager.GetComponent<BlockHintScript>().initBlock(id, type, position, false, false, 0, this, grid, scalefact);
+        object[] transforms = new object[] {false, false, 0};
+        if (GameManager.blockPositionArray.ContainsKey(id)) {
+            transforms = GameManager.blockPositionArray[id];
+        }
+        hintManager.GetComponent<BlockHintScript>().initBlock(
+            id, type, position, (bool)transforms[0], (bool)transforms[1], (int)transforms[2], this, grid, scalefact
+        );
     }
 
     BlockScript getBlockScript(int id) {

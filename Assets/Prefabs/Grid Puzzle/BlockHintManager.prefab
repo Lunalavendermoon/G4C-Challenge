@@ -44,4 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 23261a5709c95415681d0cb143a2c7d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hintTimer: 10
+  hintButton: {fileID: 0}
   blockPrefab: {fileID: 7019135002737759780, guid: 91a181e5a030648028f2cfa791517447, type: 3}
