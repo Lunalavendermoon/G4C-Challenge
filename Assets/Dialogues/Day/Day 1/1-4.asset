@@ -19,5 +19,7 @@ MonoBehaviour:
       the food bank would take at least a few days to process. Some of these people
       looked like they needed food immediately. You decide the best course of action
       at the moment would be to distribute food to people yourself.0000l
+    - ...0000l
     nextDialogue: {fileID: 11400000, guid: 567522900201d44ac9b96c8040e010fe, type: 2}
     bgNum: 1
+    bgm: 

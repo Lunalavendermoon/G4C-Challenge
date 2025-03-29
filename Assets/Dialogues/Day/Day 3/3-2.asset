@@ -25,5 +25,6 @@ MonoBehaviour:
     - Despite being called waste from the party, many of the foods were untouched
       or only had one bite. All this food was going to waste when it could have been
       used to feed so many people.0300l
-    nextDialogue: {fileID: 0}
+    nextDialogue: {fileID: 11400000, guid: 94aacb3caa65d3646bf57b21b40b7769, type: 2}
     bgNum: 1
+    bgm: 

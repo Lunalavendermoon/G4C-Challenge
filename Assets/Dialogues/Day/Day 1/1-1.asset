@@ -30,3 +30,4 @@ MonoBehaviour:
       Actually, I haven\u2019t even seen my office yet\u20260110l"
     nextDialogue: {fileID: 11400000, guid: cc1dff6a9a9938e479393dcb528cd1e1, type: 2}
     bgNum: 0
+    bgm: chill

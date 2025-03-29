@@ -67,6 +67,8 @@ public class DialogueManager : MonoBehaviour
             {
                 responseDone = false;
 
+                AudioSFXManager.Instance.PlayAudio("tap");
+
                 if (dialogueCounter < dialogues.Count)
                 {
                     DialogueAssemble(dialogueCounter++);
@@ -88,6 +90,9 @@ public class DialogueManager : MonoBehaviour
     public void StartDialogue(DialogueNode node)
     {
         ShowDialogue();
+        if(node.bgm != "") {
+            AudioBGMManager.Instance.PlayAudio(node.bgm);
+        }
         dialogueNode = node;
         dialogueCounter = 0;
         dialogues = new List<string>(node.dialogues);

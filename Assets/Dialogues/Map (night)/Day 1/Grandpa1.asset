@@ -17,9 +17,10 @@ MonoBehaviour:
     - y:Sir. I apologize, you may be quite surprised, but here is some food.0209l
     - Grandpa:What do I- *cough* have to pay?0109r
     - "y:Sir, you don\u2019t have to pay anything. And it seems that you have a cold.
-      I also have some cold medicine with me.0109r"
+      I also have some cold medicine with me.0109l"
     - "Grandpa:Don\u2019t worry about me. If you truly are giving out food, give
       it to the children first. Old men like me have no future.0109r"
     - "y:Sir, please take it. I\u2019ll be giving out food to everyone.0109l"
     nextDialogue: {fileID: 11400000, guid: 282a8134dfd3b0f4ca034b8543cb7930, type: 2}
     bgNum: 1
+    bgm: 

@@ -48,3 +48,4 @@ MonoBehaviour:
     - ...0000l
     nextDialogue: {fileID: 0}
     bgNum: 1
+    bgm: story

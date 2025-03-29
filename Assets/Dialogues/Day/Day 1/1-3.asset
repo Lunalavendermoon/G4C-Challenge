@@ -35,3 +35,4 @@ MonoBehaviour:
       it is time for you to do some investigation\u20260400l"
     nextDialogue: {fileID: 11400000, guid: 69ac8fc2d17ee4f4f91f4e70805bea87, type: 2}
     bgNum: 1
+    bgm: suspense

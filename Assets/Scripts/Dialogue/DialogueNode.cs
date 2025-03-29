@@ -9,6 +9,7 @@ public class DialogueNode
     public List<string> dialogues;
     public Dialogue nextDialogue;
     public int bgNum;
+    public string bgm;
             
     internal bool IsLastNode()
     {
