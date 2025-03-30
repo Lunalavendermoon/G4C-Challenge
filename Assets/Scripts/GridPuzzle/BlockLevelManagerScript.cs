@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using TMPro;
 using System;
+using System.Numerics;
 
 public class BlockLevelManagerScript : MonoBehaviour
 {
@@ -52,6 +53,10 @@ public class BlockLevelManagerScript : MonoBehaviour
         BlockType[] blocksToSpawn = GameManager.blockSpawnList;
 
         float ycarb = 2.5f;
+
+        grid.initGrid(
+            GameManager.blockGridArray, GameManager.blockXOffset, GameManager.blockYOffset, GameManager.blockSolutionArray
+        );
         
         // BLOCK ID MUST BE 1 OR GREATER
         int id = 1;
@@ -59,10 +64,6 @@ public class BlockLevelManagerScript : MonoBehaviour
             spawnBlock(id, b, id - 1, ycarb);
             id++;
         }
-
-        // TODO placeholder grid array - should put this in central static class
-        // 0 = empty space, -1 = out of bounds, -2 = obstacle
-        grid.initGrid(GameManager.blockGridArray, GameManager.blockXOffset, GameManager.blockYOffset, GameManager.blockSolutionArray);
 
         updateUI();
 
@@ -90,35 +91,38 @@ public class BlockLevelManagerScript : MonoBehaviour
         int id = grid.getFirstMismatch();
         if (id != -1) {
             hintManager.GetComponent<BlockHintScript>().showBlock(id);
+        } else {
+            // TODO show message that this block shouldn't be on the grid
         }
-        Debug.Log((id == -1) ? "no mismatches found" : blocks[id].GetComponent<BlockScript>().blockType.displayName);
     }
     
     void spawnBlock(int id, BlockType type, int count, float yoffset) {
         int x = count < 15 ? count % 5 : (count - 15) % 4;
         int y = count < 15 ? count / 5 : 3 + (count - 15) / 4;
-        Vector3 position = new Vector3(-7.0f + 1.3f * x, yoffset - 1.4f * y);
+        UnityEngine.Vector3 position = new UnityEngine.Vector3(-7.0f + 1.3f * x, yoffset - 1.4f * y);
         if (scalefact == 3) {
             x = count < 12 ? count % 3 : (count - 12) % 2;
             y = count < 12 ? count / 3 : 4 + (count - 12) / 2;
-            position = new Vector3(-6.0f + 1.7f * x, yoffset - 1.3f * y);
+            position = new UnityEngine.Vector3(-6.0f + 1.7f * x, yoffset - 1.3f * y);
         }
-        Vector3 jitter;
+        UnityEngine.Vector3 jitter;
         if (count == 4 && scalefact == 4) {
-            jitter = Vector3.zero;
+            jitter = UnityEngine.Vector3.zero;
         } else {
-            jitter = new Vector3(UnityEngine.Random.Range(-0.1f, 0.1f), UnityEngine.Random.Range(-0.1f, 0.1f));
+            jitter = new UnityEngine.Vector3(UnityEngine.Random.Range(-0.1f, 0.1f), UnityEngine.Random.Range(-0.1f, 0.1f));
         }
-        GameObject block = Instantiate(blockPrefab, position + jitter, Quaternion.identity);
+        GameObject block = Instantiate(blockPrefab, position + jitter, UnityEngine.Quaternion.identity);
         block.GetComponent<BlockScript>().initBlock(id, type, this, grid, scalefact);
         blocks.Add(id, block);
 
-        object[] transforms = new object[] {false, false, 0};
+        object[] transforms = new object[] {false, false, 0, 0, 0};
         if (GameManager.blockPositionArray.ContainsKey(id)) {
             transforms = GameManager.blockPositionArray[id];
         }
+
+        UnityEngine.Vector3 hintPos = grid.arrayToWorld((int)transforms[3], (int)transforms[4]);
         hintManager.GetComponent<BlockHintScript>().initBlock(
-            id, type, position, (bool)transforms[0], (bool)transforms[1], (int)transforms[2], this, grid, scalefact
+            id, type, hintPos, (bool)transforms[0], (bool)transforms[1], (int)transforms[2], this, grid, scalefact
         );
     }
 
@@ -163,7 +167,7 @@ public class BlockLevelManagerScript : MonoBehaviour
     }
 
     void updateUI() {
-        sizeBar.transform.localScale = new Vector3(0.93f * Mathf.Min(((float)size) / maxSize, 1), 0.93f, 1);
+        sizeBar.transform.localScale = new UnityEngine.Vector3(0.93f * Mathf.Min(((float)size) / maxSize, 1), 0.93f, 1);
         vegText.SetText(nutrition[0] + "/" + maxNutrition[0]);
         carbText.SetText(nutrition[1] + "/" + maxNutrition[1]);
         proteinText.SetText(nutrition[2] + "/" + maxNutrition[2]);
@@ -199,9 +203,9 @@ public class BlockLevelManagerScript : MonoBehaviour
     void Update()
     {
         if (selectedBlock != -1) {
-            Vector3 anchor = getBlockScript(selectedBlock).getSpriteTopLeft();
-            Vector3 center = blocks[selectedBlock].transform.position;
-            blockLabel.transform.position = camera.WorldToScreenPoint(new Vector3(center.x, anchor.y + 0.1f, center.z));
+            UnityEngine.Vector3 anchor = getBlockScript(selectedBlock).getSpriteTopLeft();
+            UnityEngine.Vector3 center = blocks[selectedBlock].transform.position;
+            blockLabel.transform.position = camera.WorldToScreenPoint(new UnityEngine.Vector3(center.x, anchor.y + 0.1f, center.z));
             // space = confirm placement
             // R = rotate CW
             // D,F = flip horiz,vert

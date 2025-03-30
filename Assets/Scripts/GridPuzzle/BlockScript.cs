@@ -1,5 +1,6 @@
 using System;
 using System.Numerics;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class BlockScript : MonoBehaviour
@@ -279,6 +280,14 @@ public class BlockScript : MonoBehaviour
             blockType.shape[0].Length / (2.0f / scalefact) + xoffset,
             - blockType.shape.Length / (2.0f / scalefact) + yoffset
         );
+    }
+
+    public void hintColor() {
+        float H, S;
+        Color.RGBToHSV(renderer.color, out H, out S, out _);
+
+        renderer.color = Color.HSVToRGB(H, S, 1.5f);
+        makeTransparent();
     }
 
     public void flip(bool isHorizontal) {

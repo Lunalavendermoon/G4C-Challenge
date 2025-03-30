@@ -60,12 +60,12 @@ public static class GameManager
                 new int[] {12, 12, 12,  8, -2,  6},
                 new int[] {12, 12, 12,  8,  6,  6}
             };
-            blockPositionArray.Add( 1, new object[] {false, false, 0});
-            blockPositionArray.Add( 2, new object[] {false, false, 0});
-            blockPositionArray.Add( 6, new object[] { true, false, 0});
-            blockPositionArray.Add( 8, new object[] {false, false, 1});
-            blockPositionArray.Add( 9, new object[] {false, false, 0});
-            blockPositionArray.Add(12, new object[] {false, false, 0});
+            blockPositionArray.Add( 1, new object[] {false, false, 0, 0, 2});
+            blockPositionArray.Add( 2, new object[] {false, false, 0, 0, 4});
+            blockPositionArray.Add( 6, new object[] { true, false, 0, 3, 5});
+            blockPositionArray.Add( 8, new object[] {false, false, 1, 2, 3});
+            blockPositionArray.Add( 9, new object[] {false, false, 0, 1, 1});
+            blockPositionArray.Add(12, new object[] {false, false, 0, 3, 0});
             blockXOffset = 2;
             blockYOffset = 1;
             blockSpawnList = new BlockType[] {

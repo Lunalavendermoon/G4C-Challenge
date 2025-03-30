@@ -35,6 +35,7 @@ public class BlockHintScript : MonoBehaviour
 
         // make sure block is in correct position after rotating
         block.GetComponent<BlockScript>().placeBlockAt(position);
+        block.GetComponent<BlockScript>().hintColor();
         block.GetComponent<Renderer>().sortingOrder = 29999;
 
         // shouldn't be draggable

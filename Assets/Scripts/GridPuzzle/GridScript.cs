@@ -60,6 +60,11 @@ public class GridScript : MonoBehaviour
         return new Vector3Int(xoffset + grid.y, yoffset - grid.x);
     }
 
+    public Vector3 arrayToWorld(int row, int col) {
+        Vector3 og = tilemap.CellToWorld(arrayToCell(new Vector3Int(row, col)));
+        return new Vector3(og.x - (GameManager.currentDay == 1 ? 0.5f : 0), og.y);
+    }
+
     public void drawDropShadow(Vector3 position, BlockType blockType) {
         clearTileMap();
         Vector3Int off = worldToArray(position);
