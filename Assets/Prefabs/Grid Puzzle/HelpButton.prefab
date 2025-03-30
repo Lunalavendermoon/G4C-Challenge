@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 262384780402525128}
   - component: {fileID: 4696966939700967171}
   - component: {fileID: 7515174496796663649}
+  - component: {fileID: 8058971534730174531}
   m_Layer: 0
   m_Name: HelpButton
   m_TagString: Untagged
@@ -148,3 +149,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   helpUiManager: {fileID: 0}
+--- !u!114 &8058971534730174531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3935139746991090486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db7d20eccb99598488d352f4d74f84ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -10,6 +10,7 @@ public class TutorialDialogueManager : MonoBehaviour
     public static TutorialDialogueManager Instance { get; private set; }
 
     public GameObject helpUiManager;
+    public GameObject helpbuttonscript;
 
     [Header("UI Elements")]
     public TextMeshProUGUI DialogBodyText;
@@ -55,10 +56,12 @@ public class TutorialDialogueManager : MonoBehaviour
         {
             if (dialogueCounter < dialogues.Count)
             {
+                AudioSFXManager.Instance.PlayAudio("tap");
                 DialogueAssemble(dialogueCounter++);
             }
             else
             {
+                helpbuttonscript.GetComponent<HelpButtonScript>().ButtonClickable(true);
                 HideDialogue();
             }
         }

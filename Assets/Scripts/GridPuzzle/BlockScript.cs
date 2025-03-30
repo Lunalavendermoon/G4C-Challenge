@@ -55,6 +55,7 @@ public class BlockScript : MonoBehaviour
 
     bool isEnabled = true;
     bool pauseDragging = false;
+    bool selected = false;
 
     public void initBlock(int id, BlockType type, BlockLevelManagerScript levelManager, GridScript grid, int scaling) {
         this.id = id;
@@ -231,12 +232,22 @@ public class BlockScript : MonoBehaviour
     }
 
     void makeTransparent() {
+        if (selected == false)
+        {
+            AudioSFXManager.Instance.PlayAudio("pop");
+            selected = true;
+        }
         Color col = renderer.color;
         col.a = 0.8f;
         renderer.color = col;
     }
 
     void makeOpaque() {
+        if (selected == true)
+        {
+            AudioSFXManager.Instance.PlayAudio("pop");
+            selected = false;
+        }
         Color col = renderer.color;
         col.a = 1;
         renderer.color = col;
@@ -262,6 +273,7 @@ public class BlockScript : MonoBehaviour
     }
 
     public void placeBlockAt(UnityEngine.Vector3 position) {
+        AudioSFXManager.Instance.PlayAudio("thump");
         transform.position = position
         + new UnityEngine.Vector3(
             blockType.shape[0].Length / (2.0f / scalefact) + xoffset,

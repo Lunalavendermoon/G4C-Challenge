@@ -47,9 +47,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSource: {fileID: 4067955155916497240}
   tap: {fileID: 8300000, guid: daf139bdd4bc450488119bca994a64f3, type: 3}
-  clip2: {fileID: 0}
-  clip3: {fileID: 0}
-  clip4: {fileID: 0}
+  click: {fileID: 8300000, guid: 873ce85adbd7248458fcd62e8b248023, type: 3}
+  pop: {fileID: 8300000, guid: 6fec0a1a90d345848a4c77251b4e8a81, type: 3}
+  thump: {fileID: 8300000, guid: 445705b5dd2feb644ab74ba463f699de, type: 3}
 --- !u!82 &4067955155916497240
 AudioSource:
   m_ObjectHideFlags: 0

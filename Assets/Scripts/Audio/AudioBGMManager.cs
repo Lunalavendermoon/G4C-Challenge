@@ -10,6 +10,8 @@ public class AudioBGMManager : MonoBehaviour
     public AudioClip story;
     public AudioClip night;
     public AudioClip grid;
+    public AudioClip map;
+    public string BGM;
     private void Awake()
     {
         if (Instance == null)
@@ -22,6 +24,13 @@ public class AudioBGMManager : MonoBehaviour
         }
     }
 
+    private void Start()
+    {
+        if (BGM != "") {
+            PlayAudio(BGM);
+        }
+        audioSource.loop = true;
+    }
     public void PlayAudio(string clip)
     {
         if (clip == "chill") {
@@ -34,7 +43,7 @@ public class AudioBGMManager : MonoBehaviour
         }
         else if (clip == "suspense") {
             audioSource.clip = suspense;
-            audioSource.volume = 0.7f;
+            audioSource.volume = 0.5f;
         }
         else if (clip == "story") {
             audioSource.clip = story;
@@ -46,7 +55,7 @@ public class AudioBGMManager : MonoBehaviour
         }
         else if (clip == "grid") {
             audioSource.clip = grid;
-            audioSource.volume = 0.75f;
+            audioSource.volume = 0.5f;
         }
         audioSource.Play();
     }

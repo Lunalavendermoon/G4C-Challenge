@@ -9,11 +9,17 @@ EditorBuildSettings:
     path: Assets/Scenes/Story/Day 1.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
+    path: Assets/Scenes/Grid Puzzle/Grid Day 1.unity
+    guid: 47c895407e35c6247b43caada7448304
+  - enabled: 1
     path: Assets/Scenes/Map Puzzle/Puzzle1_1.unity
     guid: 94cbcd4a730906e4abdf9b05c2e46515
   - enabled: 1
     path: Assets/Scenes/Story/Day 2.unity
     guid: 1d9ffefe0431c1a4298f2cd478d89af4
+  - enabled: 1
+    path: Assets/Scenes/Grid Puzzle/Grid Day 2.unity
+    guid: 34ca2a15466d94f9984099770737fed0
   - enabled: 1
     path: Assets/Scenes/Map Puzzle/Puzzle2_1.unity
     guid: 40b73041e2dcdc44392b9c772f5ab996
@@ -23,6 +29,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Story/Day 3.unity
     guid: df663b0b77675694d8b1cdc6bc34e11c
+  - enabled: 1
+    path: Assets/Scenes/Grid Puzzle/Grid Day 3.unity
+    guid: bc7c58b3f8efd4b76a68a9b58db47df7
   - enabled: 1
     path: Assets/Scenes/Map Puzzle/Puzzle3_1.unity
     guid: 94732cb5e76eedf44a20e0394dbaecd0
@@ -35,9 +44,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Story/Day 4.unity
     guid: 34f23a2211feb12488f7aa75eada9a53
-  - enabled: 1
-    path: Assets/Scenes/Grid Puzzle/Grid Day 1.unity
-    guid: 47c895407e35c6247b43caada7448304
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
