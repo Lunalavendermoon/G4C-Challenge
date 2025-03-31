@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AudioBGMManager : MonoBehaviour
 {
@@ -11,12 +12,13 @@ public class AudioBGMManager : MonoBehaviour
     public AudioClip night;
     public AudioClip grid;
     public AudioClip map;
-    public string BGM;
+    private string currentBGM = "";
     private void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -26,10 +28,45 @@ public class AudioBGMManager : MonoBehaviour
 
     private void Start()
     {
-        if (BGM != "") {
-            PlayAudio(BGM);
-        }
         audioSource.loop = true;
+    }
+
+    private void Update()
+    {
+        if (currentBGM != "map")
+        {
+            switch(SceneManager.GetActiveScene().name) {
+                case "Puzzle1_1":
+                    PlayAudio("map");
+                    currentBGM = "map";
+                    break;
+                case "Puzzle2_1":
+                    PlayAudio("map");
+                    currentBGM = "map";
+                    break;
+                case "Puzzle3_1":
+                    PlayAudio("map");
+                    currentBGM = "map";
+                    break;
+                default:
+                    break;
+            }
+        }
+        if (currentBGM != "grid")
+        {
+            switch(SceneManager.GetActiveScene().name) {
+                case "Grid Day 2":
+                    PlayAudio("grid");
+                    currentBGM = "grid";
+                    break;
+                case "Grid Day 3":
+                    PlayAudio("grid");
+                    currentBGM = "grid";
+                    break;
+                default:
+                    break;
+            }
+        }
     }
     public void PlayAudio(string clip)
     {
@@ -43,7 +80,7 @@ public class AudioBGMManager : MonoBehaviour
         }
         else if (clip == "suspense") {
             audioSource.clip = suspense;
-            audioSource.volume = 0.5f;
+            audioSource.volume = 0.4f;
         }
         else if (clip == "story") {
             audioSource.clip = story;
@@ -55,6 +92,10 @@ public class AudioBGMManager : MonoBehaviour
         }
         else if (clip == "grid") {
             audioSource.clip = grid;
+            audioSource.volume = 0.5f;
+        }
+        else if (clip == "map") {
+            audioSource.clip = map;
             audioSource.volume = 0.5f;
         }
         audioSource.Play();

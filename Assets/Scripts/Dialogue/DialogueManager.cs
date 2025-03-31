@@ -41,9 +41,12 @@ public class DialogueManager : MonoBehaviour
             Destroy(gameObject);
         }
         DOTween.Init();
-        StartDialogue(dialogue.RootNode);
     }
 
+    private void Start()
+    {
+        StartDialogue(dialogue.RootNode);
+    }
     private void Update()
     {
         if (Input.GetMouseButtonDown(0) && !ItemDropLocation.mouseOverItemDropLocation)

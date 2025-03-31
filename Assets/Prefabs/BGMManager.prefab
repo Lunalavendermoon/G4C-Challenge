@@ -52,6 +52,8 @@ MonoBehaviour:
   story: {fileID: 8300000, guid: cc4683292bddb6d4eb3aa96d18a0822e, type: 3}
   night: {fileID: 8300000, guid: 090b9386eb0488a44b6f1eaf42cc6200, type: 3}
   grid: {fileID: 8300000, guid: 92662d957acac7247a1265e2917dfb45, type: 3}
+  map: {fileID: 8300000, guid: 8230c35b3dc67514395fde5778fdc897, type: 3}
+  BGM: 
 --- !u!82 &79029831011156637
 AudioSource:
   m_ObjectHideFlags: 0

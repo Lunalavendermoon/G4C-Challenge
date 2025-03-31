@@ -2816,6 +2816,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5347032072115144259, guid: 9621edf9d6f193643b06909c40ed4c12, type: 3}
+      propertyPath: BGM
+      value: map
+      objectReference: {fileID: 0}
     - target: {fileID: 5347684977420437246, guid: 9621edf9d6f193643b06909c40ed4c12, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1379.8037
@@ -3115,6 +3119,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 223067506}
+    - target: {fileID: 2056936263110173395, guid: 3e7db638d0732da44bae96e424b2b1fd, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 3353702240233180948, guid: 3e7db638d0732da44bae96e424b2b1fd, type: 3}
       propertyPath: m_Text
       value: Puzzle 1/3

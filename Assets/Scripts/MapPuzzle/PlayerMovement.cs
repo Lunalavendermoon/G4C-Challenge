@@ -75,7 +75,8 @@ public class PlayerMovement : MonoBehaviour
 
         if (isRiding)
         {
-            transform.Translate(railRoadDirection.normalized * railSpd * Time.deltaTime, Space.Self);
+            Debug.Log("Riding Started!");
+            transform.Translate(railRoadDirection.normalized * railSpd * Time.fixedDeltaTime, Space.Self);
             railSpd += 30f * Time.deltaTime;
             canMove = false;
         }
