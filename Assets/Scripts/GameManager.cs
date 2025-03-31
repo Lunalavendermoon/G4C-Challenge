@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 
 public static class GameManager
 {
-    public static int currentDay;
 
     public static float foodGiven = 6;
 
@@ -27,25 +26,10 @@ public static class GameManager
     
     [RuntimeInitializeOnLoadMethod]
     static void LoadFirstScene() {
-        // TODO load w/ main menu in the final version
-        currentDay = 0;
-
-        // Uncomment this to start from the very beginning scene
-        // LoadDialogueScene();
+        // TODO load main menu?
     }
 
-    public static void LoadDialogueScene() {
-        // currentDay increases every time we show the day cutscene
-        ++currentDay;
-        if (currentDay == 1) {
-            SceneManager.LoadScene("Day 1", LoadSceneMode.Single);
-        }
-    }
-
-    // FOR TESTING ONLY
-    public static void LoadTestingBlockData() {
-        currentDay = 1; // change the day to test different setups
-
+    public static void LoadBlockData(int currentDay) {
         if (currentDay == 1) {
             blockMaxSize = 20;
             blockMaxGroupSize = new int[] {10,5,5};
@@ -149,28 +133,6 @@ public static class GameManager
                 BlockType.bacon(), BlockType.fishSlice()
             };
         }
-    }
-
-    public static void LoadBlockScene() {
-        currentDay = 1; //TODO change this
-        if (currentDay == 1) {
-            blockMaxSize = 20;
-            blockMaxGroupSize = new int[] {10,5,5};
-            blockGridArray = new int[][] {
-                new int[] {-1, -1,  0,  0,  0, -1},
-                new int[] {-1,  0,  0,  0,  0, -1},
-                new int[] {-1,  0,  0,  0, -2, -1},
-                new int[] { 0,  0,  0,  0, -2,  0},
-                new int[] { 0,  0,  0,  0,  0,  0}
-            };
-            blockXOffset = 2;
-            blockYOffset = 3;
-            blockSpawnList = new BlockType[] {
-                BlockType.apple(), BlockType.rice(), BlockType.chickenLeg(),
-                BlockType.apple(), BlockType.rice(), BlockType.chickenLeg()
-            };
-        }
-        SceneManager.LoadScene("Grid Day " + currentDay, LoadSceneMode.Single);
     }
 
     public static void StoreNutritionInfo(int playerSize, int[] playerNutrition) {

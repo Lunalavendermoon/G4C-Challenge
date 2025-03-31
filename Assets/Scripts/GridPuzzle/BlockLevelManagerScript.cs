@@ -6,6 +6,7 @@ using System.Numerics;
 
 public class BlockLevelManagerScript : MonoBehaviour
 {
+    public int day;
     public GameObject helpUiManager;
     public GameObject hintManager;
     public GameObject blockPrefab;
@@ -46,7 +47,7 @@ public class BlockLevelManagerScript : MonoBehaviour
 
     void Start()
     {
-        GameManager.LoadTestingBlockData(); // TODO delete this later, this is just for testing
+        GameManager.LoadBlockData(day);
 
         blockLabel.text = "";
 
@@ -72,9 +73,8 @@ public class BlockLevelManagerScript : MonoBehaviour
 
         updateUI();
 
-        if (GameManager.currentDay == 1) {
-            // TODO uncomment this in final
-            // helpUiManager.GetComponent<HelpUiManager>().startTutorialDay1();
+        if (day == 1) {
+            helpUiManager.GetComponent<HelpUiManager>().startTutorialDay1();
         }
     }
 
