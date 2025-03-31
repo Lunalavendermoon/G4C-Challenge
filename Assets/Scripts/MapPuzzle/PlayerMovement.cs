@@ -34,8 +34,8 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.W) && canMove)
         {
-            moveeee(new Vector3(0f, moveDistance, 0f));
             transform.rotation = Quaternion.Euler(0f, 0f, 0f);
+            moveeee(new Vector3(0f, moveDistance, 0f));
         }
         else if (Input.GetKeyDown(KeyCode.A) && canMove)
         {
@@ -71,11 +71,8 @@ public class PlayerMovement : MonoBehaviour
             transform.localScale = new Vector3(0.2f, 0.2f, 0f);
         }
 
-
-
         if (isRiding)
         {
-            Debug.Log("Riding Started!");
             transform.Translate(railRoadDirection.normalized * railSpd * Time.fixedDeltaTime, Space.Self);
             railSpd += 30f * Time.deltaTime;
             canMove = false;
@@ -91,12 +88,7 @@ public class PlayerMovement : MonoBehaviour
             noStep.text = "Ran out of steps\n'R' to retry";
         }
 
-
-
         setpText.text = step.ToString() + " Step left";
-
-
-        
 
         //if (Input.GetKeyDown(KeyCode.UpArrow))
         //{
@@ -120,9 +112,9 @@ public class PlayerMovement : MonoBehaviour
         Collider2D railRoad = Physics2D.OverlapBox(destination, Vector2.zero, 0f, LayerMask.GetMask("RailRoad"));
         Collider2D barrier = Physics2D.OverlapBox(destination, Vector2.zero, 0f, LayerMask.GetMask("Barrier"));
 
-
         if (barrier != null)
         {
+            Debug.Log("can't move");
             return;
         }
 
@@ -156,15 +148,10 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-
-
-
-
         step -= 1;
 
         StartCoroutine(leap(destination));
     }
-
 
     private IEnumerator leap(Vector3 destination)
     {
@@ -200,6 +187,6 @@ public class PlayerMovement : MonoBehaviour
     {
         foodGiven += amount;
         AudioSFXManager.Instance.PlayAudio("pop");
-        Debug.Log(foodGiven);
+        //Debug.Log(foodGiven);
     }
 }

@@ -46,6 +46,6 @@ MonoBehaviour:
     - "Mother:And with that, little one, it\u2019s time to dream sweet dreams.0000l"
     - Mother:Good night, Clare.0000l
     - ...0000l
-    nextDialogue: {fileID: 0}
+    nextDialogue: {fileID: 11400000, guid: 5c55621372150fa4eb6b71e1691a939d, type: 2}
     bgNum: 1
     bgm: story

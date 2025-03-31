@@ -80,7 +80,7 @@ public class MapLevelManager : MonoBehaviour
 
         GameManager.foodGiven = originFoodOwn - foodOwn;
 
-        Debug.Log(foodOwn);
+        //Debug.Log(foodOwn);
     }
 
     public void setFood(float amount)
