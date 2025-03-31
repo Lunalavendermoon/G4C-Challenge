@@ -61,7 +61,7 @@ public class BlockLevelManagerScript : MonoBehaviour
         float ycarb = 2.5f;
 
         grid.initGrid(
-            GameManager.blockGridArray, GameManager.blockXOffset, GameManager.blockYOffset, GameManager.blockSolutionArray
+            GameManager.blockGridArray, GameManager.blockXOffset, GameManager.blockYOffset, GameManager.blockSolutionArray, day
         );
         
         // BLOCK ID MUST BE 1 OR GREATER
@@ -74,7 +74,8 @@ public class BlockLevelManagerScript : MonoBehaviour
         updateUI();
 
         if (day == 1) {
-            helpUiManager.GetComponent<HelpUiManager>().startTutorialDay1();
+            // TODO uncomment in final
+            // helpUiManager.GetComponent<HelpUiManager>().startTutorialDay1();
         }
     }
 

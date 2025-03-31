@@ -9,7 +9,7 @@ public class BlockHintScript : MonoBehaviour
 {
     public float hintTimer;
 
-    public Button hintButton;
+    public GameObject helpButton;
 
     float timer = 0;
 
@@ -67,14 +67,14 @@ public class BlockHintScript : MonoBehaviour
             } else {
                 hintText.text = "";
             }
-            hintButton.interactable = true;
+            helpButton.GetComponent<HelpButtonScript>().ButtonClickable(true);
             curId = 0;
         }
     }
 
     public void showBlock(int id) {
         timer = hintTimer;
-        hintButton.interactable = false;
+        helpButton.GetComponent<HelpButtonScript>().ButtonClickable(false);
         curId = id;
         if (id == -1) {
             hintText.text = "All blocks are correctly placed!";

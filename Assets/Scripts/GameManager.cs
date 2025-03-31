@@ -49,8 +49,8 @@ public static class GameManager
             };
             blockPositionArray.Add( 1, new object[] {false, false, 0, 0, 2});
             blockPositionArray.Add( 2, new object[] {false, false, 0, 0, 4});
-            blockPositionArray.Add( 6, new object[] { true, false, 0, 3, 5});
-            blockPositionArray.Add( 8, new object[] {false, false, 1, 2, 3});
+            blockPositionArray.Add( 6, new object[] { true, false, 0, 3, 4});
+            blockPositionArray.Add( 8, new object[] {false, false, 1, 3, 2});
             blockPositionArray.Add( 9, new object[] {false, false, 0, 1, 1});
             blockPositionArray.Add(12, new object[] {false, false, 0, 3, 0});
             blockXOffset = 2;

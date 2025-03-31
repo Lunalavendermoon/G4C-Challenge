@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: 7111bcd5c629147c8bb354c4c11e4010
+guid: d2b27429a90a347d386d8057d4584ec2
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8775620502527152349
-    second: UI_Backpack-2_0
+      213: 6958549412729318714
+    second: UI_Backpack-3-1_0
+  - first:
+      213: -3924205513774725262
+    second: UI_Backpack-3-1_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +116,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: UI_Backpack-2_0
+      name: UI_Backpack-3-1_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 45
-        width: 1820
-        height: 1035
+        x: 1630
+        y: 213
+        width: 290
+        height: 93
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +131,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 32feb3fe5abb63680800000000000000
-      internalID: -8775620502527152349
+      spriteID: a3debb9a2dbb19060800000000000000
+      internalID: 6958549412729318714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI_Backpack-3-1_1
+      rect:
+        serializedVersion: 2
+        x: 1693
+        y: 0
+        width: 227
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27704d560eb6a89c0800000000000000
+      internalID: -3924205513774725262
       vertices: []
       indices: 
       edges: []
@@ -138,7 +163,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -147,7 +172,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      UI_Backpack-3-1_0: 6958549412729318714
+      UI_Backpack-3-1_1: -3924205513774725262
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
