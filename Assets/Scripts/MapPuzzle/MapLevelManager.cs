@@ -30,7 +30,6 @@ public class MapLevelManager : MonoBehaviour
     void Start()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
-
         sceneIndex = SceneManager.GetActiveScene().buildIndex;
         slider = GameObject.Find("Slider").GetComponent<Slider>();
         originFoodOwn = foodOwn;
@@ -38,6 +37,7 @@ public class MapLevelManager : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        AudioSFXManager.Instance.PlayAudio("thump");
         slider = GameObject.Find("Slider").GetComponent<Slider>();
         beginFoodOwn = foodOwn;
     }

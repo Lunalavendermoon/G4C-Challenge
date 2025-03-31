@@ -50,6 +50,8 @@ MonoBehaviour:
   click: {fileID: 8300000, guid: 873ce85adbd7248458fcd62e8b248023, type: 3}
   pop: {fileID: 8300000, guid: 6fec0a1a90d345848a4c77251b4e8a81, type: 3}
   thump: {fileID: 8300000, guid: 445705b5dd2feb644ab74ba463f699de, type: 3}
+  zip: {fileID: 8300000, guid: a31d9433c67fc7744ad88257253ba533, type: 3}
+  ding: {fileID: 8300000, guid: aee807cd1a012c041b84d16b8ab13a71, type: 3}
 --- !u!82 &4067955155916497240
 AudioSource:
   m_ObjectHideFlags: 0

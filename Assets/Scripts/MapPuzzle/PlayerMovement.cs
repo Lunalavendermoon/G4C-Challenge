@@ -112,7 +112,7 @@ public class PlayerMovement : MonoBehaviour
     {
         Vector3 destination = transform.position + direction;
 
-
+        AudioSFXManager.Instance.PlayAudio("tap");
         Collider2D bigGround = Physics2D.OverlapBox(destination, Vector2.zero, 0f, LayerMask.GetMask("BigGround"));
         Collider2D middleGround = Physics2D.OverlapBox(destination, Vector2.zero, 0f, LayerMask.GetMask("MiddleGround"));
         Collider2D smallGround = Physics2D.OverlapBox(destination, Vector2.zero, 0f, LayerMask.GetMask("SmallGround"));
@@ -128,6 +128,7 @@ public class PlayerMovement : MonoBehaviour
         if (railRoad != null && (Quaternion.Angle(transform.rotation, railRoad.transform.rotation) == 0 || Quaternion.Angle(transform.rotation, railRoad.transform.rotation) == 90))
         {
             isRiding = true;
+            AudioSFXManager.Instance.PlayAudio("zip");
             step -= 1;
             return;
         }
@@ -167,7 +168,6 @@ public class PlayerMovement : MonoBehaviour
     private IEnumerator leap(Vector3 destination)
     {
         Vector3 startPosition = transform.position;
-
         float elapsed = 0f;
         float duration = 0.12f;
 
@@ -198,6 +198,7 @@ public class PlayerMovement : MonoBehaviour
     public void giveFood(float amount)
     {
         foodGiven += amount;
+        AudioSFXManager.Instance.PlayAudio("pop");
         Debug.Log(foodGiven);
     }
 }

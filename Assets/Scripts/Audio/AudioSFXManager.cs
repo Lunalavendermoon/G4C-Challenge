@@ -8,7 +8,8 @@ public class AudioSFXManager : MonoBehaviour
     public AudioClip click;
     public AudioClip pop;
     public AudioClip thump;
-    
+    public AudioClip zip;
+    public AudioClip ding;
 
     private void Awake()
     {
@@ -39,6 +40,14 @@ public class AudioSFXManager : MonoBehaviour
         else if (clip == "thump") {
             audioSource.clip = thump;
             audioSource.volume = 0.5f;
+        }
+        else if (clip == "zip") {
+            audioSource.clip = zip;
+            audioSource.volume = 0.5f;
+        }
+        else if (clip == "ding") {
+            audioSource.clip = ding;
+            audioSource.volume = 1f;
         }
         audioSource.Play();
     }

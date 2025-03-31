@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RootNode:
     dialogues:
+    - The Next Day0000l
     - "Food Bank Headquarters \u2013 Afternoon0000l"
     - "p:Hey, you! What\u2019s been going on? I heard part of the food supply was
       missing last night.0312r"
@@ -31,6 +32,7 @@ MonoBehaviour:
     - "y: What? You can\u2019t just-0411l"
     - "p: Why not? I\u2019m the one in charge here. Goodbye. You should go pack your
       bags now.0311r"
+    - The End.0000l
     nextDialogue: {fileID: 0}
     bgNum: 2
     bgm: suspense

@@ -9,6 +9,7 @@ public class HunguryMan : MonoBehaviour
         if (collision.CompareTag("Player") && MapLevelManager.Instance.getFood() >= 1)
         {
             playerMovement.giveFood(1);
+            AudioSFXManager.Instance.PlayAudio("ding");
             MapLevelManager.Instance.setFood(1);
             Destroy(gameObject);
         }
