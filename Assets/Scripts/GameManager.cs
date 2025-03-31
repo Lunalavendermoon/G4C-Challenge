@@ -21,6 +21,9 @@ public static class GameManager
     public static Dictionary<int, object[]> blockPositionArray = new Dictionary<int, object[]>();
 
     public static BlockType[] blockSpawnList;
+
+    public static int gridFoodAmount;
+    public static int[] gridFoodNutrition = new int[]{0,0,0};
     
     [RuntimeInitializeOnLoadMethod]
     static void LoadFirstScene() {
@@ -170,11 +173,10 @@ public static class GameManager
         SceneManager.LoadScene("Grid Day " + currentDay, LoadSceneMode.Single);
     }
 
-    public static void LoadMapScene(int playerSize, int[] playerNutrition) {
-        if (currentDay == 1) {
-            // TODO set variables
+    public static void StoreNutritionInfo(int playerSize, int[] playerNutrition) {
+        gridFoodAmount = playerSize;
+        for (int i = 0; i < 3; ++i) {
+            gridFoodNutrition[i] = playerNutrition[i];
         }
-        Debug.Log("Player size: " + playerSize + ", Nutrition amounts: " + playerNutrition[0] + " " + playerNutrition[1] + " " + playerNutrition[2]);
-        SceneManager.LoadScene("Map", LoadSceneMode.Single);
     }
 }

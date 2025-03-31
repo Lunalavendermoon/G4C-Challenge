@@ -45,6 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   helpUiManager: {fileID: 0}
+  hintManager: {fileID: 0}
   blockPrefab: {fileID: 7019135002737759780, guid: 91a181e5a030648028f2cfa791517447, type: 3}
   gameGrid: {fileID: 0}
   scalefact: 3
@@ -54,3 +55,5 @@ MonoBehaviour:
   camera: {fileID: 0}
   blockLabel: {fileID: 0}
   sizeBar: {fileID: 0}
+  levelWarning: {fileID: 0}
+  warningTimer: 3
