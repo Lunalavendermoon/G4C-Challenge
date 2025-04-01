@@ -229,6 +229,7 @@ public class BlockLevelManagerScript : MonoBehaviour
         for (int i = 0; i < 3; ++i) {
             if (nutrition[i] < maxNutrition[i]) {
                 levelWarning.SetActive(true);
+                AudioSFXManager.Instance.PlayAudio("bad");
                 timer = warningTimer;
                 return;
             }
