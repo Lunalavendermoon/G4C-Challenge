@@ -1799,7 +1799,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 2
   m_Sprite: {fileID: 4065212991675715447, guid: a3fa0b24a34f2be43911e41a8d371a5b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -2049,21 +2049,13 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2013272852263756659, guid: 3e7db638d0732da44bae96e424b2b1fd, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 550
-      objectReference: {fileID: 0}
-    - target: {fileID: 2013272852263756659, guid: 3e7db638d0732da44bae96e424b2b1fd, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 401
-      objectReference: {fileID: 0}
     - target: {fileID: 2056936263110173395, guid: 3e7db638d0732da44bae96e424b2b1fd, type: 3}
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 223067506}
     - target: {fileID: 2514211313740028575, guid: 3e7db638d0732da44bae96e424b2b1fd, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3353702240233180948, guid: 3e7db638d0732da44bae96e424b2b1fd, type: 3}
       propertyPath: m_Text
@@ -2086,6 +2078,10 @@ PrefabInstance:
     - target: {fileID: 7845598782409146151, guid: 3e7db638d0732da44bae96e424b2b1fd, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 7845598782409146151, guid: 3e7db638d0732da44bae96e424b2b1fd, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8367856605888870804, guid: 3e7db638d0732da44bae96e424b2b1fd, type: 3}
       propertyPath: m_AnchorMax.x
@@ -2754,7 +2750,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4893421380759641431, guid: 10036d50b777c344aaf98e660ebad9f4, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6699870431635159883, guid: 10036d50b777c344aaf98e660ebad9f4, type: 3}
       propertyPath: m_Pivot.x
