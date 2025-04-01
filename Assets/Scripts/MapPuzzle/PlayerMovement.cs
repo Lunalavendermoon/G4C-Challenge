@@ -76,7 +76,7 @@ public class PlayerMovement : MonoBehaviour
         if (isRiding)
         {
             Debug.Log("Riding Started!");
-            transform.Translate(railRoadDirection.normalized * railSpd * Time.fixedDeltaTime, Space.Self);
+            transform.Translate(railRoadDirection.normalized * railSpd * Time.deltaTime, Space.Self);
             railSpd += 30f * Time.deltaTime;
             canMove = false;
         }
@@ -156,12 +156,6 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-
-
-
-
-        step -= 1;
-
         StartCoroutine(leap(destination));
     }
 
@@ -182,6 +176,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         transform.position = destination;
+        step -= 1;
         canMove = true;
     }
 

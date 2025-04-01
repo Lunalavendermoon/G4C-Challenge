@@ -2684,11 +2684,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1316642327742566486, guid: 37356b458d8646740b168212bc6c396f, type: 3}
       propertyPath: foodOwn
-      value: 5
+      value: 7.5
       objectReference: {fileID: 0}
     - target: {fileID: 1316642327742566486, guid: 37356b458d8646740b168212bc6c396f, type: 3}
       propertyPath: beginFoodOwn
-      value: 5
+      value: 7.5
       objectReference: {fileID: 0}
     - target: {fileID: 4255902357104433629, guid: 37356b458d8646740b168212bc6c396f, type: 3}
       propertyPath: m_LocalPosition.x
