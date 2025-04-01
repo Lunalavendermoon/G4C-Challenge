@@ -12,6 +12,7 @@ public class MapLevelManager : MonoBehaviour
     private float originFoodOwn;
     private Slider slider;
     private int sceneIndex;
+    private bool correctScene = true;
     [SerializeField] float fillSpeed = 10f;
 
     void Awake()
@@ -37,13 +38,27 @@ public class MapLevelManager : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        sceneIndex = SceneManager.GetActiveScene().buildIndex;
+        Debug.Log("scene loaded: " + sceneIndex);
+        if (sceneIndex == 2 || sceneIndex == 5 || sceneIndex == 6 || sceneIndex == 9 || sceneIndex == 10 || sceneIndex == 11) 
+        {
+            correctScene = true;
+            Debug.Log("scene is " + correctScene);
+        }
+        else {
+            correctScene = false;
+            Debug.Log("scene is " + correctScene);
+        }
+        if(correctScene){
         AudioSFXManager.Instance.PlayAudio("thump");
         slider = GameObject.Find("Slider").GetComponent<Slider>();
         beginFoodOwn = foodOwn;
+        }
     }
 
     void Update()
     {
+        if (correctScene){
         slider.value = Mathf.MoveTowards(slider.value, foodOwn, 15f * Time.deltaTime);
 
         if (Input.GetKeyDown(KeyCode.R))
@@ -81,6 +96,7 @@ public class MapLevelManager : MonoBehaviour
         GameManager.foodGiven = originFoodOwn - foodOwn;
 
         //Debug.Log(foodOwn);
+        }
     }
 
     public void setFood(float amount)

@@ -191,6 +191,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 594363487357321927, guid: 4c3569f168785e24b975900f6d4d5b87, type: 3}
+      propertyPath: m_SortingOrder
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 831478717309419769, guid: 4c3569f168785e24b975900f6d4d5b87, type: 3}
       propertyPath: m_Name
       value: Player
@@ -1567,7 +1571,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4155953137605683865, guid: cf45dff94736c4940a88a08dbd88cd2e, type: 3}
       propertyPath: m_SortingOrder
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6963354998730901289, guid: cf45dff94736c4940a88a08dbd88cd2e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1636,7 +1640,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7529806790728464195, guid: bf73fffa4c36e5e4291969cdac28500c, type: 3}
       propertyPath: m_SortingOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8156665231732342353, guid: bf73fffa4c36e5e4291969cdac28500c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2137,7 +2141,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7529806790728464195, guid: bf73fffa4c36e5e4291969cdac28500c, type: 3}
       propertyPath: m_SortingOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8156665231732342353, guid: bf73fffa4c36e5e4291969cdac28500c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2206,7 +2210,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4155953137605683865, guid: cf45dff94736c4940a88a08dbd88cd2e, type: 3}
       propertyPath: m_SortingOrder
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6963354998730901289, guid: cf45dff94736c4940a88a08dbd88cd2e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2275,7 +2279,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7529806790728464195, guid: bf73fffa4c36e5e4291969cdac28500c, type: 3}
       propertyPath: m_SortingOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8156665231732342353, guid: bf73fffa4c36e5e4291969cdac28500c, type: 3}
       propertyPath: m_LocalPosition.x

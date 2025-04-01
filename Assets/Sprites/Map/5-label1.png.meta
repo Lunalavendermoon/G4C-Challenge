@@ -204,6 +204,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -1034,7 +1047,44 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      5-label1_0: -4235057121350803597
+      5-label1_1: -3870030197424403887
+      5-label1_10: 8216023424962131653
+      5-label1_11: 3299133566917125711
+      5-label1_12: -2722189122600412562
+      5-label1_13: -2616012373308903947
+      5-label1_14: -3929549499109345451
+      5-label1_15: -1529547848442713615
+      5-label1_16: 2304152171990641825
+      5-label1_17: 5022262020947322871
+      5-label1_18: 7463493927946005772
+      5-label1_19: 7635739507451466354
+      5-label1_2: 2123289384593655847
+      5-label1_20: 9082943367303490735
+      5-label1_21: -6521188218058340910
+      5-label1_22: 3405456560255889807
+      5-label1_23: -3662025121776497217
+      5-label1_24: -6794120947758415389
+      5-label1_25: 723029760133507473
+      5-label1_26: -2589367208195514049
+      5-label1_27: 545967657363592389
+      5-label1_28: 3420163924643876042
+      5-label1_29: 2204810094351830084
+      5-label1_3: 3291435090407310556
+      5-label1_30: 7317314767461190333
+      5-label1_31: 5124319016211604810
+      5-label1_32: -7399879785248164568
+      5-label1_33: 2744508788948704397
+      5-label1_34: 5792972859708891000
+      5-label1_35: 8191856320154323705
+      5-label1_36: 8819984565701541740
+      5-label1_4: -1374655522444938222
+      5-label1_5: 2453916947244840348
+      5-label1_6: -6942137487964215931
+      5-label1_7: 6644573363106870328
+      5-label1_8: -3467848103806285324
+      5-label1_9: 3959001822191487783
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
