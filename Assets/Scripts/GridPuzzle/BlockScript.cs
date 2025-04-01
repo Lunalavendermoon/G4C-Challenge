@@ -77,7 +77,7 @@ public class BlockScript : MonoBehaviour
             case "banana":
                 renderer.sprite = bananaSprite;
                 break;
-            case "bean":
+            case "beans":
                 renderer.sprite = beanSprite;
                 break;
             case "bread":

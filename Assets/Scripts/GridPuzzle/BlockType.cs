@@ -224,7 +224,7 @@ public class BlockType {
     }
 
     public static BlockType bean() {
-        return new BlockType("bean", "protein", new bool[][] {
+        return new BlockType("beans", "protein", new bool[][] {
             new bool[] {true, true},
             new bool[] {true, true}
         });
