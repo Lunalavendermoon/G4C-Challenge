@@ -96,9 +96,9 @@ public class BlockLevelManagerScript : MonoBehaviour
     }
     
     void spawnBlock(int id, BlockType type, int count, float yoffset) {
-        int x = count < 15 ? count % 5 : (count - 15) % 4;
-        int y = count < 15 ? count / 5 : 3 + (count - 15) / 4;
-        UnityEngine.Vector3 position = new UnityEngine.Vector3(-7.0f + 1.3f * x, yoffset - 1.4f * y);
+        int x = count % 5; //count < 15 ? count % 5 : (count - 15) % 4;
+        int y = count / 5; // count < 15 ? count / 5 : 3 + (count - 15) / 4;
+        UnityEngine.Vector3 position = new UnityEngine.Vector3(-7.0f + 1.2f * x, yoffset - 1.7f * y);
         if (scalefact == 3) {
             x = count < 12 ? count % 3 : (count - 12) % 2;
             y = count < 12 ? count / 3 : 4 + (count - 12) / 2;
