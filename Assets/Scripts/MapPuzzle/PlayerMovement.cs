@@ -24,12 +24,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] Text noStep;
 
 
-    private void Start()
-    {
-
-    }
-
-
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.W) && canMove)
@@ -58,22 +52,22 @@ public class PlayerMovement : MonoBehaviour
         if (foodGiven < 2.5)
         {
             status = 1;
-            transform.localScale = new Vector3(0.5f, 0.5f, 0f);
+            transform.localScale = new Vector3(0.7f, 0.7f, 0f);
         }
         else if (foodGiven >= 2.5 && foodGiven < 5)
         {
             status = 2;
-            transform.localScale = new Vector3(0.3f, 0.3f, 0f);
+            transform.localScale = new Vector3(0.5f, 0.5f, 0f);
         }
         else if (foodGiven >= 5)
         {
             status = 3;
-            transform.localScale = new Vector3(0.2f, 0.2f, 0f);
+            transform.localScale = new Vector3(0.3f, 0.3f, 0f);
         }
 
         if (isRiding)
         {
-            transform.Translate(railRoadDirection.normalized * railSpd * Time.fixedDeltaTime, Space.Self);
+            transform.Translate(railRoadDirection.normalized * railSpd * Time.deltaTime, Space.Self);
             railSpd += 30f * Time.deltaTime;
             canMove = false;
         }
@@ -88,7 +82,7 @@ public class PlayerMovement : MonoBehaviour
             noStep.text = "Ran out of steps\n'R' to retry";
         }
 
-        setpText.text = step.ToString() + " Step left";
+        setpText.text = step.ToString();
 
         //if (Input.GetKeyDown(KeyCode.UpArrow))
         //{
@@ -148,8 +142,6 @@ public class PlayerMovement : MonoBehaviour
             }
         }
 
-        step -= 1;
-
         StartCoroutine(leap(destination));
     }
 
@@ -167,7 +159,7 @@ public class PlayerMovement : MonoBehaviour
             canMove = false;
             yield return null;
         }
-
+        step -= 1;
         transform.position = destination;
         canMove = true;
     }
@@ -187,6 +179,5 @@ public class PlayerMovement : MonoBehaviour
     {
         foodGiven += amount;
         AudioSFXManager.Instance.PlayAudio("pop");
-        //Debug.Log(foodGiven);
     }
 }

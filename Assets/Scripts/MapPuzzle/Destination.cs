@@ -8,6 +8,7 @@ public class Destination : MonoBehaviour
     [SerializeField] GameObject belt1;
     [SerializeField] GameObject belt2;
     [SerializeField] Text warnText;
+    [SerializeField] bool isLastPuzzle;
     private void OnTriggerEnter2D(Collider2D collision)
     {
         
@@ -15,8 +16,11 @@ public class Destination : MonoBehaviour
         {
             if (belt1 == null &&  belt2 == null)
             {
+                if (isLastPuzzle)
+                {
+                    Destroy(MapLevelManager.Instance.gameObject);
+                }
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-
             }
             if (belt1.GetComponent<SpriteRenderer>().color == Color.red || belt2.GetComponent<SpriteRenderer>().color == Color.red)
             {
@@ -24,6 +28,10 @@ public class Destination : MonoBehaviour
             }
             else
             {
+                if (isLastPuzzle)
+                {
+                    Destroy(MapLevelManager.Instance.gameObject);
+                }
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
         }
