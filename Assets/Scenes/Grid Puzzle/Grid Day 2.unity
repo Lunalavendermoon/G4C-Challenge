@@ -348,6 +348,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a96eb7353540c9940b8b980b6b937242, type: 3}
+--- !u!114 &1095903487 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6921089200822997004, guid: a96eb7353540c9940b8b980b6b937242, type: 3}
+  m_PrefabInstance: {fileID: 1095903486}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d72c69e99a2dc743bb899e328dcc49f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1248284937 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4246059449621841392, guid: 7a0d9238884c94cb68464a3a82ed5361, type: 3}
@@ -693,6 +704,10 @@ PrefabInstance:
       propertyPath: DialogBodyText
       value: 
       objectReference: {fileID: 1119172571800986811}
+    - target: {fileID: 3373386612359865382, guid: 3e8e953e9b74540978b6fce8e75e8027, type: 3}
+      propertyPath: helpbuttonscript
+      value: 
+      objectReference: {fileID: 1617786322032423450}
     - target: {fileID: 8041599378356246885, guid: 3e8e953e9b74540978b6fce8e75e8027, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1020.7354
@@ -1005,6 +1020,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 725174851218551503, guid: 957f3d0204e3540d49b6706f275d0a09, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 8445814805404792703}
+    - target: {fileID: 725174851218551503, guid: 957f3d0204e3540d49b6706f275d0a09, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1095903487}
+    - target: {fileID: 725174851218551503, guid: 957f3d0204e3540d49b6706f275d0a09, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: startTutorialFromButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 725174851218551503, guid: 957f3d0204e3540d49b6706f275d0a09, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: PlayAudio
+      objectReference: {fileID: 0}
+    - target: {fileID: 725174851218551503, guid: 957f3d0204e3540d49b6706f275d0a09, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Arguments.m_StringArgument
+      value: click
+      objectReference: {fileID: 0}
     - target: {fileID: 2694958518761257137, guid: 957f3d0204e3540d49b6706f275d0a09, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1203,6 +1238,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1763846756}
     - target: {fileID: 7285832761670412829, guid: 7a0d9238884c94cb68464a3a82ed5361, type: 3}
+      propertyPath: helpButton
+      value: 
+      objectReference: {fileID: 1617786322032423450}
+    - target: {fileID: 7285832761670412829, guid: 7a0d9238884c94cb68464a3a82ed5361, type: 3}
       propertyPath: helpChoice
       value: 
       objectReference: {fileID: 0}
@@ -1267,6 +1306,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7a0d9238884c94cb68464a3a82ed5361, type: 3}
+--- !u!114 &8445814805404792703 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7285832761670412829, guid: 7a0d9238884c94cb68464a3a82ed5361, type: 3}
+  m_PrefabInstance: {fileID: 8445814805404792702}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1248284937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 281bb8b5d9de14a2b8eb649689de0ee5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
