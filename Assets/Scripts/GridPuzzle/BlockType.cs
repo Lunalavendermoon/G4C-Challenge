@@ -156,14 +156,14 @@ public class BlockType {
     }
 
     public static BlockType bread3() {
-        return new BlockType("bread3", "bread", "carb", new bool[][] {
+        return new BlockType("bread3", "bread loaf", "carb", new bool[][] {
             new bool[] {true, true, false},
             new bool[] {true, true, true}
         });
     }
 
     public static BlockType bread4() {
-        return new BlockType("bread4", "bread", "carb", new bool[][] {
+        return new BlockType("bread4", "baguette", "carb", new bool[][] {
             new bool[] {true, true, true, true}
         });
     }
@@ -224,7 +224,7 @@ public class BlockType {
     }
 
     public static BlockType bean() {
-        return new BlockType("bean", "protein", new bool[][] {
+        return new BlockType("beans", "protein", new bool[][] {
             new bool[] {true, true},
             new bool[] {true, true}
         });

@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Data.Common;
 using TMPro;
@@ -77,12 +78,15 @@ public class BlockHintScript : MonoBehaviour
         helpButton.GetComponent<HelpButtonScript>().ButtonClickable(false);
         curId = id;
         if (id == -1) {
-            hintText.text = "All blocks are correctly placed!";
+            hintText.text = "Click <color=#ffd666>Next Phase</color> to move on!";
         } else {
             if (GameManager.blockPositionArray.ContainsKey(curId)) {
                 blocks[curId].SetActive(true);
             } else {
-                hintText.text = blocks[curId].GetComponent<BlockScript>().blockType.displayName + " should not be on the grid!";
+                string foodName = blocks[curId].GetComponent<BlockScript>().blockType.displayName;
+                hintText.text = "<color=#ffd666>" +
+                    char.ToUpperInvariant(foodName[0]) + foodName.Substring(1, foodName.Length - 1) +
+                    "</color> should not be on the grid!";
             }
         }
     }
