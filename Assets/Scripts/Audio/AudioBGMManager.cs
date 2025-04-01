@@ -38,15 +38,12 @@ public class AudioBGMManager : MonoBehaviour
             switch(SceneManager.GetActiveScene().name) {
                 case "Puzzle1_1":
                     PlayAudio("map");
-                    currentBGM = "map";
                     break;
                 case "Puzzle2_1":
                     PlayAudio("map");
-                    currentBGM = "map";
                     break;
                 case "Puzzle3_1":
                     PlayAudio("map");
-                    currentBGM = "map";
                     break;
                 default:
                     break;
@@ -57,11 +54,6 @@ public class AudioBGMManager : MonoBehaviour
             switch(SceneManager.GetActiveScene().name) {
                 case "Grid Day 2":
                     PlayAudio("grid");
-                    currentBGM = "grid";
-                    break;
-                case "Grid Day 3":
-                    PlayAudio("grid");
-                    currentBGM = "grid";
                     break;
                 default:
                     break;
@@ -93,10 +85,12 @@ public class AudioBGMManager : MonoBehaviour
         else if (clip == "grid") {
             audioSource.clip = grid;
             audioSource.volume = 0.5f;
+            currentBGM = "grid";
         }
         else if (clip == "map") {
             audioSource.clip = map;
             audioSource.volume = 0.5f;
+            currentBGM = "map";
         }
         audioSource.Play();
     }

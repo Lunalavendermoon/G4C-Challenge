@@ -6,7 +6,7 @@ public class HelpUiManager : MonoBehaviour
     public GameObject tutorialDialogueManager;
     public GameObject tutorialContent;
     public GameObject helpBg;
-    public GameObject helpChoice;
+    public GameObject helpButton;
     public GameObject closeButton;
 
     TutorialDialogueManager dialogueManager;
@@ -26,8 +26,10 @@ public class HelpUiManager : MonoBehaviour
     }
 
     public void startTutorialFromButton() {
-        helpChoice.SetActive(false);
+        // helpChoice.SetActive(false);
         tutorialContent.SetActive(true);
+        levelManager.setPopupStatus(true);
+        helpButton.GetComponent<HelpButtonScript>().ButtonClickable(false);
 
         dialogueManager.StartDialogue();
     }
@@ -39,7 +41,7 @@ public class HelpUiManager : MonoBehaviour
 
     public void showHelp() {
         setStatus(true);
-        helpChoice.SetActive(true);
+        // helpChoice.SetActive(true);
         tutorialContent.SetActive(false);
     }
 

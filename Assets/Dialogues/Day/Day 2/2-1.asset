@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RootNode:
     dialogues:
+    - The Next Day0000l
     - "Politician\u2019s Food Pantry \u2013 Morning0000l"
     - You decide to head to the food pantry to investigate the food distribution.
       What was causing this heavy proportion of malnourishment within the city?0000l

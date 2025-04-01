@@ -15,13 +15,16 @@ public class GridScript : MonoBehaviour
 
     int xoffset, yoffset;
 
-    public void initGrid(int[][] gridArray, int xoffset, int yoffset, int[][] solutionArray) {
+    int currentDay;
+
+    public void initGrid(int[][] gridArray, int xoffset, int yoffset, int[][] solutionArray, int day) {
         this.gridArray = gridArray;
         this.solutionArray = solutionArray;
         rows = gridArray.Length;
         cols = gridArray[0].Length;
         this.xoffset = xoffset;
         this.yoffset = yoffset;
+        currentDay = day;
         
         tilemap.ClearAllTiles();
         clearTileMap();
@@ -62,7 +65,7 @@ public class GridScript : MonoBehaviour
 
     public Vector3 arrayToWorld(int row, int col) {
         Vector3 og = tilemap.CellToWorld(arrayToCell(new Vector3Int(row, col)));
-        return new Vector3(og.x - (GameManager.currentDay == 1 ? 0.5f : 0), og.y);
+        return new Vector3(og.x - (currentDay == 1 ? 0.5f : 0), og.y);
     }
 
     public void drawDropShadow(Vector3 position, BlockType blockType) {

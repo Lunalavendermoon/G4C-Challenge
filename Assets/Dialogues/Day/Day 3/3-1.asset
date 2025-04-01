@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RootNode:
     dialogues:
+    - The Next Day0000l
     - "Politician\u2019s Party \u2013 Evening0000l"
     - "You are invited by local politicians to attend a formal event. Apparently
       it was to celebrate one of the politician\u2019s successful financial investments.0100l"

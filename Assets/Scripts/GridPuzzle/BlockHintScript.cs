@@ -1,5 +1,7 @@
 using System.Collections.Generic;
 using System.Data.Common;
+using TMPro;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,15 +9,21 @@ public class BlockHintScript : MonoBehaviour
 {
     public float hintTimer;
 
-    public Button hintButton;
+    public GameObject helpButton;
 
     float timer = 0;
 
     public GameObject blockPrefab;
+    public TextMeshProUGUI hintText;
 
-    int curId = -1;
+    int curId = 0;
 
     Dictionary<int, GameObject> blocks = new Dictionary<int, GameObject>();
+
+    void Start()
+    {
+        hintText.text = "";
+    }
 
     public void initBlock(int id, BlockType type, Vector3 position, bool hflip, bool vflip, int rot, BlockLevelManagerScript script, GridScript grid, int scalefact) {
         GameObject block = Instantiate(blockPrefab, position, Quaternion.identity);
@@ -53,18 +61,29 @@ public class BlockHintScript : MonoBehaviour
             timer -= Time.deltaTime;
             return;
         }
-        if (curId != -1) {
-            blocks[curId].SetActive(false);
-            hintButton.interactable = true;
-            curId = -1;
+        if (curId != 0) {
+            if (GameManager.blockPositionArray.ContainsKey(curId)) {
+                blocks[curId].SetActive(false);
+            } else {
+                hintText.text = "";
+            }
+            helpButton.GetComponent<HelpButtonScript>().ButtonClickable(true);
+            curId = 0;
         }
-
     }
 
     public void showBlock(int id) {
         timer = hintTimer;
-        hintButton.interactable = false;
+        helpButton.GetComponent<HelpButtonScript>().ButtonClickable(false);
         curId = id;
-        blocks[curId].SetActive(true);
+        if (id == -1) {
+            hintText.text = "All blocks are correctly placed!";
+        } else {
+            if (GameManager.blockPositionArray.ContainsKey(curId)) {
+                blocks[curId].SetActive(true);
+            } else {
+                hintText.text = blocks[curId].GetComponent<BlockScript>().blockType.displayName + " should not be on the grid!";
+            }
+        }
     }
 }

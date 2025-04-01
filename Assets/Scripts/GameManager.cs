@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 
 public static class GameManager
 {
-    public static int currentDay;
 
     public static float foodGiven = 6;
 
@@ -21,28 +20,16 @@ public static class GameManager
     public static Dictionary<int, object[]> blockPositionArray = new Dictionary<int, object[]>();
 
     public static BlockType[] blockSpawnList;
+
+    public static int gridFoodAmount;
+    public static int[] gridFoodNutrition = new int[]{0,0,0};
     
     [RuntimeInitializeOnLoadMethod]
     static void LoadFirstScene() {
-        // TODO load w/ main menu in the final version
-        currentDay = 0;
-
-        // Uncomment this to start from the very beginning scene
-        // LoadDialogueScene();
+        // TODO load main menu?
     }
 
-    public static void LoadDialogueScene() {
-        // currentDay increases every time we show the day cutscene
-        ++currentDay;
-        if (currentDay == 1) {
-            SceneManager.LoadScene("Day 1", LoadSceneMode.Single);
-        }
-    }
-
-    // FOR TESTING ONLY
-    public static void LoadTestingBlockData() {
-        currentDay = 1; // change the day to test different setups
-
+    public static void LoadBlockData(int currentDay) {
         if (currentDay == 1) {
             blockMaxSize = 20;
             blockMaxGroupSize = new int[] {10,5,5};
@@ -62,8 +49,8 @@ public static class GameManager
             };
             blockPositionArray.Add( 1, new object[] {false, false, 0, 0, 2});
             blockPositionArray.Add( 2, new object[] {false, false, 0, 0, 4});
-            blockPositionArray.Add( 6, new object[] { true, false, 0, 3, 5});
-            blockPositionArray.Add( 8, new object[] {false, false, 1, 2, 3});
+            blockPositionArray.Add( 6, new object[] { true, false, 0, 3, 4});
+            blockPositionArray.Add( 8, new object[] {false, false, 1, 3, 2});
             blockPositionArray.Add( 9, new object[] {false, false, 0, 1, 1});
             blockPositionArray.Add(12, new object[] {false, false, 0, 3, 0});
             blockXOffset = 2;
@@ -148,33 +135,10 @@ public static class GameManager
         }
     }
 
-    public static void LoadBlockScene() {
-        currentDay = 1; //TODO change this
-        if (currentDay == 1) {
-            blockMaxSize = 20;
-            blockMaxGroupSize = new int[] {10,5,5};
-            blockGridArray = new int[][] {
-                new int[] {-1, -1,  0,  0,  0, -1},
-                new int[] {-1,  0,  0,  0,  0, -1},
-                new int[] {-1,  0,  0,  0, -2, -1},
-                new int[] { 0,  0,  0,  0, -2,  0},
-                new int[] { 0,  0,  0,  0,  0,  0}
-            };
-            blockXOffset = 2;
-            blockYOffset = 3;
-            blockSpawnList = new BlockType[] {
-                BlockType.apple(), BlockType.rice(), BlockType.chickenLeg(),
-                BlockType.apple(), BlockType.rice(), BlockType.chickenLeg()
-            };
+    public static void StoreNutritionInfo(int playerSize, int[] playerNutrition) {
+        gridFoodAmount = playerSize;
+        for (int i = 0; i < 3; ++i) {
+            gridFoodNutrition[i] = playerNutrition[i];
         }
-        SceneManager.LoadScene("Grid Day " + currentDay, LoadSceneMode.Single);
-    }
-
-    public static void LoadMapScene(int playerSize, int[] playerNutrition) {
-        if (currentDay == 1) {
-            // TODO set variables
-        }
-        Debug.Log("Player size: " + playerSize + ", Nutrition amounts: " + playerNutrition[0] + " " + playerNutrition[1] + " " + playerNutrition[2]);
-        SceneManager.LoadScene("Map", LoadSceneMode.Single);
     }
 }

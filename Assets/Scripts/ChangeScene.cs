@@ -18,4 +18,14 @@ public class ChangeScene : MonoBehaviour
             SceneManager.LoadScene(nextSceneIndex);
         }
     }
+
+    public static void LoadNextSceneStatic() {
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        int nextSceneIndex = currentSceneIndex + 1;
+        
+        if (nextSceneIndex < SceneManager.sceneCountInBuildSettings)
+        {
+            SceneManager.LoadScene(nextSceneIndex);
+        }
+    }
 }

@@ -6,6 +6,7 @@ using System.Numerics;
 
 public class BlockLevelManagerScript : MonoBehaviour
 {
+    public int day;
     public GameObject helpUiManager;
     public GameObject hintManager;
     public GameObject blockPrefab;
@@ -24,6 +25,11 @@ public class BlockLevelManagerScript : MonoBehaviour
 
     public GameObject sizeBar;
 
+
+    public GameObject levelWarning;
+    public float warningTimer;
+    float timer;
+
     GridScript grid;
 
     Dictionary<int, GameObject> blocks = new Dictionary<int, GameObject>();
@@ -41,7 +47,7 @@ public class BlockLevelManagerScript : MonoBehaviour
 
     void Start()
     {
-        GameManager.LoadTestingBlockData(); // TODO delete this later, this is just for testing
+        GameManager.LoadBlockData(day);
 
         blockLabel.text = "";
 
@@ -55,7 +61,7 @@ public class BlockLevelManagerScript : MonoBehaviour
         float ycarb = 2.5f;
 
         grid.initGrid(
-            GameManager.blockGridArray, GameManager.blockXOffset, GameManager.blockYOffset, GameManager.blockSolutionArray
+            GameManager.blockGridArray, GameManager.blockXOffset, GameManager.blockYOffset, GameManager.blockSolutionArray, day
         );
         
         // BLOCK ID MUST BE 1 OR GREATER
@@ -67,8 +73,8 @@ public class BlockLevelManagerScript : MonoBehaviour
 
         updateUI();
 
-        if (GameManager.currentDay == 1) {
-            // TODO uncomment this in final
+        if (day == 1) {
+            // TODO uncomment in final
             // helpUiManager.GetComponent<HelpUiManager>().startTutorialDay1();
         }
     }
@@ -85,15 +91,8 @@ public class BlockLevelManagerScript : MonoBehaviour
     }
 
     public void showHint() {
-        // TODO implement this
-        // compare solution and current int grid, first difference = block that's in the wrong spot
-        // find the block correponding to that id and show it as a hint
         int id = grid.getFirstMismatch();
-        if (id != -1) {
-            hintManager.GetComponent<BlockHintScript>().showBlock(id);
-        } else {
-            // TODO show message that this block shouldn't be on the grid
-        }
+        hintManager.GetComponent<BlockHintScript>().showBlock(id);
     }
     
     void spawnBlock(int id, BlockType type, int count, float yoffset) {
@@ -202,6 +201,11 @@ public class BlockLevelManagerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (timer > 0.0f) {
+            timer -= Time.deltaTime;
+        } else {
+            levelWarning.SetActive(false);
+        }
         if (selectedBlock != -1) {
             UnityEngine.Vector3 anchor = getBlockScript(selectedBlock).getSpriteTopLeft();
             UnityEngine.Vector3 center = blocks[selectedBlock].transform.position;
@@ -219,9 +223,19 @@ public class BlockLevelManagerScript : MonoBehaviour
                 getBlockScript(selectedBlock).flip(false);
             }
         }
-        // M = finish gameplay and go to Map scene
-        if (Input.GetKeyDown(KeyCode.M)) {
-            GameManager.LoadMapScene(size, nutrition);
+    }
+
+    public void toNextLvl() {
+        for (int i = 0; i < 3; ++i) {
+            if (nutrition[i] < maxNutrition[i]) {
+                levelWarning.SetActive(true);
+                AudioSFXManager.Instance.PlayAudio("bad");
+                timer = warningTimer;
+                return;
+            }
         }
+        // TODO do next scene
+        GameManager.StoreNutritionInfo(size, nutrition);
+        ChangeScene.LoadNextSceneStatic();
     }
 }
