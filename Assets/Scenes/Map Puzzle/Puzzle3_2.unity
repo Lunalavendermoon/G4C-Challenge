@@ -1986,7 +1986,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4155953137605683865, guid: cf45dff94736c4940a88a08dbd88cd2e, type: 3}
       propertyPath: m_SortingOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6963354998730901289, guid: cf45dff94736c4940a88a08dbd88cd2e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2765,7 +2765,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4155953137605683865, guid: cf45dff94736c4940a88a08dbd88cd2e, type: 3}
       propertyPath: m_SortingOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6963354998730901289, guid: cf45dff94736c4940a88a08dbd88cd2e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2941,6 +2941,10 @@ PrefabInstance:
       propertyPath: warnText
       value: 
       objectReference: {fileID: 1174731967}
+    - target: {fileID: 8701651943578065538, guid: b2aaf747b53050041a346b61807425bf, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8777259684874502967, guid: b2aaf747b53050041a346b61807425bf, type: 3}
       propertyPath: m_Name
       value: Destination

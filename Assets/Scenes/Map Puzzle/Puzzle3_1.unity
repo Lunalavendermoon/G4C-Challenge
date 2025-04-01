@@ -2390,6 +2390,10 @@ PrefabInstance:
       propertyPath: warnText
       value: 
       objectReference: {fileID: 275179722}
+    - target: {fileID: 8701651943578065538, guid: b2aaf747b53050041a346b61807425bf, type: 3}
+      propertyPath: m_SortingOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8777259684874502967, guid: b2aaf747b53050041a346b61807425bf, type: 3}
       propertyPath: m_Name
       value: Destination
