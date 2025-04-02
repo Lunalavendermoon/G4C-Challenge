@@ -436,34 +436,6 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 2510093809665946108, guid: c485496c287e842acab4271820cb7eb8, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.17999998
-      objectReference: {fileID: 0}
-    - target: {fileID: 2510093809665946108, guid: c485496c287e842acab4271820cb7eb8, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 3.13
-      objectReference: {fileID: 0}
-    - target: {fileID: 2510093809665946108, guid: c485496c287e842acab4271820cb7eb8, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2510093809665946108, guid: c485496c287e842acab4271820cb7eb8, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2510093809665946108, guid: c485496c287e842acab4271820cb7eb8, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2510093809665946108, guid: c485496c287e842acab4271820cb7eb8, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2510093809665946108, guid: c485496c287e842acab4271820cb7eb8, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2510093809665946108, guid: c485496c287e842acab4271820cb7eb8, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
@@ -661,6 +633,10 @@ PrefabInstance:
       propertyPath: helpbuttonscript
       value: 
       objectReference: {fileID: 1085637483}
+    - target: {fileID: 3373386612359865382, guid: 3e8e953e9b74540978b6fce8e75e8027, type: 3}
+      propertyPath: 'tutorialBackgrounds.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2800000, guid: 0458abc1b6f80421f9ff985810983022, type: 3}
     - target: {fileID: 8041599378356246885, guid: 3e8e953e9b74540978b6fce8e75e8027, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1020.7354
@@ -1126,6 +1102,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[3].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
+    - target: {fileID: 6161756316179452492, guid: 957f3d0204e3540d49b6706f275d0a09, type: 3}
+      propertyPath: m_Texture
+      value: 
+      objectReference: {fileID: 2800000, guid: 0458abc1b6f80421f9ff985810983022, type: 3}
     - target: {fileID: 7596529660269879732, guid: 957f3d0204e3540d49b6706f275d0a09, type: 3}
       propertyPath: m_Pivot.x
       value: 0
