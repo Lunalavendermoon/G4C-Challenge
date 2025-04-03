@@ -45,10 +45,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   helpUiManager: {fileID: 0}
+  helpbuttonscript: {fileID: 0}
   DialogBodyText: {fileID: 0}
   background: {fileID: 0}
   tutorialBackgrounds:
-  - {fileID: 2800000, guid: 8b9e0b638ac174e168ea3eb7eebb88b1, type: 3}
+  - {fileID: 2800000, guid: 0458abc1b6f80421f9ff985810983022, type: 3}
   - {fileID: 2800000, guid: 9117e26667c114dbfbd931711d952cf1, type: 3}
   - {fileID: 2800000, guid: 57044194b2289423894e3e912cd3df8e, type: 3}
   - {fileID: 2800000, guid: b14d6845413eb44acadd915534e91837, type: 3}

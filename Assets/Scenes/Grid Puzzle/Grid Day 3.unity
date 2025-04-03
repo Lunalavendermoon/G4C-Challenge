@@ -531,6 +531,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3935139746991090486, guid: c485496c287e842acab4271820cb7eb8, type: 3}
   m_PrefabInstance: {fileID: 1617786322032423449}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1617786322032423451 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7515174496796663649, guid: c485496c287e842acab4271820cb7eb8, type: 3}
+  m_PrefabInstance: {fileID: 1617786322032423449}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1617786322032423450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11afb73eb18a24c299ca06e552e73079, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1984989614968972828 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2466085712364377633, guid: abac6a98559c84d76a97819f089cab7d, type: 3}
@@ -1059,6 +1070,30 @@ PrefabInstance:
     - target: {fileID: 3580260512520500328, guid: 957f3d0204e3540d49b6706f275d0a09, type: 3}
       propertyPath: m_hasFontAssetChanged
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5377619876441261039, guid: 957f3d0204e3540d49b6706f275d0a09, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 8445814805404792703}
+    - target: {fileID: 5377619876441261039, guid: 957f3d0204e3540d49b6706f275d0a09, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1843212214}
+    - target: {fileID: 5377619876441261039, guid: 957f3d0204e3540d49b6706f275d0a09, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 1617786322032423451}
+    - target: {fileID: 5377619876441261039, guid: 957f3d0204e3540d49b6706f275d0a09, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: hideHelp
+      objectReference: {fileID: 0}
+    - target: {fileID: 5377619876441261039, guid: 957f3d0204e3540d49b6706f275d0a09, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: PlayAudio
+      objectReference: {fileID: 0}
+    - target: {fileID: 5377619876441261039, guid: 957f3d0204e3540d49b6706f275d0a09, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: ButtonClickable
       objectReference: {fileID: 0}
     - target: {fileID: 5464896006010900552, guid: 957f3d0204e3540d49b6706f275d0a09, type: 3}
       propertyPath: m_Name
