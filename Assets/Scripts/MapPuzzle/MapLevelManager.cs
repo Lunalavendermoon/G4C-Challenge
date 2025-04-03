@@ -37,7 +37,7 @@ public class MapLevelManager : MonoBehaviour
 
     void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        sceneIndex = SceneManager.GetActiveScene().buildIndex;
+        //sceneIndex = SceneManager.GetActiveScene().buildIndex;
         Debug.Log("scene loaded: " + sceneIndex);
       
         AudioSFXManager.Instance.PlayAudio("thump");
