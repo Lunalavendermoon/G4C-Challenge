@@ -3,6 +3,7 @@ using Unity.Properties;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.Rendering;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 
@@ -20,9 +21,22 @@ public class PlayerMovement : MonoBehaviour
     private int status = 1;
 
 
+
+
     [SerializeField] Text setpText;
     [SerializeField] Text noStep;
 
+    private void Start()
+    {
+        if (SceneManager.GetActiveScene().buildIndex == 6 && MapLevelManager.Instance.foodOwn != 3.5)
+        {
+            foodGiven--;
+        }
+        if (SceneManager.GetActiveScene().buildIndex == 11 && MapLevelManager.Instance.foodOwn != 4)
+        {
+            foodGiven--;
+        }
+    }
 
     void Update()
     {
@@ -83,12 +97,6 @@ public class PlayerMovement : MonoBehaviour
         }
 
         setpText.text = step.ToString();
-
-        Collider2D bigGround = Physics2D.OverlapBox(transform.position, Vector2.zero, 0f, LayerMask.GetMask("BigGround"));
-        if (bigGround == null)
-        {
-            Debug.Log("no ground");
-        }
     }
 
 

@@ -380,6 +380,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 280275757}
     - target: {fileID: 184401490058177730, guid: 4c3569f168785e24b975900f6d4d5b87, type: 3}
+      propertyPath: foodGiven
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 184401490058177730, guid: 4c3569f168785e24b975900f6d4d5b87, type: 3}
       propertyPath: firstShrinkAt
       value: 2
       objectReference: {fileID: 0}

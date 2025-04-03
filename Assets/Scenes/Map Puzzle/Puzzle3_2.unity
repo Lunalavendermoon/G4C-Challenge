@@ -129,7 +129,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 184401490058177730, guid: 4c3569f168785e24b975900f6d4d5b87, type: 3}
       propertyPath: step
-      value: 23
+      value: 26
       objectReference: {fileID: 0}
     - target: {fileID: 184401490058177730, guid: 4c3569f168785e24b975900f6d4d5b87, type: 3}
       propertyPath: noStep
@@ -141,7 +141,7 @@ PrefabInstance:
       objectReference: {fileID: 1174731968}
     - target: {fileID: 184401490058177730, guid: 4c3569f168785e24b975900f6d4d5b87, type: 3}
       propertyPath: foodGiven
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 184401490058177730, guid: 4c3569f168785e24b975900f6d4d5b87, type: 3}
       propertyPath: firstShrinkAt
