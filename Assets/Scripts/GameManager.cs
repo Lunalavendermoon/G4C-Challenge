@@ -74,7 +74,6 @@ public static class GameManager
                 new int[] { 0,  0,  0, -2,  0,  0},
                 new int[] { 0,  0,  0,  0,  0,  0}
             };
-            // TODO fill this out
             blockSolutionArray = new int[][] {
                 new int[] {-1, -1, 17, 17, 15, -1},
                 new int[] {-1, 17, 17, 15, 15, -1},
@@ -85,7 +84,6 @@ public static class GameManager
                 new int[] {14, 12, 11, 11, 11,  9}
             };
             blockPositionArray.Clear();
-            // TODO Add solution to blockPositionArray
             blockPositionArray.Add(11, new object[] {false, false, 0, 5, 2});
             blockPositionArray.Add(14, new object[] {false, false, 0, 5, 0});
             blockPositionArray.Add( 9, new object[] {false, false, 1, 5, 4});
@@ -120,20 +118,28 @@ public static class GameManager
                 new int[] {-1, -1, -1,  0,  0,  0, -2,  0,  0},
                 new int[] {-1, -1, -1, -1,  0,  0,  0,  0,  0}
             };
-            // TODO fill this out
             blockSolutionArray = new int[][] {
-                new int[] { 0,  0, -1, -1, -1, -1, -1, -1, -1},
-                new int[] { 0,  0, -2, -1, -1,  0,  0,  0, -1},
-                new int[] { 0,  0,  0, -1,  0,  0,  0,  0, -1},
-                new int[] {-1, -1, -1,  0,  0, -2,  0,  0, -1},
-                new int[] {-1, -1, -1,  0,  0,  0,  0,  0, -2},
-                new int[] {-1, -1, -1,  0,  0,  0,  0,  0,  0},
-                new int[] {-1, -1, -1,  0,  0,  0, -2,  0,  0},
-                new int[] {-1, -1, -1,  0,  0,  0, -2,  0,  0},
-                new int[] {-1, -1, -1, -1,  0,  0,  0,  0,  0}
+                new int[] {15, 15, -1, -1, -1, -1, -1, -1, -1},
+                new int[] {15, 15, -2, -1, -1, 16,  4,  4, -1},
+                new int[] {15, 19, 19, -1, 16, 16,  4,  4, -1},
+                new int[] {-1, -1, -1,  1, 16, -2,  4,  4, -1},
+                new int[] {-1, -1, -1,  1,  1,  3, 10, 10, -2},
+                new int[] {-1, -1, -1,  1,  3,  3, 10, 10, 10},
+                new int[] {-1, -1, -1,  3,  3,  3, -2,  2,  2},
+                new int[] {-1, -1, -1,  8,  8, 11, -2, 11,  2},
+                new int[] {-1, -1, -1, -1,  8, 11, 11, 11,  2}
             };
             blockPositionArray.Clear();
-            // TODO Add solution to blockPositionArray
+            blockPositionArray.Add(11, new object[] {false, false, 0, 7, 5});
+            blockPositionArray.Add( 8, new object[] {false, false, 2, 6, 4});
+            blockPositionArray.Add( 2, new object[] { true, false, 3, 6, 7});
+            blockPositionArray.Add(10, new object[] {false, false, 0, 4, 6});
+            blockPositionArray.Add( 3, new object[] {false, false, 0, 4, 3});
+            blockPositionArray.Add( 1, new object[] {false, false, 3, 3, 3});
+            blockPositionArray.Add(19, new object[] {false, false, 1, 1, 2});
+            blockPositionArray.Add( 4, new object[] {false, false, 1, 1, 6});
+            blockPositionArray.Add(16, new object[] {false, false, 1, 1, 4});
+            blockPositionArray.Add(15, new object[] {false, false, 3, 0, 0});
             blockXOffset = 4;
             blockYOffset = 3;
             blockSpawnList = new BlockType[] {

@@ -120,6 +120,13 @@ public class BlockLevelManagerScript : MonoBehaviour
         }
 
         UnityEngine.Vector3 hintPos = grid.arrayToWorld((int)transforms[3], (int)transforms[4]);
+        // idk why these blocks specifically are broken but i guess i have to hardcode it now..
+        if (day == 3 && (int)transforms[2] != 0) {
+            hintPos += new UnityEngine.Vector3(-0.25f, -0.25f);
+            if (type.name.Equals("eggplant")) {
+                hintPos += new UnityEngine.Vector3(-0.25f, -0.25f);
+            }
+        }
         hintManager.GetComponent<BlockHintScript>().initBlock(
             id, type, hintPos, (bool)transforms[0], (bool)transforms[1], (int)transforms[2], this, grid, scalefact
         );
