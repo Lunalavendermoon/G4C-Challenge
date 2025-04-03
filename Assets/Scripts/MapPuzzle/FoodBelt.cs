@@ -8,14 +8,15 @@ public class FoodBelt : MonoBehaviour
     private float foodHave;
     private float foodStored = 0;
     public bool haveStored = false;
-
+    [SerializeField] GameObject cart;
+    FoodBelt[] beltEnd;
     [System.Obsolete]
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            FoodBelt[] beltEnd = FindObjectsOfType<FoodBelt>();
+            beltEnd = FindObjectsOfType<FoodBelt>();
             foodHave = MapLevelManager.Instance.getFood();
             if (gameObject.GetComponent<SpriteRenderer>().color == Color.red)
             {
@@ -33,6 +34,8 @@ public class FoodBelt : MonoBehaviour
             }
             else if (!haveStored)
             {
+                cart.GetComponent<Animator>().enabled = true;
+
                 if (foodHave >= 2.5)
                 {
                     foodStored = 2.5f;
@@ -45,16 +48,29 @@ public class FoodBelt : MonoBehaviour
 
                 playerMovement.giveFood(foodStored);
                 MapLevelManager.Instance.setFood(foodStored);
+                haveStored = true;
                 foreach (FoodBelt copy in beltEnd)
                 {
                     if (copy != this)
                     {
-                        copy.gameObject.GetComponent<SpriteRenderer>().color = Color.red;
                         copy.foodStored = foodStored;
-                        haveStored = true;
+                        copy.haveStored = true;
                     }
                 }
+                Invoke("Stored", 2f);
             }
         }
+    }
+
+    void Stored()
+    {
+        foreach (FoodBelt copy in beltEnd)
+        {
+            if (copy != this)
+            {
+                copy.gameObject.GetComponent<SpriteRenderer>().color = Color.red;
+            }
+        }
+        cart.GetComponent<Animator>().enabled = false;
     }
 }
