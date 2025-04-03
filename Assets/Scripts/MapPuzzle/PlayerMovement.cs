@@ -84,14 +84,11 @@ public class PlayerMovement : MonoBehaviour
 
         setpText.text = step.ToString();
 
-        //if (Input.GetKeyDown(KeyCode.UpArrow))
-        //{
-        //    foodGiven += 1;
-        //}
-        //else if (Input.GetKeyDown(KeyCode.DownArrow))
-        //{
-        //    foodGiven -= 1;
-        //}
+        Collider2D bigGround = Physics2D.OverlapBox(transform.position, Vector2.zero, 0f, LayerMask.GetMask("BigGround"));
+        if (bigGround == null)
+        {
+            Debug.Log("no ground");
+        }
     }
 
 
@@ -112,7 +109,7 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
 
-        if (railRoad != null && (Quaternion.Angle(transform.rotation, railRoad.transform.rotation) == 0 || Quaternion.Angle(transform.rotation, railRoad.transform.rotation) == 90))
+        if (railRoad != null && (Quaternion.Angle(transform.rotation, railRoad.transform.rotation) < 10 || (Quaternion.Angle(transform.rotation, railRoad.transform.rotation) > 80 && Quaternion.Angle(transform.rotation, railRoad.transform.rotation) < 100)))
         {
             isRiding = true;
             AudioSFXManager.Instance.PlayAudio("zip");
