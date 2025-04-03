@@ -25,6 +25,7 @@ MonoBehaviour:
     - You can always flip or rotate the food with the following keybinds to help
       it better fit into the space.
     - "{Remember to press SPACE to confirm the food\u2019s location.}"
-    - If you are unsure about what to do, click on the HELP tab for help.
+    - If you are unsure about what to do, click on the TUTORIAL tab for help.
     nextDialogue: {fileID: 0}
     bgNum: 0
+    bgm: 

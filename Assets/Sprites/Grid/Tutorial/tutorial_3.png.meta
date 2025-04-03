@@ -5,27 +5,6 @@ TextureImporter:
   - first:
       213: 5703094916084779961
     second: tutorial_3_0
-  - first:
-      213: -5881187351043258020
-    second: tutorial_3_1
-  - first:
-      213: 267529526553822819
-    second: tutorial_3_2
-  - first:
-      213: -84019598740330854
-    second: tutorial_3_3
-  - first:
-      213: -7917444339452171889
-    second: tutorial_3_4
-  - first:
-      213: 7934267448943820798
-    second: tutorial_3_5
-  - first:
-      213: 9167194443068279773
-    second: tutorial_3_6
-  - first:
-      213: 7717412882155099174
-    second: tutorial_3_7
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -137,10 +116,10 @@ TextureImporter:
       name: tutorial_3_0
       rect:
         serializedVersion: 2
-        x: 756
-        y: 624
-        width: 27
-        height: 115
+        x: 0
+        y: 0
+        width: 1920
+        height: 1080
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -151,160 +130,6 @@ TextureImporter:
       bones: []
       spriteID: 9bbc1912c96752f40800000000000000
       internalID: 5703094916084779961
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tutorial_3_1
-      rect:
-        serializedVersion: 2
-        x: 801
-        y: 631
-        width: 59
-        height: 89
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c59cb8b9343d16ea0800000000000000
-      internalID: -5881187351043258020
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tutorial_3_2
-      rect:
-        serializedVersion: 2
-        x: 869
-        y: 641
-        width: 39
-        height: 62
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3664b2ddfa476b300800000000000000
-      internalID: 267529526553822819
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tutorial_3_3
-      rect:
-        serializedVersion: 2
-        x: 876
-        y: 495
-        width: 66
-        height: 203
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a9669eebe9085def0800000000000000
-      internalID: -84019598740330854
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tutorial_3_4
-      rect:
-        serializedVersion: 2
-        x: 967
-        y: 622
-        width: 53
-        height: 91
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f89a60a52569f1290800000000000000
-      internalID: -7917444339452171889
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tutorial_3_5
-      rect:
-        serializedVersion: 2
-        x: 1101
-        y: 628
-        width: 60
-        height: 127
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: effbd3f053e2c1e60800000000000000
-      internalID: 7934267448943820798
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tutorial_3_6
-      rect:
-        serializedVersion: 2
-        x: 1192
-        y: 605
-        width: 87
-        height: 183
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ddb050ea6ca683f70800000000000000
-      internalID: 9167194443068279773
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: tutorial_3_7
-      rect:
-        serializedVersion: 2
-        x: 1301
-        y: 660
-        width: 86
-        height: 109
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 624d0e1b022c91b60800000000000000
-      internalID: 7717412882155099174
       vertices: []
       indices: 
       edges: []
@@ -322,15 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      tutorial_3_0: 5703094916084779961
-      tutorial_3_1: -5881187351043258020
-      tutorial_3_2: 267529526553822819
-      tutorial_3_3: -84019598740330854
-      tutorial_3_4: -7917444339452171889
-      tutorial_3_5: 7934267448943820798
-      tutorial_3_6: 9167194443068279773
-      tutorial_3_7: 7717412882155099174
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
