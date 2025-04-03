@@ -75,17 +75,26 @@ public static class GameManager
                 new int[] { 0,  0,  0,  0,  0,  0}
             };
             // TODO fill this out
-            blockGridArray = new int[][] {
-                new int[] {-1, -1,  0,  0,  0, -1},
-                new int[] {-1,  0,  0,  0,  0, -1},
-                new int[] {-1,  0,  0,  0,  0, -1},
-                new int[] { 0, -2,  0,  0,  0, -2},
-                new int[] { 0,  0,  0,  0,  0,  0},
-                new int[] { 0,  0,  0, -2,  0,  0},
-                new int[] { 0,  0,  0,  0,  0,  0}
+            blockSolutionArray = new int[][] {
+                new int[] {-1, -1, 17, 17, 15, -1},
+                new int[] {-1, 17, 17, 15, 15, -1},
+                new int[] {-1,  2,  2,  2,  4, -1},
+                new int[] { 8, -2,  2,  4,  4, -2},
+                new int[] { 8, 12,  4,  4,  4,  9},
+                new int[] {14, 12, 11, -2, 11,  9},
+                new int[] {14, 12, 11, 11, 11,  9}
             };
             blockPositionArray.Clear();
             // TODO Add solution to blockPositionArray
+            blockPositionArray.Add(11, new object[] {false, false, 0, 5, 2});
+            blockPositionArray.Add(14, new object[] {false, false, 0, 5, 0});
+            blockPositionArray.Add( 9, new object[] {false, false, 1, 5, 4});
+            blockPositionArray.Add(12, new object[] {false, false, 1, 5, 0});
+            blockPositionArray.Add( 8, new object[] {false, false, 0, 3, 0});
+            blockPositionArray.Add( 4, new object[] {false, false, 0, 2, 2});
+            blockPositionArray.Add( 2, new object[] {false, false, 0, 2, 1});
+            blockPositionArray.Add(15, new object[] { true, false, 0, 0, 3});
+            blockPositionArray.Add(17, new object[] { true, false, 0, 0, 1});
             blockXOffset = 5;
             blockYOffset = 2;
             blockSpawnList = new BlockType[] {

@@ -1020,6 +1020,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: toNextLvl
       objectReference: {fileID: 0}
+    - target: {fileID: 4232717503527196074, guid: 957f3d0204e3540d49b6706f275d0a09, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5464896006010900552, guid: 957f3d0204e3540d49b6706f275d0a09, type: 3}
       propertyPath: m_Name
       value: Canvas
