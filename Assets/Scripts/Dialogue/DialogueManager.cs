@@ -124,7 +124,6 @@ public class DialogueManager : MonoBehaviour
         foreach (GameObject ui in disabledUI) ui.SetActive(true);
         DialogueParent.SetActive(false);
 
-        //GameManager.LoadBlockScene();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
