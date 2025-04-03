@@ -767,7 +767,7 @@ MonoBehaviour:
   dialogueBeforeEnding: {fileID: 11400000, guid: 852b15f805991e0448b03f30abc12430, type: 2}
   goodEnding: {fileID: 11400000, guid: 80be103463fc6184d9fd7d37cb5347fe, type: 2}
   badEnding: {fileID: 11400000, guid: 9ba30ac650975ff49ac1219d9669c03f, type: 2}
-  threshold: 8
+  threshold: 11
 --- !u!1001 &8738286936388419462
 PrefabInstance:
   m_ObjectHideFlags: 0

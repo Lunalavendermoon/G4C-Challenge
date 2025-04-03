@@ -75,7 +75,7 @@ public class BlockLevelManagerScript : MonoBehaviour
 
         if (day == 1) {
             // TODO uncomment in final
-            // helpUiManager.GetComponent<HelpUiManager>().startTutorialDay1();
+            helpUiManager.GetComponent<HelpUiManager>().startTutorialDay1();
         }
     }
 
@@ -234,7 +234,6 @@ public class BlockLevelManagerScript : MonoBehaviour
                 return;
             }
         }
-        // TODO do next scene
         GameManager.StoreNutritionInfo(size, nutrition);
         ChangeScene.LoadNextSceneStatic();
     }
