@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public static class GameManager
 {
 
-    public static float foodGiven = 6;
+    public static float foodGiven = 0;
 
     public static int blockMaxSize, blockXOffset, blockYOffset;
 
