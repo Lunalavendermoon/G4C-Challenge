@@ -20,6 +20,7 @@ public class FoodBelt : MonoBehaviour
             foodHave = MapLevelManager.Instance.getFood();
             if (gameObject.GetComponent<SpriteRenderer>().color == Color.red)
             {
+                AudioSFXManager.Instance.PlayAudio("deliverNoBelt");
                 gameObject.GetComponent<SpriteRenderer>().color = Color.white;
                 playerMovement.giveFood(-foodStored);
                 MapLevelManager.Instance.setFood(-foodStored);
@@ -34,6 +35,7 @@ public class FoodBelt : MonoBehaviour
             }
             else if (!haveStored)
             {
+                AudioSFXManager.Instance.PlayAudio("deliverBelt");
                 cart.GetComponent<Animator>().enabled = true;
 
                 if (foodHave >= 2.5)

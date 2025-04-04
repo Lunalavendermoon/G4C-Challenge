@@ -64,32 +64,32 @@ public class AudioBGMManager : MonoBehaviour
     {
         if (clip == "chill") {
             audioSource.clip = chill;
-            audioSource.volume = 0.2f;
+            audioSource.volume = 0.1f;
         }
         else if (clip == "sad") {
             audioSource.clip = sad;
-            audioSource.volume = 1f;
+            audioSource.volume = 0.5f;
         }
         else if (clip == "suspense") {
             audioSource.clip = suspense;
-            audioSource.volume = 0.4f;
+            audioSource.volume = 0.2f;
         }
         else if (clip == "story") {
             audioSource.clip = story;
-            audioSource.volume = 0.5f;
+            audioSource.volume = 0.3f;
         }
         else if (clip == "night") {
             audioSource.clip = night;
-            audioSource.volume = 0.75f;
+            audioSource.volume = 0.5f;
         }
         else if (clip == "grid") {
             audioSource.clip = grid;
-            audioSource.volume = 0.5f;
+            audioSource.volume = 1f;
             currentBGM = "grid";
         }
         else if (clip == "map") {
             audioSource.clip = map;
-            audioSource.volume = 0.5f;
+            audioSource.volume = 1f;
             currentBGM = "map";
         }
         audioSource.Play();

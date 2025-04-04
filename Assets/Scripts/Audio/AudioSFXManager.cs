@@ -12,6 +12,9 @@ public class AudioSFXManager : MonoBehaviour
     public AudioClip ding;
     public AudioClip bad;
     public AudioClip savePeople;
+    public AudioClip deliverBelt;
+    public AudioClip deliverNoBelt;
+
 
     private void Awake()
     {
@@ -41,11 +44,11 @@ public class AudioSFXManager : MonoBehaviour
         }
         else if (clip == "thump") {
             audioSource.clip = thump;
-            audioSource.volume = 0.5f;
+            audioSource.volume = 1f;
         }
         else if (clip == "zip") {
             audioSource.clip = zip;
-            audioSource.volume = 0.5f;
+            audioSource.volume = 1f;
         }
         else if (clip == "ding") {
             audioSource.clip = ding;
@@ -59,6 +62,16 @@ public class AudioSFXManager : MonoBehaviour
         {
             audioSource.clip = savePeople;
             audioSource.volume = 1f;
+        }
+        else if (clip == "deliverBelt")
+        {
+            audioSource.clip = deliverBelt;
+            audioSource.volume = 0.5f;
+        }
+        else if (clip == "deliverNoBelt")
+        {
+            audioSource.clip = deliverNoBelt;
+            audioSource.volume = 0.5f;
         }
         audioSource.Play();
     }

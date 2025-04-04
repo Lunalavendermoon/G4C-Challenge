@@ -53,7 +53,9 @@ MonoBehaviour:
   zip: {fileID: 8300000, guid: a31d9433c67fc7744ad88257253ba533, type: 3}
   ding: {fileID: 8300000, guid: aee807cd1a012c041b84d16b8ab13a71, type: 3}
   bad: {fileID: 8300000, guid: f37d049fff7e0e04690dacd5538717db, type: 3}
-  savePeople: {fileID: 8300000, guid: 17e9ca100fe203e44a68f44ac91060b3, type: 3}
+  savePeople: {fileID: 8300000, guid: 2f67b4d493cf7574caf3f15087785a5c, type: 3}
+  deliverBelt: {fileID: 8300000, guid: 904bb8c041b31fe419b55de486c8dbfd, type: 3}
+  deliverNoBelt: {fileID: 8300000, guid: 9c0f702519064d6469cd828464860689, type: 3}
 --- !u!82 &4067955155916497240
 AudioSource:
   m_ObjectHideFlags: 0

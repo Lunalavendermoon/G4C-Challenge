@@ -2701,10 +2701,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: SFXManager
       objectReference: {fileID: 0}
-    - target: {fileID: 6921089200822997004, guid: a96eb7353540c9940b8b980b6b937242, type: 3}
-      propertyPath: ding
-      value: 
-      objectReference: {fileID: 8300000, guid: 17e9ca100fe203e44a68f44ac91060b3, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
