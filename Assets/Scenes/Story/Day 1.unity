@@ -250,20 +250,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SFXManager
       objectReference: {fileID: 0}
-    - target: {fileID: 6921089200822997004, guid: a96eb7353540c9940b8b980b6b937242, type: 3}
-      propertyPath: audioSource
-      value: 
-      objectReference: {fileID: 36857033}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a96eb7353540c9940b8b980b6b937242, type: 3}
---- !u!82 &36857033 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 4067955155916497240, guid: a96eb7353540c9940b8b980b6b937242, type: 3}
-  m_PrefabInstance: {fileID: 36857032}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &183933518 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4991226386591422234, guid: 513c1baf4fe89724aae79587e709e221, type: 3}

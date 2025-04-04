@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 4067955155916497240}
-  tap: {fileID: 8300000, guid: daf139bdd4bc450488119bca994a64f3, type: 3}
+  tap: {fileID: 8300000, guid: 622a0bf8c6e02df438589f325c505759, type: 3}
   click: {fileID: 8300000, guid: 873ce85adbd7248458fcd62e8b248023, type: 3}
   pop: {fileID: 8300000, guid: 6fec0a1a90d345848a4c77251b4e8a81, type: 3}
   thump: {fileID: 8300000, guid: 445705b5dd2feb644ab74ba463f699de, type: 3}
@@ -54,7 +54,7 @@ MonoBehaviour:
   ding: {fileID: 8300000, guid: aee807cd1a012c041b84d16b8ab13a71, type: 3}
   bad: {fileID: 8300000, guid: f37d049fff7e0e04690dacd5538717db, type: 3}
   savePeople: {fileID: 8300000, guid: 2f67b4d493cf7574caf3f15087785a5c, type: 3}
-  deliverBelt: {fileID: 8300000, guid: 904bb8c041b31fe419b55de486c8dbfd, type: 3}
+  deliverBelt: {fileID: 8300000, guid: 45a311b18999f4b4bbe190d56b917275, type: 3}
   deliverNoBelt: {fileID: 8300000, guid: 9c0f702519064d6469cd828464860689, type: 3}
 --- !u!82 &4067955155916497240
 AudioSource:

@@ -183,6 +183,6 @@ public class PlayerMovement : MonoBehaviour
     public void giveFood(float amount)
     {
         foodGiven += amount;
-        AudioSFXManager.Instance.PlayAudio("pop");
+        //AudioSFXManager.Instance.PlayAudio("pop");
     }
 }

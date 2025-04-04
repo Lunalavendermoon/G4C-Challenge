@@ -59,6 +59,10 @@ public class FoodBelt : MonoBehaviour
                         copy.haveStored = true;
                     }
                 }
+                foreach (FoodBelt copy in beltEnd)
+                {
+                    copy.GetComponent<BoxCollider2D>().enabled = false;
+                }
                 Invoke("Stored", 2f);
             }
         }
@@ -72,7 +76,9 @@ public class FoodBelt : MonoBehaviour
             {
                 copy.gameObject.GetComponent<SpriteRenderer>().color = Color.red;
             }
+            copy.GetComponent<BoxCollider2D>().enabled = true;
         }
+        AudioSFXManager.Instance.PlayAudio("deliverNoBelt");
         cart.GetComponent<Animator>().enabled = false;
     }
 }

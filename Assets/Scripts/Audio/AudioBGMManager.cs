@@ -68,7 +68,7 @@ public class AudioBGMManager : MonoBehaviour
         }
         else if (clip == "sad") {
             audioSource.clip = sad;
-            audioSource.volume = 0.5f;
+            audioSource.volume = 0.4f;
         }
         else if (clip == "suspense") {
             audioSource.clip = suspense;
@@ -80,11 +80,11 @@ public class AudioBGMManager : MonoBehaviour
         }
         else if (clip == "night") {
             audioSource.clip = night;
-            audioSource.volume = 0.5f;
+            audioSource.volume = 0.4f;
         }
         else if (clip == "grid") {
             audioSource.clip = grid;
-            audioSource.volume = 1f;
+            audioSource.volume = 0.5f;
             currentBGM = "grid";
         }
         else if (clip == "map") {

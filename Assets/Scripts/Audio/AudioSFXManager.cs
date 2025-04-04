@@ -73,7 +73,7 @@ public class AudioSFXManager : MonoBehaviour
             audioSource.clip = deliverNoBelt;
             audioSource.volume = 0.5f;
         }
-        audioSource.Play();
+        audioSource.PlayOneShot(audioSource.clip);
     }
 
 }
