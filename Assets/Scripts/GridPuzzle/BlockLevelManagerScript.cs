@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using System;
 using System.Numerics;
+using DG.Tweening;
 
 public class BlockLevelManagerScript : MonoBehaviour
 {
@@ -233,16 +234,24 @@ public class BlockLevelManagerScript : MonoBehaviour
         }
     }
 
-    public void toNextLvl() {
+    public bool metRequirements() {
         for (int i = 0; i < 3; ++i) {
             if (nutrition[i] < maxNutrition[i]) {
-                levelWarning.SetActive(true);
-                levelWarning.GetComponent<FlashingAnim>().SetAnimated(true);
-                AudioSFXManager.Instance.PlayAudio("bad");
-                timer = warningTimer;
-                return;
+                return false;
             }
         }
+        return true;
+    }
+
+    public void toNextLvl() {
+        if (!metRequirements()) {
+            levelWarning.SetActive(true);
+            levelWarning.GetComponent<FlashingAnim>().SetAnimated(true);
+            AudioSFXManager.Instance.PlayAudio("bad");
+            timer = warningTimer;
+            return;
+        }
+        DOTween.KillAll();
         GameManager.StoreNutritionInfo(size, nutrition);
         ChangeScene.LoadNextSceneStatic();
     }
