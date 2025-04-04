@@ -52,7 +52,13 @@ public class AudioBGMManager : MonoBehaviour
         if (currentBGM != "grid")
         {
             switch(SceneManager.GetActiveScene().name) {
+                case "Grid Day 1":
+                    PlayAudio("grid");
+                    break;
                 case "Grid Day 2":
+                    PlayAudio("grid");
+                    break;
+                case "Grid Day 3":
                     PlayAudio("grid");
                     break;
                 default:

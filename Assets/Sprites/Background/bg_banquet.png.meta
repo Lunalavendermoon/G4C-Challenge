@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 38cbe97f4913a494faf7fc75f42283e7
+guid: d0a44ad982c28e44d997a2c7eb28fc97
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3426395051870268485
-    second: tutorial_6_0
+      213: -6083652165889490017
+    second: bg_banquet_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -113,7 +113,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: tutorial_6_0
+      name: bg_banquet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bb3dd19aadff270d0800000000000000
-      internalID: -3426395051870268485
+      spriteID: f930f137696829ba0800000000000000
+      internalID: -6083652165889490017
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      tutorial_6_0: -3426395051870268485
+      bg_banquet_0: -6083652165889490017
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
