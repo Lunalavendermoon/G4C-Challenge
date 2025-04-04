@@ -59,6 +59,8 @@ public class BlockScript : MonoBehaviour
     bool selected = false;
 
     public void initBlock(int id, BlockType type, BlockLevelManagerScript levelManager, GridScript grid, int scaling) {
+        GetComponent<FlashingAnim>().SetAnimated(false);
+
         this.id = id;
         isOnGrid = false;
         blockType = type;

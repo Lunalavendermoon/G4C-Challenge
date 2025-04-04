@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7075898702858366372}
   - component: {fileID: 5474921115176459790}
+  - component: {fileID: 7126320977292787596}
   - component: {fileID: 4937745846019922070}
   m_Layer: 5
   m_Name: WarningMessage
@@ -45,6 +46,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 663468845202650808}
   m_CullTransparentMesh: 1
+--- !u!114 &7126320977292787596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 663468845202650808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2da3a89ba1fb244acab1469a8def8178, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isText: 1
+  startImmediately: 0
 --- !u!114 &4937745846019922070
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -74,7 +89,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4289984511
   m_fontColor: {r: 1, g: 0.96984756, b: 0.7012578, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3

@@ -45,6 +45,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2648484501779290411}
   - component: {fileID: 8771272165057310812}
+  - component: {fileID: 7376252633005210452}
   m_Layer: 0
   m_Name: VflipSign
   m_TagString: Untagged
@@ -122,6 +123,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7376252633005210452
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4382178353065881491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2da3a89ba1fb244acab1469a8def8178, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isText: 0
+  startImmediately: 1
 --- !u!1 &4525085282714474853
 GameObject:
   m_ObjectHideFlags: 0
@@ -132,6 +147,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7954369161546812053}
   - component: {fileID: 7091300983393055221}
+  - component: {fileID: 1010936502669581038}
   m_Layer: 0
   m_Name: HflipSign
   m_TagString: Untagged
@@ -209,6 +225,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1010936502669581038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4525085282714474853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2da3a89ba1fb244acab1469a8def8178, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isText: 0
+  startImmediately: 1
 --- !u!1 &8350434879151415177
 GameObject:
   m_ObjectHideFlags: 0
@@ -219,6 +249,7 @@ GameObject:
   m_Component:
   - component: {fileID: 328783262999573550}
   - component: {fileID: 6451458144241276399}
+  - component: {fileID: 3312912443976849103}
   m_Layer: 0
   m_Name: RotateSign
   m_TagString: Untagged
@@ -296,6 +327,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3312912443976849103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8350434879151415177}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2da3a89ba1fb244acab1469a8def8178, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isText: 0
+  startImmediately: 1
 --- !u!1 &8365480450462486604
 GameObject:
   m_ObjectHideFlags: 0
@@ -306,6 +351,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8559113372850375446}
   - component: {fileID: 28856210580810786}
+  - component: {fileID: 1662672145562317629}
   m_Layer: 0
   m_Name: ConfirmSign
   m_TagString: Untagged
@@ -383,3 +429,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &1662672145562317629
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8365480450462486604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2da3a89ba1fb244acab1469a8def8178, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isText: 0
+  startImmediately: 1

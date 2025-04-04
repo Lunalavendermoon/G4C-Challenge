@@ -212,6 +212,7 @@ public class BlockLevelManagerScript : MonoBehaviour
             timer -= Time.deltaTime;
         } else {
             levelWarning.SetActive(false);
+            levelWarning.GetComponent<FlashingAnim>().SetAnimated(false);
         }
         if (selectedBlock != -1) {
             UnityEngine.Vector3 anchor = getBlockScript(selectedBlock).getSpriteTopLeft();
@@ -236,6 +237,7 @@ public class BlockLevelManagerScript : MonoBehaviour
         for (int i = 0; i < 3; ++i) {
             if (nutrition[i] < maxNutrition[i]) {
                 levelWarning.SetActive(true);
+                levelWarning.GetComponent<FlashingAnim>().SetAnimated(true);
                 AudioSFXManager.Instance.PlayAudio("bad");
                 timer = warningTimer;
                 return;

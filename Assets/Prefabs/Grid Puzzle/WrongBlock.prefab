@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2619724309352623960}
   - component: {fileID: 3019301261134032038}
+  - component: {fileID: 3849502297281971794}
   - component: {fileID: 9143738356789273852}
   m_Layer: 5
   m_Name: WrongBlock
@@ -45,6 +46,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6875410349191517121}
   m_CullTransparentMesh: 1
+--- !u!114 &3849502297281971794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6875410349191517121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2da3a89ba1fb244acab1469a8def8178, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isText: 1
+  startImmediately: 0
 --- !u!114 &9143738356789273852
 MonoBehaviour:
   m_ObjectHideFlags: 0

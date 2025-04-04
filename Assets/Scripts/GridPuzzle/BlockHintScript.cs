@@ -14,7 +14,9 @@ public class BlockHintScript : MonoBehaviour
     float timer = 0;
 
     public GameObject blockPrefab;
-    public TextMeshProUGUI hintText;
+    public GameObject hintTextObject;
+
+    TextMeshProUGUI hintText;
 
     int curId = 0;
 
@@ -22,6 +24,7 @@ public class BlockHintScript : MonoBehaviour
 
     void Start()
     {
+        hintText = hintTextObject.GetComponent<TextMeshProUGUI>();
         hintText.text = "";
     }
 
@@ -62,11 +65,15 @@ public class BlockHintScript : MonoBehaviour
             return;
         }
         if (curId != 0) {
+            GameObject obj;
             if (GameManager.blockPositionArray.ContainsKey(curId)) {
                 blocks[curId].SetActive(false);
+                obj = blocks[curId];
             } else {
                 hintText.text = "";
+                obj = hintTextObject;
             }
+            obj.GetComponent<FlashingAnim>().SetAnimated(false);
             helpButton.GetComponent<HelpButtonScript>().ButtonClickable(true);
             curId = 0;
         }
@@ -76,17 +83,22 @@ public class BlockHintScript : MonoBehaviour
         timer = hintTimer;
         helpButton.GetComponent<HelpButtonScript>().ButtonClickable(false);
         curId = id;
+        GameObject obj;
         if (id == -1) {
             hintText.text = "Click <color=#ffd666>Next Phase</color> to move on!";
+            obj = hintTextObject;
         } else {
             if (GameManager.blockPositionArray.ContainsKey(curId)) {
                 blocks[curId].SetActive(true);
+                obj = blocks[curId];
             } else {
                 string foodName = blocks[curId].GetComponent<BlockScript>().blockType.displayName;
                 hintText.text = "<color=#ffd666>" +
                     char.ToUpperInvariant(foodName[0]) + foodName.Substring(1, foodName.Length - 1) +
                     "</color> should not be on the grid!";
+                obj = hintTextObject;
             }
         }
+        obj.GetComponent<FlashingAnim>().SetAnimated(true);
     }
 }

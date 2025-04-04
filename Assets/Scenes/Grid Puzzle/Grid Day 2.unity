@@ -429,6 +429,10 @@ PrefabInstance:
       propertyPath: hintButton
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 1267897176820026138, guid: a11ef024677b34ee088273d39f1b8d12, type: 3}
+      propertyPath: hintTextObject
+      value: 
+      objectReference: {fileID: 6896229043364529680}
     - target: {fileID: 8079074506281791939, guid: a11ef024677b34ee088273d39f1b8d12, type: 3}
       propertyPath: m_Name
       value: BlockHintManager
@@ -1153,7 +1157,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3580260512520500328, guid: 957f3d0204e3540d49b6706f275d0a09, type: 3}
   m_PrefabInstance: {fileID: 6896229043364529677}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 6896229043364529680}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
@@ -1162,6 +1166,11 @@ MonoBehaviour:
 --- !u!1 &6896229043364529679 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1796173369802680240, guid: 957f3d0204e3540d49b6706f275d0a09, type: 3}
+  m_PrefabInstance: {fileID: 6896229043364529677}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6896229043364529680 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1162187262691590997, guid: 957f3d0204e3540d49b6706f275d0a09, type: 3}
   m_PrefabInstance: {fileID: 6896229043364529677}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &8007658815940332305 stripped
