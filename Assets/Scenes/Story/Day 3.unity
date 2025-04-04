@@ -518,6 +518,14 @@ PrefabInstance:
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 358384080}
+    - target: {fileID: 6921089200822997004, guid: a96eb7353540c9940b8b980b6b937242, type: 3}
+      propertyPath: deliverBelt
+      value: 
+      objectReference: {fileID: 8300000, guid: 904bb8c041b31fe419b55de486c8dbfd, type: 3}
+    - target: {fileID: 6921089200822997004, guid: a96eb7353540c9940b8b980b6b937242, type: 3}
+      propertyPath: deliverNoBelt
+      value: 
+      objectReference: {fileID: 8300000, guid: 9c0f702519064d6469cd828464860689, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
