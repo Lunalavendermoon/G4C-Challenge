@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public static class GameManager
 {
+    public static int day;
 
     public static float foodGiven = 0;
 
@@ -23,13 +24,9 @@ public static class GameManager
 
     public static int gridFoodAmount;
     public static int[] gridFoodNutrition = new int[]{0,0,0};
-    
-    [RuntimeInitializeOnLoadMethod]
-    static void LoadFirstScene() {
-        // TODO load main menu?
-    }
 
     public static void LoadBlockData(int currentDay) {
+        day = currentDay;
         if (currentDay == 1) {
             blockMaxSize = 20;
             blockMaxGroupSize = new int[] {10,5,5};

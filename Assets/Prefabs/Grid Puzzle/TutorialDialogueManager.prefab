@@ -57,4 +57,7 @@ MonoBehaviour:
   - {fileID: 2800000, guid: 38cbe97f4913a494faf7fc75f42283e7, type: 3}
   - {fileID: 2800000, guid: ff4b67d1b8e3d40e28f31bcc7ca56542, type: 3}
   - {fileID: 2800000, guid: 2a822cbce1af64eea89c8d32f8c39492, type: 3}
-  dialogue: {fileID: 11400000, guid: 11df4404f9d534cfdbaa2ab12698b9b5, type: 2}
+  tutorialYapBg: {fileID: 2800000, guid: 6c98033d737f74afda1ea7bb927fd1d0, type: 3}
+  dialogueDay1: {fileID: 11400000, guid: f040f27b967a945ccb5e28c9e3f1e134, type: 2}
+  dialogueDay3: {fileID: 11400000, guid: 537823a5c3892403badfef09d846d4a4, type: 2}
+  dialogueTutorial: {fileID: 11400000, guid: 11df4404f9d534cfdbaa2ab12698b9b5, type: 2}

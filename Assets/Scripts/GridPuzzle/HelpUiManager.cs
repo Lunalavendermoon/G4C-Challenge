@@ -13,25 +13,46 @@ public class HelpUiManager : MonoBehaviour
 
     BlockLevelManagerScript levelManager;
 
+    void initializeStuff() {
+        if (levelManager == null) {
+            levelManager = blockLevelManager.GetComponent<BlockLevelManagerScript>();
+        }
+        if (dialogueManager == null) {
+            dialogueManager = tutorialDialogueManager.GetComponent<TutorialDialogueManager>();
+        }
+    }
+
     void Start() {
-        levelManager = blockLevelManager.GetComponent<BlockLevelManagerScript>();
-        dialogueManager = tutorialDialogueManager.GetComponent<TutorialDialogueManager>();
-        hideHelp();
+        initializeStuff();
+        if (GameManager.day == 2) {
+            hideHelp();
+        }
     }
 
     public void startTutorialDay1() {
+        initializeStuff();
         setStatus(true);
         closeButton.SetActive(false);
-        startTutorialFromButton();
+        startTutorialFromButton(1);
     }
 
-    public void startTutorialFromButton() {
-        // helpChoice.SetActive(false);
+    public void startTutorialDay3() {
+        initializeStuff();
+        setStatus(true);
+        closeButton.SetActive(false);
+        startTutorialFromButton(3);
+    }
+
+    public void startTutorialFromButton(int day) {
         tutorialContent.SetActive(true);
         levelManager.setPopupStatus(true);
         helpButton.GetComponent<HelpButtonScript>().ButtonClickable(false);
 
-        dialogueManager.StartDialogue();
+        if (day == 1 || day == 3) {
+            dialogueManager.StartDialogueFromDay(day);
+        } else {
+            dialogueManager.StartDialogueFromTutorial();
+        }
     }
 
     public void hideHelpFromTutorial() {
@@ -41,7 +62,6 @@ public class HelpUiManager : MonoBehaviour
 
     public void showHelp() {
         setStatus(true);
-        // helpChoice.SetActive(true);
         tutorialContent.SetActive(false);
     }
 

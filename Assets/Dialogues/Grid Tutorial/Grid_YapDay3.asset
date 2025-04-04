@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1996a6502e32979468f8865814e50378, type: 3}
+  m_Name: Grid_YapDay3
+  m_EditorClassIdentifier: 
+  RootNode:
+    dialogues:
+    - Hunger is a severe issue that our world faces.
+    - "However, it\u2019s not because we don\u2019t have enough food. Rather, it\u2019s
+      because so much of the food goes to waste. In fact, 20% of food produced for
+      human consumption is lost or wasted globally."
+    - "To truly visualize this, the food we waste and lose every year requires nearly
+      30% of the world\u2019s agricultural land. This is {LARGER} than the surface
+      area of China and India."
+    - "Food waste can happen for a variety of reasons: \u201Cugly\u201D food is often
+      thrown away for no good reason, sometimes farmers simply don\u2019t have the
+      storage space for that much food, or when edible or surplus food is thrown
+      away by retailers or consumers."
+    - "If we stopped wasting all that food, we\u2019d save enough to feed {2 billion}
+      people."
+    - "There are ways to reduce food waste, though it is difficult. For example,
+      helping farmers by giving them better technology and resources to store and
+      transport their food, implementing policies that require retailers to manage
+      their food more wisely\u2026"
+    - Even you could help make a difference by avoiding buying unnecessary food and
+      asking to buy ugly foods in stores.
+    nextDialogue: {fileID: 11400000, guid: 11df4404f9d534cfdbaa2ab12698b9b5, type: 2}
+    bgNum: 0
+    bgm: 

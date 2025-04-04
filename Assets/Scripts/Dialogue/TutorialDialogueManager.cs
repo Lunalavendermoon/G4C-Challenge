@@ -17,9 +17,13 @@ public class TutorialDialogueManager : MonoBehaviour
     public RawImage background;
 
     public List<Texture> tutorialBackgrounds;
+    public Texture tutorialYapBg;
 
     [Header("Dialogue Data")]
-    public Dialogue dialogue;
+    public Dialogue dialogueDay1;
+    public Dialogue dialogueDay3;
+    public Dialogue dialogueTutorial;
+    private int day = 0;
     private DialogueNode dialogueNode;
     private List<string> dialogues;
 
@@ -59,20 +63,37 @@ public class TutorialDialogueManager : MonoBehaviour
                 AudioSFXManager.Instance.PlayAudio("tap");
                 DialogueAssemble(dialogueCounter++);
             }
-            else
+            else if (dialogueNode.IsLastNode() || day == 3)
             {
                 helpbuttonscript.GetComponent<HelpButtonScript>().ButtonClickable(true);
                 HideDialogue();
             }
+            else
+            {
+                StartDialogueFromTutorial();
+            }
         }
     }
 
-    public void StartDialogue()
+    public void StartDialogueFromDay(int day)
     {
         dialogueIsActive = true;
-        dialogueNode = dialogue.RootNode;
+        dialogueNode = day == 1 ? dialogueDay1.RootNode : dialogueDay3.RootNode;
         dialogueCounter = 0;
         dialogues = new List<string>(dialogueNode.dialogues);
+
+        this.day = day;
+        
+        DialogueAssemble(dialogueCounter++);
+    }
+
+    public void StartDialogueFromTutorial() {
+        dialogueIsActive = true;
+        dialogueNode = dialogueTutorial.RootNode;
+        dialogueCounter = 0;
+        dialogues = new List<string>(dialogueNode.dialogues);
+
+        day = 0;
         
         DialogueAssemble(dialogueCounter++);
     }
@@ -84,7 +105,7 @@ public class TutorialDialogueManager : MonoBehaviour
 
         DialogBodyText.text = AddTags(fullText);
 
-        background.texture = tutorialBackgrounds[index];
+        background.texture = (day == 1 || day == 3) ? tutorialYapBg : tutorialBackgrounds[index];
     }
 
     public void HideDialogue()

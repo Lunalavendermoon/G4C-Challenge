@@ -77,6 +77,8 @@ public class BlockLevelManagerScript : MonoBehaviour
         if (day == 1) {
             // TODO uncomment in final
             helpUiManager.GetComponent<HelpUiManager>().startTutorialDay1();
+        } else if (day == 3) {
+            helpUiManager.GetComponent<HelpUiManager>().startTutorialDay3();
         }
     }
 

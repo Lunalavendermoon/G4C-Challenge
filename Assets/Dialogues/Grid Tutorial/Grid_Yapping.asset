@@ -10,23 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1996a6502e32979468f8865814e50378, type: 3}
-  m_Name: 1-5
+  m_Name: Grid_Yapping
   m_EditorClassIdentifier: 
   RootNode:
     dialogues:
-    - "It\u2019s time to prepare food for distribution.0000l"
-    - Giving people any food is not enough.0000l
+    - "It\u2019s time to prepare food for distribution."
+    - Giving people any food is not enough.
     - '{45 million} children under 5 suffer from wasting, which is what happens when
       people are malnourished for a brief period of time. They are much more likely
       to die than other children and even one occurance can have lifelong effects
-      on health.0000l'
+      on health.'
     - "{148 million} children under 5 suffer from stunting, which is the consequence
       of a long period of malnutrition. Stunting leads to poor cognitive development,
       impeding an individual\u2019s ability to learn. {Stunting cannot be cured,
-      so it must be prevented.}0000l"
+      so it must be prevented.}"
     - In order to prevent these consequences, it is important to have {proper nutrition.}
       A balanced diet includes a variety of nutrient-rich foods that provide essential
-      macronutrients, such as proteins, vegetables, healthy carbs and fats, and hydration.0000l
-    nextDialogue: {fileID: 0}
-    bgNum: 1
-    bgm: grid
+      macronutrients, such as proteins, vegetables, healthy carbs and fats, and hydration.
+    nextDialogue: {fileID: 11400000, guid: 11df4404f9d534cfdbaa2ab12698b9b5, type: 2}
+    bgNum: 0
+    bgm: 
