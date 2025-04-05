@@ -1,20 +1,17 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AudioSFXManager : MonoBehaviour
 {
     public static AudioSFXManager Instance { get; private set; }
-    public AudioSource audioSource;
-    public AudioClip tap;
-    public AudioClip click;
-    public AudioClip pop;
-    public AudioClip thump;
-    public AudioClip zip;
-    public AudioClip ding;
-    public AudioClip bad;
-    public AudioClip savePeople;
-    public AudioClip deliverBelt;
-    public AudioClip deliverNoBelt;
 
+    public AudioSource audioSource;
+    public AudioClip tap, click, pop, thump, zip, ding, bad, savePeople, deliverBelt, deliverNoBelt;
+
+    private bool canPlay = true;
+    private HashSet<string> gridScenes = new HashSet<string> { "Grid Day 1", "Grid Day 2", "Grid Day 3" };
 
     private void Awake()
     {
@@ -26,54 +23,41 @@ public class AudioSFXManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        string scene = SceneManager.GetActiveScene().name;
+
+        if (gridScenes.Contains(scene))
+        {
+            canPlay = false;
+            StartCoroutine(EnableAudioAfterDelay(1f));
+        }
     }
 
     public void PlayAudio(string clip)
     {
-        if (clip == "tap") {
-            audioSource.clip = tap;
-            audioSource.volume = 1f;
-        }
-        else if (clip == "click") {
-            audioSource.clip = click;
-            audioSource.volume = 1f;
-        }
-        else if (clip == "pop") {
-            audioSource.clip = pop;
-            audioSource.volume = 1f;
-        }
-        else if (clip == "thump") {
-            audioSource.clip = thump;
-            audioSource.volume = 1f;
-        }
-        else if (clip == "zip") {
-            audioSource.clip = zip;
-            audioSource.volume = 1f;
-        }
-        else if (clip == "ding") {
-            audioSource.clip = ding;
-            audioSource.volume = 1f;
-        }
-        else if (clip == "bad") {
-            audioSource.clip = bad;
-            audioSource.volume = 1f;
-        }
-        else if (clip == "savePeople")
+        if (!canPlay) return;
+
+        switch (clip)
         {
-            audioSource.clip = savePeople;
-            audioSource.volume = 1f;
+            case "tap": audioSource.clip = tap; audioSource.volume = 1f; break;
+            case "click": audioSource.clip = click; audioSource.volume = 1f; break;
+            case "pop": audioSource.clip = pop; audioSource.volume = 1f; break;
+            case "thump": audioSource.clip = thump; audioSource.volume = 1f; break;
+            case "zip": audioSource.clip = zip; audioSource.volume = 1f; break;
+            case "ding": audioSource.clip = ding; audioSource.volume = 1f; break;
+            case "bad": audioSource.clip = bad; audioSource.volume = 1f; break;
+            case "savePeople": audioSource.clip = savePeople; audioSource.volume = 1f; break;
+            case "deliverBelt": audioSource.clip = deliverBelt; audioSource.volume = 0.5f; break;
+            case "deliverNoBelt": audioSource.clip = deliverNoBelt; audioSource.volume = 0.5f; break;
+            default: return;
         }
-        else if (clip == "deliverBelt")
-        {
-            audioSource.clip = deliverBelt;
-            audioSource.volume = 0.5f;
-        }
-        else if (clip == "deliverNoBelt")
-        {
-            audioSource.clip = deliverNoBelt;
-            audioSource.volume = 0.5f;
-        }
+
         audioSource.PlayOneShot(audioSource.clip);
     }
 
+    private IEnumerator EnableAudioAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        canPlay = true;
+    }
 }

@@ -77,7 +77,7 @@ public class MapLevelManager : MonoBehaviour
             Destroy(gameObject);
         }
 
-        GameManager.foodGiven = originFoodOwn - foodOwn;
+        //GameManager.foodGiven = originFoodOwn - foodOwn;
 
         //Debug.Log(foodOwn);
         
