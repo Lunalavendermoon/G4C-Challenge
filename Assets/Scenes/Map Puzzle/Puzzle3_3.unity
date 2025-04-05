@@ -2623,6 +2623,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1471371046}
   - component: {fileID: 1471371045}
+  - component: {fileID: 1471371047}
   - component: {fileID: 1471371044}
   m_Layer: 0
   m_Name: hint5-1
@@ -2643,7 +2644,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8584b96b9417b71468483066c1143a32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  whenToShow: 100
+  whenToShow: 7
 --- !u!212 &1471371045
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2714,6 +2715,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1471371047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1471371043}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2da3a89ba1fb244acab1469a8def8178, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isText: 0
+  startImmediately: 1
 --- !u!1 &1500885059
 GameObject:
   m_ObjectHideFlags: 0
@@ -3126,6 +3141,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1829885689}
   - component: {fileID: 1829885688}
+  - component: {fileID: 1829885691}
   - component: {fileID: 1829885690}
   m_Layer: 0
   m_Name: hint5-2
@@ -3216,7 +3232,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8584b96b9417b71468483066c1143a32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  whenToShow: 100
+  whenToShow: 14
+--- !u!114 &1829885691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1829885687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2da3a89ba1fb244acab1469a8def8178, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isText: 0
+  startImmediately: 1
 --- !u!1001 &1842529358
 PrefabInstance:
   m_ObjectHideFlags: 0

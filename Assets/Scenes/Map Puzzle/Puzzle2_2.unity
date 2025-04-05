@@ -1072,7 +1072,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: "It's best to save as much people as possible. \n\nThe amount of people
-    saved WILL AFFECT THE FUTURE OF THIS CITY\n\nNeed to think twich before leaving"
+    saved WILL AFFECT THE FUTURE OF THIS CITY.\n\nThink twice before leaving."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8e5e9c70067fcfb40b4f51c8ebf363cf, type: 2}
   m_sharedMaterial: {fileID: -3509128430193175985, guid: 8e5e9c70067fcfb40b4f51c8ebf363cf, type: 2}
@@ -1527,6 +1527,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1105957366}
   - component: {fileID: 1105957365}
+  - component: {fileID: 1105957368}
   - component: {fileID: 1105957367}
   m_Layer: 0
   m_Name: hint2_0
@@ -1617,7 +1618,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8584b96b9417b71468483066c1143a32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  whenToShow: 10
+  whenToShow: 6
+--- !u!114 &1105957368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1105957364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2da3a89ba1fb244acab1469a8def8178, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isText: 0
+  startImmediately: 1
 --- !u!1001 &1131458680
 PrefabInstance:
   m_ObjectHideFlags: 0

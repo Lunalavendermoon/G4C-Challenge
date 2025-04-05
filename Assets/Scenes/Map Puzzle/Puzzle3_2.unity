@@ -363,6 +363,7 @@ GameObject:
   - component: {fileID: 179104062}
   - component: {fileID: 179104061}
   - component: {fileID: 179104063}
+  - component: {fileID: 179104064}
   m_Layer: 0
   m_Name: hint4-1_0
   m_TagString: Untagged
@@ -452,7 +453,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8584b96b9417b71468483066c1143a32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  whenToShow: 10
+  whenToShow: 7
+--- !u!114 &179104064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 179104060}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2da3a89ba1fb244acab1469a8def8178, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isText: 0
+  startImmediately: 1
 --- !u!1 &223067504
 GameObject:
   m_ObjectHideFlags: 0
@@ -1043,6 +1058,7 @@ GameObject:
   - component: {fileID: 600533970}
   - component: {fileID: 600533969}
   - component: {fileID: 600533971}
+  - component: {fileID: 600533972}
   m_Layer: 0
   m_Name: hint4-2
   m_TagString: Untagged
@@ -1132,7 +1148,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8584b96b9417b71468483066c1143a32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  whenToShow: 17
+  whenToShow: 14
+--- !u!114 &600533972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 600533968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2da3a89ba1fb244acab1469a8def8178, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isText: 0
+  startImmediately: 1
 --- !u!1001 &614348813
 PrefabInstance:
   m_ObjectHideFlags: 0
