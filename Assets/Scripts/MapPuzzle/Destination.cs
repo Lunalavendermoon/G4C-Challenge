@@ -20,6 +20,7 @@ public class Destination : MonoBehaviour
                 {
                     Destroy(MapLevelManager.Instance.gameObject);
                 }
+                MapLevelManager.Instance.countRestart = 0;
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
             if (belt1.GetComponent<SpriteRenderer>().color == Color.red || belt2.GetComponent<SpriteRenderer>().color == Color.red)
@@ -32,6 +33,7 @@ public class Destination : MonoBehaviour
                 {
                     Destroy(MapLevelManager.Instance.gameObject);
                 }
+                MapLevelManager.Instance.countRestart = 0;
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             }
         }
