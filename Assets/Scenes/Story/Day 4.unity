@@ -645,6 +645,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 861284462848076274, guid: b17545f5a4fe0a54983467065681f6b8, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -7392171645639815560, guid: dd734fd75dc990d40b1e8519dcb172ff, type: 3}
     - target: {fileID: 5104386509041075149, guid: b17545f5a4fe0a54983467065681f6b8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -802,7 +806,7 @@ MonoBehaviour:
   dialogueBeforeEnding: {fileID: 11400000, guid: 42df1b1c6a0cb5e4f96b1b648e1b33b5, type: 2}
   goodEnding: {fileID: 11400000, guid: 5f6cec01df77ed14ca532dd013190837, type: 2}
   badEnding: {fileID: 11400000, guid: c137b285cf995394eb574d46290b7ae4, type: 2}
-  threshold: 19
+  threshold: 20
 --- !u!1001 &8738286936388419462
 PrefabInstance:
   m_ObjectHideFlags: 0

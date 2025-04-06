@@ -11,8 +11,8 @@ public class HunguryMan : MonoBehaviour
             playerMovement.giveFood(1);
             AudioSFXManager.Instance.PlayAudio("savePeople");
             MapLevelManager.Instance.setFood(1);
-            GameManager.foodGiven++;
-            Debug.Log(GameManager.foodGiven);
+            MapLevelManager.Instance.AddpeopleWFood();
+            Debug.Log(GameManager.peopleFed);
             Destroy(gameObject);
         }
     }

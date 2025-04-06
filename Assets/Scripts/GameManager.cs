@@ -8,7 +8,9 @@ public static class GameManager
 {
     public static int day;
 
-    public static float foodGiven = 0;
+    public static float peopleFed = 0;
+    public static float peopleFedlv = 0;
+    public static float peopleFed1stlv = 0;
 
     public static int blockMaxSize, blockXOffset, blockYOffset;
 
