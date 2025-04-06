@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: a10d75de94d45c14ab0be0415d46d9c6
+guid: 70f57270950199545a02a131f2cf554e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5764580272462981891
-    second: hint5-1 1_0
-  - first:
-      213: 2161018697866318048
-    second: hint5-1 1_1
+      213: -6223511322706947175
+    second: hint4-1 2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -116,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: hint5-1 1_0
+      name: hint4-1 2_0
       rect:
         serializedVersion: 2
-        x: 54
-        y: 366
-        width: 502
-        height: 438
+        x: 3
+        y: 0
+        width: 173
+        height: 173
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -131,30 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: df49e94c8c81000b0800000000000000
-      internalID: -5764580272462981891
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: hint5-1 1_1
-      rect:
-        serializedVersion: 2
-        x: 1
-        y: 24
-        width: 1026
-        height: 104
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 0e09c4f5e0b7dfd10800000000000000
-      internalID: 2161018697866318048
+      spriteID: 9935e62fc65a1a9a0800000000000000
+      internalID: -6223511322706947175
       vertices: []
       indices: 
       edges: []
@@ -163,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -172,9 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      hint5-1 1_0: -5764580272462981891
-      hint5-1 1_1: 2161018697866318048
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
