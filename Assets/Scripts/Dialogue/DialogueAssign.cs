@@ -9,7 +9,7 @@ public class DialogueAssign : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        if (GameManager.foodGiven >= threshold) {
+        if (GameManager.peopleFed >= threshold) {
             dialogueBeforeEnding.RootNode.nextDialogue = goodEnding;
         }
         else {

@@ -39,7 +39,7 @@ public class AudioSFXManager : MonoBehaviour
 
         switch (clip)
         {
-            case "tap": audioSource.clip = tap; audioSource.volume = 1f; break;
+            case "tap": audioSource.clip = tap; audioSource.volume = 0.5f; break;
             case "click": audioSource.clip = click; audioSource.volume = 1f; break;
             case "pop": audioSource.clip = pop; audioSource.volume = 1f; break;
             case "thump": audioSource.clip = thump; audioSource.volume = 1f; break;
