@@ -3774,18 +3774,6 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 1601543643319680511, guid: 3e7db638d0732da44bae96e424b2b1fd, type: 3}
-      propertyPath: m_Color.b
-      value: 0.19215688
-      objectReference: {fileID: 0}
-    - target: {fileID: 1601543643319680511, guid: 3e7db638d0732da44bae96e424b2b1fd, type: 3}
-      propertyPath: m_Color.g
-      value: 0.18431373
-      objectReference: {fileID: 0}
-    - target: {fileID: 1601543643319680511, guid: 3e7db638d0732da44bae96e424b2b1fd, type: 3}
-      propertyPath: m_Color.r
-      value: 0.11764707
-      objectReference: {fileID: 0}
     - target: {fileID: 1691122020267004933, guid: 3e7db638d0732da44bae96e424b2b1fd, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -3873,18 +3861,6 @@ PrefabInstance:
     - target: {fileID: 2056936263110173395, guid: 3e7db638d0732da44bae96e424b2b1fd, type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
       value: 25
-      objectReference: {fileID: 0}
-    - target: {fileID: 2238653451044558716, guid: 3e7db638d0732da44bae96e424b2b1fd, type: 3}
-      propertyPath: m_Color.b
-      value: 0.17254902
-      objectReference: {fileID: 0}
-    - target: {fileID: 2238653451044558716, guid: 3e7db638d0732da44bae96e424b2b1fd, type: 3}
-      propertyPath: m_Color.g
-      value: 0.18039216
-      objectReference: {fileID: 0}
-    - target: {fileID: 2238653451044558716, guid: 3e7db638d0732da44bae96e424b2b1fd, type: 3}
-      propertyPath: m_Color.r
-      value: 0.33333334
       objectReference: {fileID: 0}
     - target: {fileID: 2514211313740028575, guid: 3e7db638d0732da44bae96e424b2b1fd, type: 3}
       propertyPath: m_IsActive
