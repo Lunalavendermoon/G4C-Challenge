@@ -90,7 +90,7 @@ public class PlayerMovement : MonoBehaviour
             railSpd = 5f;
         }
 
-        if (step == 0)
+        if (step <= 0)
         {
             canMove = false;
             noStep.text = "Ran out of steps\n'R' to retry";
